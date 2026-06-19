@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Defensive &mdash; WWWatcher &amp; RadioLogger | Destructive AI Gurus</title>
+<meta name="description" content="WWWatcher: a real-time network metadata observatory in Rust + Tauri + PostgreSQL. RadioLogger: Android background radio environment logger feeding the same defensive pipeline. Built by the same hands.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://destructiveaigurus.com/defensive.html">
+<meta property="og:title" content="Defensive &mdash; WWWatcher &amp; RadioLogger">
+<meta property="og:description" content="A real-time network metadata observatory + Android RF environment logger. Multi-method traceroute, MITRE ATT&CK mapping, counter-recon, threat intel built-in.">
+<meta property="og:site_name" content="Destructive AI Gurus">
+<meta property="og:image" content="https://destructiveaigurus.com/assets/wwwatcher/wwwatcher-23-20-58.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Defensive &mdash; WWWatcher &amp; RadioLogger">
+<meta name="twitter:description" content="Real-time network metadata observatory + Android RF logger. Built for expert network engineers.">
+<meta name="keywords" content="network defense, packet capture, traceroute, MITRE ATT&CK, threat hunting, Rust, Tauri, PostgreSQL, TimescaleDB, Android RF logging, stingray detection, counter-recon">
+<meta name="author" content="Destructive AI Gurus, LLC">
+<link rel="canonical" href="https://destructiveaigurus.com/defensive.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "WWWatcher",
+  "description": "A passive network metadata observatory: real-time packet metadata capture, MITRE ATT&CK mapping, built-in threat intelligence, behavioral baselines, and counter-recon. Self-hosted, single-user, built in Rust with Tauri and PostgreSQL + TimescaleDB.",
+  "operatingSystem": "Linux, macOS, Windows",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Destructive AI Gurus, LLC",
+    "url": "https://destructiveaigurus.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "RadioLogger",
+  "description": "Background radio environment logger for Android: GPS, WiFi, cell tower, and Bluetooth/BLE capture into rolling CSV files, feeding a self-hosted PostgreSQL asset graph as a remote sensor for WWWatcher.",
+  "operatingSystem": "Android",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Destructive AI Gurus, LLC",
+    "url": "https://destructiveaigurus.com"
+  }
+}
+</script>
+<style>
+:root {
+  --blue: #3b82f6;
+  --blue-dim: #2563eb;
+  --blue-glow: rgba(59, 130, 246, 0.12);
+  --blue-glow-strong: rgba(59, 130, 246, 0.25);
+  --bg: #050507;
+  --bg-el: #0a0a0f;
+  --bg-card: #0e0e14;
+  --text: #e8e8ed;
+  --text-dim: #8888a0;
+  --text-muted: #55556a;
+  --border: #1a1a24;
+  --border-h: #2a2a3a;
+  --crit: #ef4444;
+  --warn: #f59e0b;
+  --ok: #22c55e;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { height: 100%; scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* ═══════ TOP BAR ═══════ */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 60px;
+  background: rgba(5,5,7,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px; z-index: 50;
+}
+.topbar-brand { display: flex; align-items: center; gap: 12px; }
+.topbar-brand svg { width: 26px; height: 26px; flex-shrink: 0; }
+.topbar-brand-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem; letter-spacing: 0.18em; font-weight: 700; line-height: 1.1;
+}
+.topbar-brand-text .accent { color: var(--blue); }
+.topbar-back {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem; color: var(--text-dim); letter-spacing: 0.05em;
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border: 1px solid var(--border); border-radius: 8px;
+  transition: all 0.2s;
+}
+.topbar-back:hover { color: var(--blue); border-color: rgba(59,130,246,0.4); background: var(--blue-glow); }
+
+/* ═══════ HERO ═══════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 48px 80px;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 30%, rgba(59,130,246,0.12), transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(239,68,68,0.05), transparent 55%);
+  pointer-events: none;
+}
+.hero-grid {
+  max-width: 1320px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px;
+  align-items: center; position: relative; z-index: 2; width: 100%;
+}
+.hero-copy { max-width: 580px; }
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem; color: var(--blue); letter-spacing: 0.18em;
+  margin-bottom: 18px; text-transform: uppercase;
+}
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700; line-height: 1.05; letter-spacing: -0.02em;
+  margin-bottom: 22px;
+}
+.hero-title .hl { color: var(--blue); }
+.hero-lead {
+  font-size: 1.15rem; color: var(--text); line-height: 1.5;
+  margin-bottom: 18px;
+}
+.hero-desc {
+  font-size: 0.95rem; color: var(--text-dim); line-height: 1.65; font-weight: 300;
+  margin-bottom: 28px;
+}
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
+}
+.meta-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem; letter-spacing: 0.06em; color: var(--text-dim);
+  padding: 6px 12px; border: 1px solid var(--border-h); border-radius: 999px;
+  background: rgba(255,255,255,0.015);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+.meta-chip:hover {
+  color: var(--text);
+  border-color: rgba(59,130,246,0.5);
+  background: var(--blue-glow);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(59,130,246,0.18);
+}
+.meta-chip.blue { color: var(--blue); border-color: rgba(59,130,246,0.35); background: var(--blue-glow); }
+.meta-chip.blue:hover { color: var(--text); border-color: var(--blue); box-shadow: 0 4px 14px rgba(59,130,246,0.35); }
+.meta-chip.crit { color: var(--crit); border-color: rgba(239,68,68,0.35); background: rgba(239,68,68,0.08); }
+.meta-chip.crit:hover { color: var(--text); border-color: var(--crit); background: rgba(239,68,68,0.18); box-shadow: 0 4px 14px rgba(239,68,68,0.25); }
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  margin-bottom: 28px;
+}
+.hero-stat {
+  border-left: 2px solid var(--blue); padding-left: 12px;
+}
+.hero-stat-num {
+  font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text); line-height: 1;
+  letter-spacing: -0.01em;
+}
+.hero-stat-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+  color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;
+  margin-top: 6px;
+}
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.cta-p, .cta-s {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 500;
+  padding: 13px 22px; border-radius: 10px; transition: all 0.2s; cursor: pointer;
+}
+.cta-p { background: var(--blue); color: white; }
+.cta-p:hover { background: var(--blue-dim); transform: translateY(-1px); box-shadow: 0 10px 30px rgba(59,130,246,0.35); }
+.cta-s { background: transparent; color: var(--text); border: 1px solid var(--border-h); }
+.cta-s:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-glow); }
+.cta-p svg, .cta-s svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+.hero-image {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border-h);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(59,130,246,0.08);
+  aspect-ratio: 1360 / 670;
+}
+.hero-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero-image::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(59,130,246,0.04), transparent 60%);
+  pointer-events: none;
+}
+.hero-image-tag {
+  position: absolute; top: 14px; left: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; letter-spacing: 0.18em; color: var(--blue);
+  background: rgba(5,5,7,0.7); backdrop-filter: blur(8px);
+  border: 1px solid rgba(59,130,246,0.25);
+  padding: 5px 10px; border-radius: 6px; z-index: 3;
+}
+
+/* ═══════ FEATURES ═══════ */
+.features {
+  padding: 100px 48px 80px;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-el) 100%);
+}
+.features-inner { max-width: 1320px; margin: 0 auto; }
+.features-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.4rem);
+  font-weight: 700; letter-spacing: -0.015em; line-height: 1.15;
+  margin-bottom: 14px; max-width: 760px;
+}
+.features-sub {
+  font-size: 0.98rem; color: var(--text-dim); font-weight: 300;
+  margin-bottom: 48px; max-width: 700px; line-height: 1.55;
+}
+.feature-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.feature-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px 20px;
+  min-height: 200px;
+  display: flex; flex-direction: column;
+  transition: all 0.25s;
+}
+.feature-card:hover {
+  border-color: rgba(59,130,246,0.35);
+  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(59,130,246,0.04) 100%);
+  transform: translateY(-2px);
+}
+.feature-icon {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--blue-glow); border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 10px; margin-bottom: 16px;
+}
+.feature-icon svg { width: 17px; height: 17px; stroke: var(--blue); fill: none; stroke-width: 1.6; }
+.feature-title {
+  font-family: 'Syne', sans-serif; font-size: 0.92rem; font-weight: 600;
+  margin-bottom: 6px; color: var(--text); letter-spacing: -0.005em;
+}
+.feature-desc {
+  font-size: 0.76rem; color: var(--text-dim); line-height: 1.55; font-weight: 300;
+  flex-grow: 1;
+}
+
+/* ═══════ GALLERY ═══════ */
+.gallery {
+  padding: 90px 48px 100px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.gallery-inner { max-width: 1320px; margin: 0 auto; }
+.gallery-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  font-weight: 700; letter-spacing: -0.015em;
+  margin-bottom: 12px;
+}
+.gallery-sub {
+  font-size: 0.92rem; color: var(--text-dim); font-weight: 300;
+  margin-bottom: 14px; max-width: 700px; line-height: 1.55;
+}
+.gallery-note {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+  color: var(--text-muted); letter-spacing: 0.06em;
+  margin-bottom: 36px; max-width: 700px; line-height: 1.55;
+}
+.gallery-note .blue { color: var(--blue); }
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+}
+.gallery-item {
+  position: relative; display: block;
+  border-radius: 10px; overflow: hidden;
+  border: 1px solid var(--border);
+  cursor: pointer; aspect-ratio: 1360 / 670;
+  background: var(--bg-card);
+  transition: all 0.2s;
+}
+.gallery-item:hover { border-color: rgba(59,130,246,0.5); transform: translateY(-2px); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-item-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(5,5,7,0.92));
+  padding: 18px 12px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; color: var(--text); letter-spacing: 0.06em;
+}
+
+/* CSS-only lightbox via :target */
+.lightbox {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.92); backdrop-filter: blur(10px);
+  z-index: 200;
+  padding: 60px 24px 24px;
+  overflow: auto;
+}
+.lightbox:target { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.lightbox img { max-width: 100%; max-height: 85vh; border-radius: 8px; box-shadow: 0 30px 90px rgba(0,0,0,0.8); }
+.lightbox-caption {
+  margin-top: 18px; font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem; color: var(--text-dim); letter-spacing: 0.06em;
+}
+.lightbox-close {
+  position: absolute; top: 20px; right: 24px;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+  color: var(--text); padding: 10px 16px; border: 1px solid var(--border-h);
+  border-radius: 8px; background: rgba(5,5,7,0.6);
+}
+.lightbox-close:hover { color: var(--blue); border-color: var(--blue); }
+
+/* ═══════ RADIOLOGGER ═══════ */
+.radio {
+  padding: 90px 48px;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-el) 100%);
+}
+.radio-inner { max-width: 1320px; margin: 0 auto; }
+.radio-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+}
+.radio-copy {}
+.radio-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+.radio-title .hl { color: var(--blue); }
+.radio-lead {
+  font-size: 1.05rem; color: var(--text); line-height: 1.5;
+  margin-bottom: 16px;
+}
+.radio-desc {
+  font-size: 0.92rem; color: var(--text-dim); line-height: 1.65; font-weight: 300;
+  margin-bottom: 24px;
+}
+.radio-bullets {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 28px;
+}
+.radio-bullets li {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: 0.9rem; line-height: 1.5; color: var(--text);
+}
+.radio-bullets .b-tag {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+  color: var(--blue); background: var(--blue-glow);
+  border: 1px solid rgba(59,130,246,0.2);
+  padding: 3px 8px; border-radius: 4px; letter-spacing: 0.08em;
+  flex-shrink: 0; margin-top: 2px; min-width: 64px; text-align: center;
+}
+.radio-bullets .b-text strong { color: var(--blue); font-weight: 600; }
+.radio-bullets .b-text { color: var(--text-dim); font-weight: 300; font-size: 0.86rem; }
+.radio-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.radio-visual {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-h);
+  border-radius: 14px;
+  padding: 24px 26px;
+  font-family: 'JetBrains Mono', monospace;
+  overflow: hidden;
+}
+.radio-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent 0, transparent 27px, rgba(59,130,246,0.03) 27px, rgba(59,130,246,0.03) 28px);
+  pointer-events: none;
+}
+.radio-visual-header {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 0.62rem; color: var(--text-muted); letter-spacing: 0.12em;
+  margin-bottom: 16px; position: relative; z-index: 1;
+}
+.radio-visual-header .live {
+  color: var(--ok);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.radio-visual-header .live::before {
+  content: ''; width: 6px; height: 6px; background: var(--ok);
+  border-radius: 50%; box-shadow: 0 0 8px var(--ok);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.radio-log {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 4px;
+  font-size: 0.72rem; line-height: 1.55;
+}
+.radio-log .row { display: flex; gap: 12px; color: var(--text-dim); }
+.radio-log .ts { color: var(--text-muted); flex-shrink: 0; }
+.radio-log .src { width: 56px; color: var(--blue); flex-shrink: 0; }
+.radio-log .src.crit { color: var(--crit); }
+.radio-log .src.warn { color: var(--warn); }
+.radio-log .msg { color: var(--text); }
+
+/* ═══════ BRIDGE ═══════ */
+.bridge {
+  padding: 80px 48px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.bridge-inner { max-width: 880px; margin: 0 auto; text-align: center; }
+.bridge-text {
+  font-size: 1.05rem; color: var(--text); font-weight: 300; line-height: 1.6;
+  margin-bottom: 28px;
+}
+.bridge-text strong { color: var(--blue); font-weight: 600; }
+.bridge-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--blue); font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem; letter-spacing: 0.05em;
+  border: 1px solid rgba(59,130,246,0.4); padding: 12px 20px;
+  border-radius: 10px; transition: all 0.2s;
+}
+.bridge-link:hover { background: var(--blue-glow); }
+
+/* ═══════ FOOTER + DISCLAIMER ═══════ */
+.page-footer {
+  padding: 36px 48px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-el);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.page-footer-text { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
+.page-footer-text a { color: var(--blue); }
+.disclaimer-icon {
+  background: transparent; border: 1px solid var(--border-h); border-radius: 8px;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--text-dim); transition: all 0.2s;
+}
+.disclaimer-icon:hover { color: var(--blue); border-color: rgba(59,130,246,0.4); }
+.disclaimer-icon svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+.legal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center; z-index: 100;
+  padding: 24px;
+}
+.legal-overlay.active { display: flex; }
+.legal-modal {
+  background: var(--bg-el); border: 1px solid var(--border-h); border-radius: 14px;
+  padding: 40px 44px; max-width: 720px; width: 100%; max-height: 85vh;
+  overflow-y: auto; position: relative;
+}
+.legal-close {
+  position: absolute; top: 16px; right: 16px; background: none; border: none;
+  color: var(--text-dim); cursor: pointer; font-size: 1.4rem;
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  border-radius: 6px;
+}
+.legal-close:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+.legal-modal h3 {
+  font-family: 'Syne', sans-serif; margin-bottom: 16px;
+  color: var(--blue); font-size: 1.1rem;
+}
+.legal-modal p {
+  font-size: 0.85rem; line-height: 1.65; color: var(--text-dim); margin-bottom: 12px;
+}
+.legal-modal p strong { color: var(--text); }
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 1100px) {
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .hero-grid, .radio-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero { padding: 100px 28px 60px; }
+  .features, .gallery, .radio, .bridge { padding-left: 28px; padding-right: 28px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .page-footer { padding: 28px; }
+}
+@media (max-width: 560px) {
+  .topbar { padding: 0 16px; height: 54px; }
+  .topbar-brand-text { font-size: 0.68rem; }
+  .topbar-back { padding: 6px 10px; font-size: 0.66rem; }
+  .hero { padding: 90px 18px 50px; }
+  .features, .gallery, .radio, .bridge { padding-left: 18px; padding-right: 18px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+}
+
+/* ═══════ FIRM CREDENTIAL STRAP ═══════ */
+.firm-credential {
+  padding: 48px 28px;
+  background: linear-gradient(180deg, rgba(59,130,246,0.04) 0%, rgba(59,130,246,0.10) 100%);
+  border-top: 1px solid rgba(59,130,246,0.3);
+}
+.firm-credential-inner { max-width: 920px; margin: 0 auto; }
+.firm-credential-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #3b82f6;
+  letter-spacing: 0.18em;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.firm-credential-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #c8c8d8;
+  text-align: center;
+  font-weight: 300;
+}
+.firm-credential-text strong { color: #3b82f6; font-weight: 600; }
+@media (max-width: 560px) {
+  .firm-credential { padding: 32px 18px; }
+  .firm-credential-text { font-size: 0.92rem; line-height: 1.6; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ TOP BAR ═══════ -->
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,1.2) scale(0.28)" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"><path d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/><path transform="rotate(180,100,110)" d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/></g><circle cx="32" cy="4" r="3" fill="#bfdbfe"/><circle cx="32" cy="60" r="3" fill="#bfdbfe"/><circle cx="32" cy="32" r="4.6" fill="none" stroke="#a855f7" stroke-width="1.6"/><circle cx="32" cy="32" r="3" fill="#dbeafe"/></svg>
+    <div class="topbar-brand-text">DESTRUCTIVE<br><span class="accent">AI GURUS</span></div>
+  </a>
+  <a class="topbar-back" href="index.html">&larr; BACK TO HOME</a>
+</header>
+
+<!-- ═══════ HERO — WWWatcher ═══════ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="section-label">// PORTFOLIO &middot; DEFENSIVE TOOLING</div>
+      <h1 class="hero-title">See the threats <span class="hl">hunting your network</span> &mdash; first.</h1>
+      <p class="hero-lead">WWWatcher is a <strong>passive</strong> network metadata observatory &mdash; it puts AI to work <strong>understanding the threats around you</strong>, watching for the things trying to surveil and attack you and surfacing them before they reach you. It observes the traffic; it never intrudes.</p>
+      <p class="hero-desc">WWWatcher captures packet metadata &mdash; not payloads &mdash; from every interface on the host, stores it in PostgreSQL with TimescaleDB, and surfaces it through 23 dashboard tabs covering flows, anomalies, MITRE ATT&amp;CK mapping, geo, topology, traceroute, threat hunt, and counter-recon. Built in Rust, shipped as a single Tauri desktop app on Linux, macOS, and Windows. Single-user. Self-hosted. Your data never leaves your machine.</p>
+      <p class="wv-stamp" style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;line-height:1.6;letter-spacing:0.03em;color:#8a8aa0;margin:14px 0 2px;max-width:560px;">We aim AI at what drains and threatens you &mdash; never at you. <strong style="color:#c7ccd6;font-weight:500;">We gather nothing.</strong></p>
+      <div class="hero-meta">
+        <a class="meta-chip blue" href="#feat-traceroute" title="Backend in Rust for memory-safe high-throughput packet processing; Tauri v2 for a lightweight cross-platform desktop shell. See the engineering.">Rust + Tauri v2</a>
+        <a class="meta-chip" href="#gallery" title="Frontend in Svelte 5 with runes &mdash; compiled reactivity, near-zero overhead for animation-heavy dashboards. See it in action.">Svelte 5</a>
+        <a class="meta-chip" href="#feat-asset" title="Storage in PostgreSQL with TimescaleDB hypertables for time-series traffic data. See the persistent asset graph.">PostgreSQL + TimescaleDB</a>
+        <a class="meta-chip" href="#gallery" title="One binary, three platforms &mdash; libpcap on Linux/macOS, npcap on Windows. See it running.">Linux &middot; macOS &middot; Windows</a>
+        <a class="meta-chip" href="#feat-metadata" title="Designed for one expert engineer per host &mdash; no multi-tenant complexity, no auth surface.">Single-user</a>
+        <a class="meta-chip" href="#feat-metadata" title="Runs entirely on your own hardware &mdash; no cloud, no telemetry, your data never leaves the machine.">Self-hosted</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">23</div><div class="hero-stat-label">Dashboard tabs</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">36&rarr;30</div><div class="hero-stat-label">ATT&amp;CK mappings</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">158</div><div class="hero-stat-label">Tests passing</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">9</div><div class="hero-stat-label">Rust crates</div></div>
+      </div>
+      <div class="mono" style="font-size:0.6rem;color:var(--text-muted);letter-spacing:0.12em;margin:-16px 0 28px;">// SNAPSHOT &middot; JUNE 2026 BUILD</div>
+      <div class="hero-ctas">
+        <a class="cta-p" href="#gallery">
+          See the screenshots
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a class="cta-s" href="mailto:contact@destructiveaigurus.com?subject=WWWatcher%20%E2%80%94%20Tell%20me%20more&body=I'd%20like%20to%20learn%20more%20about%20WWWatcher.">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-tag">// LIVE &middot; TRAFFIC TUNNEL VIEW</div>
+      <img src="assets/wwwatcher/wwwatcher-23-20-58.png" alt="WWWatcher GPU traffic tunnel visualization">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FEATURES ═══════ -->
+<section class="features">
+  <div class="features-inner">
+    <div class="section-label">// CAPABILITIES</div>
+    <h2 class="features-heading">Built for engineers who need to see everything.</h2>
+    <p class="features-sub">Nine crates &middot; one binary &middot; metadata observatory by design. WWWatcher is what you reach for when an off-the-shelf SIEM is too coarse and a packet sniffer is too noisy.</p>
+
+    <div class="feature-grid">
+
+      <div class="feature-card" id="feat-metadata">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 1l3 6 6 .9-4.5 4.4 1 6.7L12 16l-5.5 3 1-6.7L3 7.9 9 7z"/></svg></div>
+        <div class="feature-title">Metadata, Not Payloads</div>
+        <div class="feature-desc">5-tuple, TLS SNI, JA3/JA4 fingerprints, DNS queries, TCP flags &mdash; never payload bytes. Privacy-conscious by architecture, not by toggle.</div>
+      </div>
+
+      <div class="feature-card" id="feat-traceroute">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <div class="feature-title">Multi-Method Traceroute</div>
+        <div class="feature-desc">UDP + TCP SYN + ICMP probes with Paris flow consistency. Always-on route agent re-traces every external IP, builds a persistent topology graph. Native Rust raw-socket implementation.</div>
+      </div>
+
+      <div class="feature-card" id="feat-attack">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div class="feature-title">MITRE ATT&amp;CK Mapping</div>
+        <div class="feature-desc">36 anomaly types mapped to 30 techniques across 11 tactics. A live ATT&amp;CK matrix view shows where on the kill chain your traffic is sitting right now.</div>
+      </div>
+
+      <div class="feature-card" id="feat-intel">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div class="feature-title">Threat Intel Built-In</div>
+        <div class="feature-desc">Emerging Threats, AbuseIPDB, AlienVault OTX, abuse.ch SSLBL/URLhaus/ThreatFox, 16 HaGeZi domain feeds &mdash; 891K+ entries loaded in the background.</div>
+      </div>
+
+      <div class="feature-card" id="feat-baseline">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="feature-title">Behavioral Baselines</div>
+        <div class="feature-desc">Welford rolling mean &amp; stddev per host across four metrics, 2&sigma; deviation alerts. Beacon detection by FFT, DGA scoring, low-prevalence C2 hunting.</div>
+      </div>
+
+      <div class="feature-card" id="feat-counter">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 008 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H2a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H8a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V8c.42.32.72.85.72 1.42V12c0 .57-.3 1.1-.72 1.42z"/></svg></div>
+        <div class="feature-title">Counter-Recon</div>
+        <div class="feature-desc">Detects who's probing <em>you</em> &mdash; port scans, SYN scans, WiFi probe floods, deauths, BT inquiries, BLE active scans, IMSI catcher paging.</div>
+      </div>
+
+      <div class="feature-card" id="feat-pineapple">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="feature-title">Pineapple-Class Scoring</div>
+        <div class="feature-desc">Behavioral fingerprinting flags hostile-rig hardware regardless of MAC randomization. Karma responders, evil twins, enterprise broadcasts &mdash; all scored.</div>
+      </div>
+
+      <div class="feature-card" id="feat-asset">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <div class="feature-title">Persistent Asset Graph</div>
+        <div class="feature-desc">Devices outlive observations. JupiterOne-style entity graph with PostgreSQL + TimescaleDB hypertables, provenance per attribute. Raw data rolls weekly; entities accumulate forever &mdash; retention is the function, because the instrument runs on its owner&rsquo;s ground, for its owner. RadioLogger feeds the same graph.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ GALLERY ═══════ -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div class="section-label">// LIVE FROM THE WORKSTATION</div>
+    <h2 class="gallery-heading">Thirteen views into one running session.</h2>
+    <p class="gallery-sub">Captured 2026-05-09. The same WWWatcher instance, switched across 13 of its 23 dashboard tabs while the operator's home network was actively under observation.</p>
+    <p class="gallery-note"><span class="blue">// PII REDACTED:</span> MAC addresses, public IPs, IPv6 EUI-64 host identifiers, hostnames containing personal identifiers, neighbor SSIDs, and ASN/org strings have been overlaid with diagonal slash bars. RFC1918 local addresses, the application UI itself, and aggregate counters are unredacted.</p>
+
+    <div class="gallery-grid">
+      <a href="#shot1" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-17-48.png" alt="Matrix Traffic Flow with anomaly log"><div class="gallery-item-label">COMMAND &middot; matrix waterfall</div></a>
+      <a href="#shot2" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-18-26.png" alt="Airspace WiFi APs and tracked entities"><div class="gallery-item-label">AIRSPACE &middot; wifi + tracked</div></a>
+      <a href="#shot3" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-18-43.png" alt="MITRE ATT&CK matrix view"><div class="gallery-item-label">ATT&amp;CK &middot; live matrix</div></a>
+      <a href="#shot4" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-19-16.png" alt="Observed domains list"><div class="gallery-item-label">DOMAINS &middot; 457 observed</div></a>
+      <a href="#shot5" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-19-29.png" alt="Traffic categories breakdown"><div class="gallery-item-label">CATEGORIES &middot; 496 records</div></a>
+      <a href="#shot6" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-19-39.png" alt="Custom YAML rules editor"><div class="gallery-item-label">RULES &middot; YAML detector editor</div></a>
+      <a href="#shot7" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-19-54.png" alt="Network topology graph"><div class="gallery-item-label">TOPOLOGY &middot; 952 nodes</div></a>
+      <a href="#shot8" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-20-16.png" alt="IP geolocation globe map"><div class="gallery-item-label">GLOBE &middot; 500 IPs mapped</div></a>
+      <a href="#shot9" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-20-40.png" alt="GPU VIZ Cyberspace scene"><div class="gallery-item-label">GPU VIZ &middot; cyberspace</div></a>
+      <a href="#shot10" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-20-53.png" alt="GPU VIZ Threat Globe scene"><div class="gallery-item-label">GPU VIZ &middot; threat globe</div></a>
+      <a href="#shot11" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-20-58.png" alt="GPU VIZ Traffic Tunnel scene"><div class="gallery-item-label">GPU VIZ &middot; traffic tunnel</div></a>
+      <a href="#shot12" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-21-22.png" alt="Sankey traffic flow diagram"><div class="gallery-item-label">SANKEY &middot; 978 flows</div></a>
+      <a href="#shot13" class="gallery-item"><img src="assets/wwwatcher/wwwatcher-23-21-38.png" alt="Settings panel detector configuration"><div class="gallery-item-label">SETTINGS &middot; detector tuning</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ LIGHTBOXES ═══════ -->
+<div class="lightbox" id="shot1"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-17-48.png" alt=""><div class="lightbox-caption">COMMAND &middot; Matrix waterfall + anomaly log &middot; click outside to close</div></div>
+<div class="lightbox" id="shot2"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-18-26.png" alt=""><div class="lightbox-caption">AIRSPACE &middot; 36 WiFi APs &middot; HOSTILE / HOME MESH classification</div></div>
+<div class="lightbox" id="shot3"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-18-43.png" alt=""><div class="lightbox-caption">ATT&amp;CK &middot; live matrix &middot; 467,514 detections across 16 techniques / 8 tactics</div></div>
+<div class="lightbox" id="shot4"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-19-16.png" alt=""><div class="lightbox-caption">DOMAINS &middot; 457 observed &middot; categorize / DGA-score / top-talker leaderboard</div></div>
+<div class="lightbox" id="shot5"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-19-29.png" alt=""><div class="lightbox-caption">CATEGORIES &middot; traffic breakdown &middot; Social/Cloud/CDN/Dev/Ad/DDNS/Streaming</div></div>
+<div class="lightbox" id="shot6"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-19-39.png" alt=""><div class="lightbox-caption">RULES &middot; YAML detector editor &middot; SSH brute-force example shown</div></div>
+<div class="lightbox" id="shot7"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-19-54.png" alt=""><div class="lightbox-caption">TOPOLOGY &middot; 952 nodes / 90 links / 977 endpoints &middot; force-directed network graph</div></div>
+<div class="lightbox" id="shot8"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-20-16.png" alt=""><div class="lightbox-caption">GLOBE &middot; 500 IPs mapped &middot; size = bandwidth, color = volume bucket</div></div>
+<div class="lightbox" id="shot9"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-20-40.png" alt=""><div class="lightbox-caption">GPU VIZ &middot; CYBERSPACE &middot; one of five Three.js intelligence scenes</div></div>
+<div class="lightbox" id="shot10"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-20-53.png" alt=""><div class="lightbox-caption">GPU VIZ &middot; THREAT GLOBE &middot; foreign endpoints &amp; AS attribution</div></div>
+<div class="lightbox" id="shot11"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-20-58.png" alt=""><div class="lightbox-caption">GPU VIZ &middot; TRAFFIC TUNNEL &middot; 41 connections / 37 active &middot; flowing burst view</div></div>
+<div class="lightbox" id="shot12"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-21-22.png" alt=""><div class="lightbox-caption">SANKEY &middot; 978 flows / 97.6 MB &middot; sources &rarr; protocols &rarr; categories &rarr; hostnames</div></div>
+<div class="lightbox" id="shot13"><a href="#" class="lightbox-close">&times; CLOSE</a><img src="assets/wwwatcher/wwwatcher-23-21-38.png" alt=""><div class="lightbox-caption">SETTINGS &middot; per-alert configuration / detector threshold tuning</div></div>
+
+<!-- ═══════ RADIOLOGGER ═══════ -->
+<section class="radio">
+  <div class="radio-inner">
+    <div class="section-label">// COMPANION SENSOR</div>
+    <div class="radio-grid">
+      <div class="radio-copy">
+        <h2 class="radio-title">Radio<span class="hl">Logger</span></h2>
+        <p class="radio-lead">Background radio environment logger for Android.</p>
+        <p class="radio-desc">RadioLogger runs continuously on rooted Android devices, capturing the full radio picture &mdash; GPS, WiFi APs, cell towers, Bluetooth and BLE &mdash; into rolling CSV files. The data feeds back into WWWatcher as a remote sensor stream, extending the observatory's coverage from one machine to a fleet.</p>
+        <ul class="radio-bullets">
+          <li><span class="b-tag">SENSORS</span><span class="b-text"><strong>4 channels:</strong> GPS fixes, WiFi beacons + probes, cell tower IDs + signal strength, BT/BLE inquiry + active scan</span></li>
+          <li><span class="b-tag">DETECTORS</span><span class="b-text"><strong>Stingray cadence,</strong> GNSS spoof patterns, Karma/Pineapple-class actor scoring, BSSID lifetime correlation</span></li>
+          <li><span class="b-tag">PIPELINE</span><span class="b-text"><strong>Postgres asset graph:</strong> 6,657 devices &middot; 512K+ observations &middot; provenance per attribute</span></li>
+          <li><span class="b-tag">DEPLOY</span><span class="b-text"><strong>Built for the field:</strong> walks for hours, survives reboots, ships its session as a CSV bundle on demand</span></li>
+        </ul>
+        <div class="radio-meta">
+          <a class="meta-chip blue" href="#radio-feed" title="Background service on rooted Android devices in the OMEN test fleet. See a live feed sample.">Android (rooted)</a>
+          <a class="meta-chip" href="#feat-asset" title="Python ingest pipeline parses field CSVs into the shared PostgreSQL asset graph.">Python ingest</a>
+          <a class="meta-chip" href="#feat-asset" title="Same PostgreSQL backend as WWWatcher &mdash; shared asset graph, shared device entities.">PostgreSQL</a>
+          <a class="meta-chip" href="#radio-feed" title="Field-first format: CSVs survive crashes, reboots, and bad cellular &mdash; bulk-ingest later.">CSV-first</a>
+          <a class="meta-chip crit" href="#feat-counter" title="Detection set tuned for stingray cadence, GNSS spoof, Karma/Pineapple-class actor scoring, BSSID lifetime correlation. See the counter-recon capabilities.">Threat-hunt grade</a>
+        </div>
+      </div>
+      <div class="radio-visual" id="radio-feed">
+        <div class="radio-visual-header">
+          <span>RADIOLOGGER &middot; LIVE FEED</span>
+          <span class="live">CAPTURING</span>
+        </div>
+        <div class="radio-log">
+          <div class="row"><span class="ts">23:18:04</span><span class="src">GPS</span><span class="msg">42.5584&deg;N 70.8800&deg;W &middot; 14 sats &middot; HDOP 0.8</span></div>
+          <div class="row"><span class="ts">23:18:04</span><span class="src">WIFI</span><span class="msg">36 APs in beacon scan &middot; 6 new BSSIDs</span></div>
+          <div class="row"><span class="ts">23:18:05</span><span class="src warn">CELL</span><span class="msg">FORCED_DOWNGRADE &middot; LTE&rarr;UMTS &middot; cid 51053</span></div>
+          <div class="row"><span class="ts">23:18:05</span><span class="src">BT</span><span class="msg">12 devices &middot; 3 Apple-rotated &middot; 1 Find My</span></div>
+          <div class="row"><span class="ts">23:18:06</span><span class="src crit">SUSP</span><span class="msg">PINEAPPLE_ENTERPRISE_BROADCAST &middot; bssid /////////</span></div>
+          <div class="row"><span class="ts">23:18:06</span><span class="src">WIFI</span><span class="msg">PROBE_FLOOD &middot; 47 SSIDs in 30s &middot; sta /////////</span></div>
+          <div class="row"><span class="ts">23:18:07</span><span class="src">BT</span><span class="msg">SCAN_REQ_FLOOD &middot; addr ///////// &middot; 89 reqs</span></div>
+          <div class="row"><span class="ts">23:18:07</span><span class="src warn">CELL</span><span class="msg">SUDDEN_STRONG_CID_JUMP &middot; +25dB &middot; cid 14849</span></div>
+          <div class="row"><span class="ts">23:18:08</span><span class="src">GPS</span><span class="msg">42.5585&deg;N 70.8801&deg;W &middot; cn0 uniform: false</span></div>
+          <div class="row"><span class="ts">23:18:08</span><span class="src">CSV</span><span class="msg">flushed 1,847 rows to session_20260509_231804/</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ BRIDGE ═══════ -->
+<section class="bridge">
+  <div class="bridge-inner">
+    <div class="section-label" style="margin-bottom: 14px;">// HOW THIS CONNECTS</div>
+    <p class="bridge-text">WWWatcher and RadioLogger are the same engineering muscle that fixes enterprise platform problems &mdash; <strong>AI turned on the threats trying to surveil you, so you see them first and the data stays on your infrastructure</strong>. Metadata only. Self-hosted. Single-binary. These instruments observe their operator&rsquo;s own environment, for their operator &mdash; nothing flows back to us. The same instinct &mdash; <strong>watch your own ground, surface what matters, give nothing away</strong> &mdash; scales from a single device to a Fortune 500 platform.</p>
+    <a class="bridge-link" href="index.html#services">&larr; SEE THE CONSULTING PRACTICE</a>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+
+<!-- ═══════ FIRM CREDENTIAL ═══════ -->
+<section class="firm-credential">
+  <div class="firm-credential-inner">
+    <div class="firm-credential-label">// THE FIRM</div>
+    <p class="firm-credential-text">
+      <strong>We&rsquo;re here to help people &mdash; and to save them money.</strong> Destructive AI Gurus turns directed, local AI on the things quietly draining you &mdash; runaway cloud cost, data leaving your perimeter, vendor lock-in &mdash; so <strong>enterprise-grade outcomes no longer require enterprise-scale cost</strong>. The tools we build watch the threats around you and gather nothing doing it. We bring 40+ years architecting extremely scaled systems for Fortune 500 companies &mdash; networking, databases, enterprise platforms, AI both agentic and local. We don&rsquo;t replace the platforms you own. <strong>We free them.</strong>
+    </p>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <div class="page-footer-text">
+    &copy; 2026 Destructive AI Gurus, LLC. All rights reserved. &middot; Beverly, MA &middot; <a href="mailto:contact@destructiveaigurus.com">contact@destructiveaigurus.com</a>
+  </div>
+  <button class="disclaimer-icon" onclick="document.getElementById('legalOverlay').classList.add('active')" title="Disclaimer">
+    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+  </button>
+</footer>
+
+<!-- ═══════ DISCLAIMER MODAL ═══════ -->
+<div class="legal-overlay" id="legalOverlay">
+  <div class="legal-modal">
+    <button class="legal-close" onclick="document.getElementById('legalOverlay').classList.remove('active')">&times;</button>
+    <h3>Disclaimer</h3>
+    <p><strong>WWWatcher and RadioLogger</strong> are independent research and engineering projects developed by Destructive AI Gurus, LLC. They are not commercial products at this time and are not offered as a managed service.</p>
+    <p>Screenshots on this page were captured from the developer's own equipment on the developer's own network. <strong>All personally-identifiable information has been redacted</strong> with diagonal slash overlays before publication: MAC addresses (BSSIDs, BT addresses, neighbor SSIDs), public IPs and IPv6 EUI-64 host identifiers, hostnames containing personal identifiers, ASN and organization strings. RFC1918 local addresses (10.0.0.x and similar), the application UI chrome, and aggregate counters are intentionally left visible.</p>
+    <p>Network monitoring tools must be used only on networks you own or have explicit written authorization to monitor. The portrayal of WWWatcher's counter-recon and threat-hunt capabilities here is descriptive of the tool's design; <strong>no representations are made about the lawful use of the tool by any third party</strong>.</p>
+    <p>Forward-looking statements (planned features, future roadmap, sister-project integrations) are illustrative and do not constitute commitments. For inquiries, contact <a href="mailto:contact@destructiveaigurus.com" style="color:var(--blue);">contact@destructiveaigurus.com</a>.</p>
+  </div>
+</div>
+
+</body>
+</html>

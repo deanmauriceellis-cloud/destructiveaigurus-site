@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Destructive AI Gurus — Magus Axis (one colour)">
+  <title>Destructive AI Gurus — The Magus Axis (one colour)</title>
+  <!-- single-colour electric-blue mark for one-ink contexts (print, stamps, embroidery).
+       To recolour: find/replace #3b82f6, or inline this SVG and swap fill/stroke to currentColor. -->
+  <g transform="translate(4,1.2) scale(0.28)" fill="none" stroke="#3b82f6" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/>
+    <path transform="rotate(180,100,110)" d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/>
+  </g>
+  <line x1="32" y1="6.5" x2="32" y2="57.5" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+  <g fill="#3b82f6">
+    <circle cx="56.25" cy="18" r="2"/><circle cx="56.25" cy="46" r="2"/>
+    <circle cx="7.75" cy="46" r="2"/><circle cx="7.75" cy="18" r="2"/>
+    <circle cx="32" cy="4" r="2.7"/><circle cx="32" cy="60" r="2.7"/>
+    <circle cx="32" cy="32" r="2.3"/>
+  </g>
+  <circle cx="32" cy="32" r="4.4" fill="none" stroke="#3b82f6" stroke-width="1.2" opacity="0.55"/>
+</svg>

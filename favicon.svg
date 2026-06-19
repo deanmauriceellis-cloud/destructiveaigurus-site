@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <rect width="40" height="40" rx="8" fill="#050507"/>
+  <!-- The Magus Axis: authentic unicursal hexagram, framed -->
+  <g transform="translate(3.04,3.04) scale(0.53)">
+    <g transform="translate(4,1.2) scale(0.28)" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+      <path d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/>
+      <path transform="rotate(180,100,110)" d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/>
+    </g>
+    <circle cx="32" cy="4" r="3" fill="#bfdbfe"/>
+    <circle cx="32" cy="60" r="3" fill="#bfdbfe"/>
+    <circle cx="32" cy="32" r="4.6" fill="none" stroke="#a855f7" stroke-width="1.6"/>
+    <circle cx="32" cy="32" r="3" fill="#dbeafe"/>
+  </g>
+</svg>

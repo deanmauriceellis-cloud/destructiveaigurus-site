@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Destructive AI Gurus">
+  <title>Destructive AI Gurus</title>
+  <!-- favicon-tuned: heavier stroke, no hairline axis/ring (they vanish at 16px) -->
+  <g transform="translate(4,1.2) scale(0.28)" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/>
+    <path transform="rotate(180,100,110)" d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/>
+  </g>
+  <!-- emphasised above/below + solid core -->
+  <circle cx="32" cy="4" r="3" fill="#bfdbfe"/>
+  <circle cx="32" cy="60" r="3" fill="#bfdbfe"/>
+  <circle cx="32" cy="32" r="3.4" fill="#dbeafe"/>
+</svg>
