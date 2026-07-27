@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Practice — Destructive AI Gurus</title>
+<meta name="description" content="Use AI to your advantage — don't be its victim. Destructive AI Gurus turns directed local AI on runaway cloud cost, surveillance, and lock-in: 40+ years of Fortune 500 architecture for the Pega and Salesforce platforms you already run. We don't replace your platforms — we free them.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://destructiveaigurus.com/dashboard.html">
+<meta property="og:title" content="Destructive AI Gurus — We Don't Replace Your Platforms. We Free Them.">
+<meta property="og:description" content="Use AI to your advantage — don't be its victim. 40+ years of Fortune 500 architecture plus directed local AI, aimed at the platforms you already run. We don't replace your platforms — we free them.">
+<meta property="og:site_name" content="Destructive AI Gurus">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Destructive AI Gurus — We Don't Replace Your Platforms. We Free Them.">
+<meta name="twitter:description" content="Use AI to your advantage — don't be its victim. Fortune 500 architecture + directed local AI. We don't replace your platforms; we free them.">
+<meta name="keywords" content="enterprise AI consulting, platform cost optimization, Pega consulting, Salesforce consulting, local AI, enterprise architecture, cloud-to-local AI, Fortune 500 consulting">
+<meta name="author" content="Destructive AI Gurus, LLC">
+<link rel="canonical" href="https://destructiveaigurus.com/dashboard.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Destructive AI Gurus, LLC",
+  "alternateName": "Destructive AI Gurus",
+  "description": "Enterprise consulting firm helping organizations maximize ROI on platform investments through AI augmentation and cloud-to-local optimization.",
+  "url": "https://destructiveaigurus.com",
+  "email": "contact@destructiveaigurus.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Dean M. Ellis",
+    "jobTitle": "Principal Technical Architect",
+    "description": "40+ years enterprise architecture, 15 years Pegasystems Principal Technical Architect"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": ["Enterprise AI Consulting", "Platform Cost Optimization", "Cloud Architecture", "Crisis Remediation", "Production Defense", "Strategic Advisory"],
+  "knowsAbout": ["Pega", "Salesforce", "Enterprise Architecture", "Local AI", "LLM Deployment", "Cloud Architecture"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+:root {
+  --blue: #3b82f6;
+  --blue-dim: #2563eb;
+  --blue-glow: rgba(59, 130, 246, 0.12);
+  --blue-glow-strong: rgba(59, 130, 246, 0.25);
+  --bg: #050507;
+  --bg-el: #0a0a0f;
+  --bg-card: #0e0e14;
+  --text: #e8e8ed;
+  --text-dim: #8888a0;
+  --text-muted: #55556a;
+  --border: #1a1a24;
+  --border-h: #2a2a3a;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.accent { color: var(--blue); }
+
+/* ═══════ SIDEBAR NAV ═══════ */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: var(--bg-el);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  z-index: 10;
+}
+.sidebar-logo {
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.sidebar-logo .logo-tagline { width: 100%; }
+.sidebar-logo { text-decoration: none; color: inherit; transition: opacity .2s; }
+.sidebar-logo:hover { opacity: .82; }
+.sidebar-logo svg { width: 28px; height: 28px; flex-shrink: 0; }
+.sidebar-logo .logo-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.sidebar-logo .logo-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.52rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+.sidebar-nav {
+  flex: 1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+.nav-item:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+.nav-item.active {
+  color: var(--blue);
+  background: var(--blue-glow);
+  border-color: rgba(59,130,246,0.15);
+}
+.nav-item .nav-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nav-item .nav-icon svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+.nav-item .nav-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(59,130,246,0.4);
+  margin: -2px 0;
+}
+.nav-item:hover .nav-avatar { border-color: rgba(59,130,246,0.7); }
+.nav-item .nav-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  margin-left: auto;
+  letter-spacing: 0.05em;
+}
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+.sidebar-footer a { color: var(--blue); }
+
+/* ═══════ MAIN CONTENT ═══════ */
+.main {
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s;
+  overflow-y: auto;
+}
+.panel.active { opacity: 1; visibility: visible; }
+.panel-inner { padding: 40px 48px; height: 100%; display: flex; flex-direction: column; }
+
+/* ═══════ HERO PANEL ═══════ */
+.hero-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 760px;
+  padding: 0 24px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--blue);
+  background: var(--blue-glow);
+  border: 1px solid rgba(59,130,246,0.18);
+  padding: 5px 14px;
+  border-radius: 100px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero-badge::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--blue);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(59,130,246,0.4); }
+  50% { opacity:0.6; box-shadow: 0 0 0 5px rgba(59,130,246,0); }
+}
+.hero-content h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.hero-content h1 .hl { color: var(--blue); }
+.hero-sub {
+  font-size: 1rem;
+  color: var(--text-dim);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto 32px;
+}
+.hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-p {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 28px; background: var(--blue); color: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600;
+  border-radius: 8px; border: none; cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s; text-decoration: none;
+}
+.btn-p:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(59,130,246,0.3); }
+.btn-s {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 28px; background: transparent; color: var(--text-dim);
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
+  border-radius: 8px; border: 1px solid var(--border); cursor: pointer;
+  transition: border-color 0.3s, color 0.3s; text-decoration: none;
+}
+.btn-s:hover { border-color: var(--border-h); color: var(--text); }
+
+/* Stats row at bottom of hero */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.hero-stat { text-align: center; }
+.hero-stat .hs-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1;
+}
+.hero-stat .hs-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+}
+
+/* ═══════ PROBLEM PANEL ═══════ */
+.problem-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  flex: 1;
+  align-items: center;
+}
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.section-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.section-desc {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  font-weight: 300;
+}
+.pain-list { list-style: none; margin-top: 24px; }
+.pain-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+.pain-list li:first-child { border-top: 1px solid var(--border); }
+.pain-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: #ef4444;
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.12);
+  padding: 3px 7px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.cost-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.cost-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 25%; right: 25%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+}
+.cost-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.bar-group { margin-bottom: 16px; }
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+}
+.bar-label .amt { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+.bar-label .amt.red { color: #ef4444; }
+.bar-label .amt.blue { color: var(--blue); }
+.bar-track {
+  height: 7px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+  width: 0;
+}
+.bar-fill.red { background: linear-gradient(90deg, #ef4444, #dc2626); }
+.bar-fill.blue { background: linear-gradient(90deg, var(--blue-dim), var(--blue)); }
+.bar-fill.go { width: var(--w); }
+.savings-box {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+.savings-box .sn { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: #22c55e; }
+.savings-box .sl { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+
+/* ═══════ SOLUTION PANEL ═══════ */
+.solution-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+  flex: 1;
+}
+.sol-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: border-color 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.sol-card:hover { border-color: var(--border-h); transform: translateY(-3px); }
+.sol-icon {
+  width: 40px; height: 40px;
+  background: var(--blue-glow);
+  border: 1px solid rgba(59,130,246,0.12);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.sol-icon svg { width: 20px; height: 20px; stroke: var(--blue); fill: none; stroke-width: 1.5; }
+.sol-card h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.sol-card p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.7; }
+
+/* ═══════ SERVICES PANEL ═══════ */
+.services-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+  flex: 1;
+  min-height: 0;
+}
+.svc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.svc-card:hover { border-color: var(--blue); box-shadow: 0 0 30px var(--blue-glow); transform: translateY(-2px); }
+.svc-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+.svc-card:hover .svc-num { color: rgba(59,130,246,0.15); }
+.svc-card h3 { font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+.svc-card p { font-size: 0.74rem; color: var(--text-dim); line-height: 1.55; flex: 1; }
+.svc-arrow {
+  margin-top: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--blue);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.svc-card:hover .svc-arrow { opacity: 1; }
+
+/* ═══════ ABOUT PANEL ═══════ */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  flex: 1;
+  align-items: start;
+}
+.about-story h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.35;
+}
+.about-story p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.75; margin-bottom: 12px; }
+.about-story .about-entity {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--blue);
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  opacity: 0.9;
+}
+.client-bar {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.about-firm-credential {
+  margin-top: 24px;
+  padding: 20px 24px;
+  background: linear-gradient(180deg, rgba(59,130,246,0.04) 0%, rgba(59,130,246,0.10) 100%);
+  border: 1px solid rgba(59,130,246,0.3);
+  border-radius: 10px;
+  text-align: center;
+}
+.about-firm-credential-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--blue);
+  letter-spacing: 0.18em;
+  margin-bottom: 10px;
+}
+.about-firm-credential p {
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: var(--text-dim);
+  font-weight: 300;
+  margin: 0;
+}
+.about-firm-credential p strong { color: var(--blue); font-weight: 600; }
+.client-bar .cb-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.client-bar .cb-names { display: flex; flex-wrap: wrap; gap: 18px; }
+.client-bar .cb-names span {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.timeline { position: relative; padding-left: 24px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 6px; bottom: 6px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--blue), var(--border));
+}
+.tl-item { padding: 12px 0; position: relative; }
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -28px; top: 18px;
+  width: 7px; height: 7px;
+  background: var(--bg);
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+}
+.tl-item .tl-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--blue);
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+.tl-item h4 { font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; margin-bottom: 3px; }
+.tl-item p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.55; }
+
+/* ═══════ CONTACT PANEL ═══════ */
+.contact-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.contact-inner { max-width: 520px; }
+.contact-inner .section-heading { margin-bottom: 12px; }
+.contact-inner .section-desc { margin: 0 auto 28px; }
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  color: var(--blue);
+  background: var(--blue-glow);
+  border: 1px solid rgba(59,130,246,0.18);
+  padding: 14px 28px;
+  border-radius: 10px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.contact-link:hover { background: var(--blue-glow-strong); border-color: rgba(59,130,246,0.35); }
+.contact-link svg { width: 18px; height: 18px; stroke: var(--blue); fill: none; stroke-width: 1.5; }
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 900px) {
+  body { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-logo { padding: 12px 16px; border-bottom: none; border-right: 1px solid var(--border); }
+  .sidebar-nav {
+    flex-direction: row;
+    padding: 8px;
+    gap: 2px;
+    overflow-x: auto;
+    flex: 1;
+  }
+  .nav-item { padding: 6px 10px; white-space: nowrap; }
+  .nav-item .nav-label { display: none; }
+  .sidebar-footer { display: none; }
+  .main { height: calc(100vh - 56px); }
+  .panel-inner { padding: 24px 20px; }
+  .problem-layout, .about-layout { grid-template-columns: 1fr; overflow-y: auto; }
+  .solution-cards { grid-template-columns: 1fr; overflow-y: auto; }
+  .services-cards { grid-template-columns: 1fr 1fr; grid-template-rows: auto; overflow-y: auto; }
+  .hero-stats { gap: 24px; flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .sidebar-logo svg { width: 22px; height: 22px; }
+  .sidebar-logo .logo-text { font-size: 0.72rem; }
+  .panel-inner { padding: 16px 14px; }
+  .hero-content h1 { font-size: 1.6rem; }
+  .hero-sub { font-size: 0.88rem; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-stats { flex-direction: column; gap: 16px; align-items: center; }
+  .hero-stat .hs-num { font-size: 1.4rem; }
+  .section-heading { font-size: 1.3rem; }
+  .services-cards { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-left { padding: 24px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ SIDEBAR ═══════ -->
+<aside class="sidebar">
+  <a class="sidebar-logo" href="index.html" title="Back to the entry">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,1.2) scale(0.28)" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"><path d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/><path transform="rotate(180,100,110)" d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/></g><circle cx="32" cy="4" r="3" fill="#bfdbfe"/><circle cx="32" cy="60" r="3" fill="#bfdbfe"/><circle cx="32" cy="32" r="4.6" fill="none" stroke="#a855f7" stroke-width="1.6"/><circle cx="32" cy="32" r="3" fill="#dbeafe"/></svg>
+    <div class="logo-text">DESTRUCTIVE<br><span class="accent">AI GURUS</span></div>
+    <div class="logo-tagline">Use AI. Don&rsquo;t be used by it.</div>
+  </a>
+  <nav class="sidebar-nav">
+    <button class="nav-item active" data-panel="hero">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+      Home
+      <span class="nav-label">01</span>
+    </button>
+    <button class="nav-item" data-panel="problem">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+      The Opportunity
+      <span class="nav-label">02</span>
+    </button>
+    <button class="nav-item" data-panel="solution">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+      Solution
+      <span class="nav-label">03</span>
+    </button>
+    <button class="nav-item" data-panel="services">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+      Services
+      <span class="nav-label">04</span>
+    </button>
+    <button class="nav-item" data-panel="about">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+      About
+      <span class="nav-label">05</span>
+    </button>
+    <button class="nav-item" data-panel="contact">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+      Contact
+      <span class="nav-label">06</span>
+    </button>
+    <a class="nav-item" href="katrina.html" title="Katrina &mdash; Katrina&rsquo;s Mystic Visitors Guide">
+      <img class="nav-avatar" src="assets/lma/katrina-avatar.jpg" alt="Katrina &mdash; Katrina&rsquo;s Mystic Visitors Guide">
+      Katrina
+      <span class="nav-label">07</span>
+    </a>
+    <a class="nav-item" href="defensive.html">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+      Defensive
+      <span class="nav-label">08</span>
+    </a>
+    <a class="nav-item" href="tigerline.html">
+      <span class="nav-icon"><svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
+      TigerLine
+      <span class="nav-label">09</span>
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    &copy; 2026 Destructive AI Gurus, LLC. All rights reserved.<br>Beverly, MA<br><span style="font-size:0.55rem;line-height:1.4;display:inline-block;margin-top:6px;">All trademarks are property of their respective owners. We are an independent consulting firm.</span>
+  </div>
+</aside>
+
+<!-- ═══════ MAIN PANELS ═══════ -->
+<div class="main">
+
+  <!-- HERO -->
+  <div class="panel active" id="panel-hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-panel panel-inner">
+      <div class="hero-content">
+        <div class="hero-badge">Don&rsquo;t be AI&rsquo;s victim.</div>
+        <h1>Use AI to <span class="hl">destroy</span> the AI trying to violate you.</h1>
+        <p class="hero-sub"><span class="hl">Defend your people. Free your platforms. Keep the advantage.</span> AI is being turned against you &mdash; to surveil, to lock in, to meter every call. We turn it around: 40+ years of Fortune 500 architecture and directed, local AI on the platforms you already run, your data on your own infrastructure.</p>
+        <div class="hero-ctas">
+          <a class="btn-p" data-goto="contact">Let's Talk <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn-s" data-goto="solution">See How</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hs-num">40+</div><div class="hs-label">Years Experience</div></div>
+          <div class="hero-stat"><div class="hs-num">1,000+</div><div class="hs-label">Production Environments</div></div>
+          <div class="hero-stat"><div class="hs-num">F500</div><div class="hs-label">Client Roster</div></div>
+          <div class="hero-stat"><div class="hs-num">200K+</div><div class="hs-label">Users at Scale</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <div class="panel" id="panel-problem">
+    <div class="panel-inner">
+      <div class="problem-layout">
+        <div>
+          <div class="section-label">// What Engineers &amp; PMs Face Every Day</div>
+          <h2 class="section-heading">Your platforms are powerful. <span style="color:var(--blue)">Local AI</span> makes them unstoppable.</h2>
+          <p class="section-desc">Enterprise platforms like Pega and Salesforce do extraordinary things. But engineers and product managers know that as usage scales, cloud-based processing costs scale with it. The breakthrough: AI now makes it possible to run many of these workloads locally &mdash; inside your own infrastructure &mdash; at a fraction of the cost, while your platforms stay at the center of everything.</p>
+          <ul class="pain-list">
+            <li><span class="pain-tag" style="color:var(--blue);background:var(--blue-glow);border-color:rgba(59,130,246,0.12);">COST</span><span><strong>Cloud processing costs at scale.</strong> Cloud-based AI inference is powerful and convenient. At Fortune 500 volume, per-call fees add up. Local AI complements your platform by handling eligible workloads on your hardware &mdash; keeping costs predictable.</span></li>
+            <li><span class="pain-tag" style="color:var(--blue);background:var(--blue-glow);border-color:rgba(59,130,246,0.12);">SPEED</span><span><strong>Latency from cloud round-trips.</strong> Decisions that should take milliseconds take hundreds of milliseconds because data travels to a cloud endpoint and back. Local processing removes the round-trip entirely.</span></li>
+            <li><span class="pain-tag" style="color:var(--blue);background:var(--blue-glow);border-color:rgba(59,130,246,0.12);">SCALE</span><span><strong>Costs that grow with success.</strong> The more your business grows, the more you process, the more you pay. Local AI lets you scale workloads without linearly scaling costs &mdash; your infrastructure investment stays predictable.</span></li>
+            <li><span class="pain-tag" style="color:var(--blue);background:var(--blue-glow);border-color:rgba(59,130,246,0.12);">DATA</span><span><strong>Sensitive data leaving your perimeter.</strong> Every cloud API call sends data externally. Local AI keeps your customer data, financial records, and health information on your own infrastructure &mdash; running in your environment, for your benefit, with nothing routing through us.</span></li>
+            <li><span class="pain-tag" style="color:var(--blue);background:var(--blue-glow);border-color:rgba(59,130,246,0.12);">FIT</span><span><strong>Custom models for your business.</strong> Platform AI delivers broad capabilities out of the box. Local AI adds a layer trained on YOUR data, YOUR patterns, YOUR business context &mdash; delivering even more accurate results.</span></li>
+          </ul>
+        </div>
+        <div class="cost-card" id="costCard">
+          <h3>The Cloud-to-Local Bridge</h3>
+          <p style="font-size:0.78rem;color:var(--text-dim);line-height:1.6;margin-bottom:16px;font-weight:300;">We don't replace your platforms. We design local AI capabilities that work alongside them &mdash; bridging cloud and local infrastructure so each workload runs where it's most efficient.</p>
+          <div class="bar-group">
+            <div class="bar-label"><span style="color:var(--text-dim)">Cloud Processing</span><span class="amt" style="color:var(--text-dim)">Per-call fees</span></div>
+            <div class="bar-track"><div class="bar-fill" style="--w:90%;background:var(--text-muted)"></div></div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-label"><span style="color:var(--text-dim)">Cloud + Local AI</span><span class="amt blue">Optimized</span></div>
+            <div class="bar-track"><div class="bar-fill blue" style="--w:35%"></div></div>
+          </div>
+          <div class="savings-box" style="background:var(--blue-glow);border-color:rgba(59,130,246,0.25);">
+            <div class="sn" style="color:var(--blue);">Same Capability. Lower Cost.</div>
+            <div class="sl">Run eligible workloads locally while your platform orchestrates everything</div>
+          </div>
+          <div style="font-size:0.62rem;color:var(--text-muted);margin-top:8px;font-style:italic;">* Illustrative. Your platform stays at the center &mdash; AI augments it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOLUTION -->
+  <div class="panel" id="panel-solution">
+    <div class="panel-inner">
+      <div class="section-label">// The Cloud-to-Local Bridge</div>
+      <h2 class="section-heading">74 ways to run <span style="color:var(--blue)">smarter</span> on your Pega &amp; Salesforce platforms.</h2>
+      <p class="section-desc">Every use case below identifies a workload that can run locally alongside your platform &mdash; reducing cloud processing costs while keeping your platform at the center. Organized by the real architectural layers engineers work with every day.</p>
+      <div class="solution-cards">
+        <a href="solutions.html" class="sol-card" style="cursor:pointer;text-decoration:none;color:inherit;">
+          <div class="sol-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Pega Platform</h3>
+          <p>38 use cases across 7 architectural layers &mdash; local AI for Case Management, Decisioning, Workflow, Integration, Data, DevOps, and Operations.</p>
+        </a>
+        <a href="solutions.html" class="sol-card" style="cursor:pointer;text-decoration:none;color:inherit;">
+          <div class="sol-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Salesforce Platform</h3>
+          <p>31 use cases across 6 architectural layers &mdash; local AI for CRM Core, Marketing Cloud, Analytics, Integration, Governance, and DevOps.</p>
+        </a>
+        <a href="solutions.html" class="sol-card" style="cursor:pointer;text-decoration:none;color:inherit;">
+          <div class="sol-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+          <h3>Cross-Platform</h3>
+          <p>5 use cases that work across any platform &mdash; local document processing, intelligent caching, edge AI, license optimization, and process harmonization.</p>
+        </a>
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <a href="solutions.html" style="display:inline-flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;color:var(--blue);padding:12px 28px;border:1px solid rgba(59,130,246,0.25);border-radius:8px;background:var(--blue-glow);transition:all 0.3s;text-decoration:none;">
+          Explore All 74 AI Use Cases <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="panel" id="panel-services">
+    <div class="panel-inner">
+      <div class="section-label">// Services</div>
+      <h2 class="section-heading">Eight ways to make your enterprise stronger.</h2>
+      <p class="section-desc">From platform cost optimization to C-Suite strategy &mdash; every engagement is aimed at one thing: lower cost and stronger applications, using AI you own.</p>
+      <div class="services-cards">
+        <a class="svc-card" href="services/platform-cost-optimization.html">
+          <div class="svc-num">01</div>
+          <h3>Platform Cost Optimization</h3>
+          <p>Optimize the glue between Salesforce, Pega, and other platforms to cut licensing fees.</p>
+          <div class="svc-arrow">Learn more &rarr;</div>
+        </a>
+        <a class="svc-card" href="services/cloud-architecture.html">
+          <div class="svc-num">02</div>
+          <h3>Cloud Architecture</h3>
+          <p>Right architecture for every permutation of cloud deployment at enterprise scale.</p>
+          <div class="svc-arrow">Learn more &rarr;</div>
+        </a>
+        <a class="svc-card" href="services/crisis-remediation.html">
+          <div class="svc-num">03</div>
+          <h3>Crisis Remediation</h3>
+          <p>Rapidly fix large-scale applications that are crashing and costing you money.</p>
+          <div class="svc-arrow">Learn more &rarr;</div>
+        </a>
+        <a class="svc-card" href="services/production-defense.html">
+          <div class="svc-num">04</div>
+          <h3>Production Defense</h3>
+          <p>Processes and architecture that catch failures before they reach production.</p>
+          <div class="svc-arrow">Learn more &rarr;</div>
+        </a>
+        <a class="svc-card" href="services/sev1-management.html">
+          <div class="svc-num">05</div>
+          <h3>Sev1 Situational Management</h3>
+          <p>Crisis leadership when your critical global enterprise solutions go down.</p>
+          <div class="svc-arrow">Learn more &rarr;</div>
+        </a>
+        <a class="svc-card" href="services/ai-resilience.html">
+          <div class="svc-num">06</div>
+          <h3>AI-Powered Resilience</h3>
+          <p>Best practices and interrogative AI that finds weaknesses before production does.</p>
+          <div class="svc-arrow">Learn more &rarr;</div>
+        </a>
+        <a class="svc-card" href="services/project-governance.html">
+          <div class="svc-num">07</div>
+          <h3>Project Governance</h3>
+          <p>Architectural oversight that ensures enterprise projects deliver real ROI.</p>
+          <div class="svc-arrow">Learn more &rarr;</div>
+        </a>
+        <a class="svc-card" href="services/strategic-advisory.html">
+          <div class="svc-num">08</div>
+          <h3>C-Suite Strategic Advisory</h3>
+          <p>CEO/CIO/CTO-level plans to orchestrate more effective, efficient operations with AI.</p>
+          <div class="svc-arrow">Learn more &rarr;</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="panel" id="panel-about">
+    <div class="panel-inner">
+      <div class="section-label">// Why Me</div>
+      <h2 class="section-heading">15 years at the core of the platform you run. That depth now works for you.</h2>
+      <div class="about-layout">
+        <div class="about-story">
+          <p class="about-entity">Destructive AI Gurus, LLC &middot; a Massachusetts limited liability company &middot; founded and operated by Dean M. Ellis</p>
+          <h3>I've seen inside thousands of Fortune 500 applications. I know exactly where the optimization opportunities are.</h3>
+          <p>As a Principal Technical Architect at Pegasystems, I led the team that enterprises called when everything was on the line. Production crises at JPMC. Scalability challenges at Verizon. Performance optimization at Blue Shield.</p>
+          <p>Now I combine that deep insider knowledge with cutting-edge AI. Local LLMs. Custom models. Solutions that run on your infrastructure and help you get the best ROI from your platform investments.</p>
+          <div class="client-bar">
+            <div class="cb-label">Fortune 500 crisis work delivered at</div>
+            <div class="cb-names">
+              <span>JPMC</span><span>Verizon</span><span>Blue Shield</span><span>Ford</span><span>Molina</span><span>NFCU</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">2026 &mdash; Present</div>
+            <h4>Destructive AI Gurus</h4>
+            <p>Enterprise AI consulting. Combining decades of architecture expertise with deep AI/LLM knowledge. We build and ship our own products under the same rules we consult by.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2011 &mdash; 2026</div>
+            <h4>Pegasystems &mdash; Principal Technical Architect</h4>
+            <p>Led elite teams for Fortune 500 crisis remediation. 1,000+ production environments.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">Earlier Career</div>
+            <h4>Founded Company Acquired by Lucent</h4>
+            <p>Built Radius Authentication startup. Enterprise software across healthcare, finance, education.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">40+ Years</div>
+            <h4>Full-Stack Systems Architect</h4>
+            <p>6502 assembly to Kubernetes. HL7 systems, IBM 360 emulators, Math Blaster, and everything in between.</p>
+          </div>
+        </div>
+      </div>
+      <!-- ═══════ FIRM CREDENTIAL ═══════ -->
+      <div class="about-firm-credential">
+        <div class="about-firm-credential-label">// THE FIRM</div>
+        <p><strong>We&rsquo;re here to help people &mdash; and to save them money.</strong> Destructive AI Gurus turns directed, local AI on the things quietly draining you &mdash; runaway cloud cost, data leaving your perimeter, vendor lock-in &mdash; so <strong>enterprise-grade outcomes no longer require enterprise-scale cost</strong>. The tools we build watch the threats around you and gather nothing doing it. We bring 40+ years architecting extremely scaled systems for Fortune 500 companies &mdash; networking, databases, enterprise platforms, AI both agentic and local. We don&rsquo;t replace the platforms you own. <strong>We free them.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="panel" id="panel-contact">
+    <div class="panel-inner contact-panel">
+      <div class="contact-inner">
+        <div class="section-label">// Let's Talk</div>
+        <h2 class="section-heading">Ready to maximize your platform investment?</h2>
+        <p class="section-desc">Whether you're running enterprise platforms at Fortune 500 scale or exploring how AI can transform your operations &mdash; let's have a conversation about what's possible. The conversation itself is real value, whether or not an engagement follows.</p>
+        <a href="mailto:contact@destructiveaigurus.com" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contact@destructiveaigurus.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ---- Panel Navigation ---- */
+document.querySelectorAll('.nav-item[data-panel]').forEach(btn => {
+  btn.addEventListener('click', () => switchPanel(btn.dataset.panel));
+});
+document.querySelectorAll('[data-goto]').forEach(el => {
+  el.addEventListener('click', e => { e.preventDefault(); switchPanel(el.dataset.goto); });
+});
+
+function switchPanel(id) {
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`[data-panel="${id}"]`).classList.add('active');
+  document.getElementById('panel-' + id).classList.add('active');
+  // Animate cost bars when problem panel opens
+  if (id === 'problem') {
+    setTimeout(() => {
+      document.querySelectorAll('.bar-fill').forEach(b => b.classList.add('go'));
+    }, 200);
+  }
+}
+
+/* ---- Hash-based panel switching (for service page back links) ---- */
+(function() {
+  const hash = window.location.hash.replace('#', '');
+  if (hash && document.querySelector(`[data-panel="${hash}"]`)) {
+    switchPanel(hash);
+  }
+})();
+
+/* ---- Neural Network Canvas ---- */
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+  const COUNT = 50, DIST = 140;
+  const B = { r:59, g:130, b:246 };
+
+  function resize() {
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+  function init() {
+    particles = [];
+    for (let i = 0; i < COUNT; i++) {
+      particles.push({
+        x: Math.random()*w, y: Math.random()*h,
+        vx: (Math.random()-0.5)*0.35, vy: (Math.random()-0.5)*0.35,
+        r: Math.random()*1.8+0.8, o: Math.random()*0.4+0.1
+      });
+    }
+  }
+  function draw() {
+    ctx.clearRect(0,0,w,h);
+    for (let i=0;i<particles.length;i++) {
+      for (let j=i+1;j<particles.length;j++) {
+        const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if (d<DIST) {
+          ctx.beginPath();
+          ctx.strokeStyle=`rgba(${B.r},${B.g},${B.b},${(1-d/DIST)*0.12})`;
+          ctx.lineWidth=0.5;
+          ctx.moveTo(particles[i].x,particles[i].y);
+          ctx.lineTo(particles[j].x,particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    particles.forEach(p => {
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0||p.x>w) p.vx*=-1;
+      if(p.y<0||p.y>h) p.vy*=-1;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(${B.r},${B.g},${B.b},${p.o})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', () => { resize(); init(); });
+  resize(); init(); draw();
+})();
+</script>
+</body>
+</html>
