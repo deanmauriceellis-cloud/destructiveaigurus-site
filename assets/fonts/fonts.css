@@ -1,0 +1,67 @@
+/* ============================================================================
+   Destructive AI Gurus — self-hosted web fonts
+   ----------------------------------------------------------------------------
+   WHY THESE ARE SELF-HOSTED (2026-07-28)
+
+   These faces were previously loaded from Google's CDN (fonts.googleapis.com +
+   fonts.gstatic.com). An embedded third-party font is a request made by the
+   VISITOR'S browser to that third party: it discloses their IP address,
+   user-agent and the referring page, on every page load, before any consent and
+   with no visible UI. Functionally it is a tracking pixel that happens to
+   return a typeface.
+
+   This site tells people we aim AI at what drains and threatens them, never at
+   them. Handing every visitor to a third party to fetch a headline font is the
+   opposite of that. So the fonts are served from our own origin and no third
+   party is contacted to render this page.
+
+   ----------------------------------------------------------------------------
+   LICENCE — SIL Open Font License 1.1 (OFL-1.1)
+
+   Because we now REDISTRIBUTE these font binaries rather than link to them,
+   OFL-1.1's notice-preservation terms apply to us. The full licence text ships
+   beside this file, one per family, and must stay with the fonts:
+
+     OFL-Syne.txt           Copyright 2017 The Syne Project Authors
+                            https://gitlab.com/bonjour-monde/fonderie/syne-typeface
+     OFL-DMSans.txt         Copyright 2014 The DM Sans Project Authors
+                            https://github.com/googlefonts/dm-fonts
+     OFL-JetBrainsMono.txt  Copyright 2020 The JetBrains Mono Project Authors
+                            https://github.com/JetBrains/JetBrainsMono
+
+   None of the three declares a Reserved Font Name, so the RFN renaming
+   condition does not apply. The files were obtained from the upstream
+   google/fonts repository (ofl/ directories — the licence directory IS the
+   licence) and converted TTF -> WOFF2 with fontTools 4.62.1; no glyph, metric
+   or design change was made. Under OFL these fonts may not be sold on their
+   own; they are not.
+
+   Provenance and verification: see SOFTWARE-INVENTORY.md (repo root).
+   ----------------------------------------------------------------------------
+   All three are VARIABLE fonts — one file covers every weight the site uses,
+   which is why there is a single @font-face per family with a weight RANGE.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Syne';
+  src: url('syne-var.woff2') format('woff2');
+  font-weight: 400 800;          /* site uses 400 · 600 · 700 · 800 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('dm-sans-var.woff2') format('woff2');
+  font-weight: 300 600;          /* site uses 300 · 400 · 500 · 600 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('jetbrains-mono-var.woff2') format('woff2');
+  font-weight: 400 500;          /* site uses 400 · 500 */
+  font-style: normal;
+  font-display: swap;
+}
