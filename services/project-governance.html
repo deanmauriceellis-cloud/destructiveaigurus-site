@@ -32,7 +32,9 @@
   --green: #22c55e;
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; overflow: hidden; }
+/* S034 root cause: was `height:100%; overflow:hidden`, which forbade the PAGE from
+   scrolling at all — that is why content had to be trapped in an inner scroll box. */
+html, body { min-height: 100%; }
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--bg);
@@ -40,17 +42,21 @@ body {
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 a { color: inherit; text-decoration: none; }
 
-/* ═══════ UPPER CONTENT (67%) ═══════ */
+/* ═══════ CONTENT ═══════
+   S034: was `height:67vh; overflow-y:auto`, which trapped every business-carrying
+   page inside a scroll box under a permanent 33vh animation band — contrary to the
+   operator's own show-content-in-full rule (S025). The PAGE scrolls now; the
+   content is shown in full. */
 .content-area {
-  height: 67vh;
-  overflow-y: auto;
-  flex-shrink: 0;
-  transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 0 0 auto;
 }
-.content-area.collapsed { height: 0; overflow: hidden; }
+/* neutralised: the finale is a true fixed overlay now, so collapsing the page
+   behind it would only cause a scroll jump. Class is still toggled by the JS. */
+.content-area.collapsed { }
 .page-wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -173,15 +179,24 @@ a { color: inherit; text-decoration: none; }
 
 /* ═══════ ANIMATION THEATER ═══════ */
 .theater {
-  height: 33vh;
+  /* S034: in page flow with a real height, instead of a viewport-locked third
+     that was permanently on screen no matter what you were reading. */
+  height: clamp(340px, 52vh, 600px);
+  flex-shrink: 0;
   position: relative;
   border-top: 1px solid var(--border);
   overflow: hidden;
   background: var(--bg-el);
-  transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* the takeover is now a genuine overlay rather than a layout change, so it works
+   from any scroll position — it used to only look right if you happened to be
+   scrolled to the bottom. */
 .theater.fullscreen {
-  height: 100vh;
+  position: fixed;
+  inset: 0;
+  height: auto;
+  width: auto;
+  z-index: 60;
   border-top: none;
 }
 .theater canvas {
@@ -1915,7 +1930,20 @@ a { color: inherit; text-decoration: none; }
 
   // ──── START ────
   draw();
-  setTimeout(runSequence, 1000);
+  /* S034: the theater now sits in page flow, so a blind timer would play the whole
+     sequence below the fold. Run it when it is actually on screen. */
+  (function () {
+    var fired = false;
+    function go() { if (fired) return; fired = true; resize(); runSequence(); }
+    if ('IntersectionObserver' in window && theater) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); go(); } });
+      }, { threshold: 0.35 });
+      io.observe(theater);
+    } else {
+      setTimeout(go, 1000);
+    }
+  })();
   restartBtn.addEventListener('click', () => {
     finaleShowing = false;
     stageLabel.style.display = '';
