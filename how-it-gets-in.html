@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How It Gets In &mdash; Destructive AI Gurus</title>
+<meta name="description" content="Systems don&#39;t ask permission to collect you; they acquire it once, while you&#39;re busy, and never stop. The six moves &mdash; and why a boundary works where a setting doesn&#39;t.">
+<meta name="author" content="Destructive AI Gurus, LLC">
+<meta name="keywords" content="enterprise AI, local AI, data perimeter, platform cost, Pega, Salesforce, enterprise architecture">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://destructiveaigurus.com/how-it-gets-in.html">
+<meta property="og:title" content="How It Gets In &mdash; Destructive AI Gurus">
+<meta property="og:description" content="Systems don&#39;t ask permission to collect you; they acquire it once, while you&#39;re busy, and never stop. The six moves &mdash; and why a boundary works where a setting doesn&#39;t.">
+<meta property="og:site_name" content="Destructive AI Gurus">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How It Gets In &mdash; Destructive AI Gurus">
+<meta name="twitter:description" content="Systems don&#39;t ask permission to collect you; they acquire it once, while you&#39;re busy, and never stop. The six moves &mdash; and why a boundary works where a setting doesn&#39;t.">
+<link rel="canonical" href="https://destructiveaigurus.com/how-it-gets-in.html">
+<link href="/assets/fonts/fonts.css" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How It Gets In",
+  "description": "The six ways systems acquire permission to collect you — and why a settings page cannot stop it.",
+  "author":    { "@type": "Organization", "name": "Destructive AI Gurus, LLC" },
+  "publisher": { "@type": "Organization", "name": "Destructive AI Gurus, LLC" },
+  "mainEntityOfPage": "https://destructiveaigurus.com/how-it-gets-in.html"
+}
+</script>
+<style>
+:root{
+  --void:#020204; --blue:#3b82f6; --blue-lit:#93c5fd; --violet:#a855f7;
+  --text:#e8eaf0; --muted:#767d8e; --line:rgba(255,255,255,.07);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--void);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;
+     font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+.bar{display:flex;align-items:center;justify-content:space-between;padding:22px 34px;
+     border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:11px}
+.mark svg{width:26px;height:26px}
+.mark b{font-family:'Syne',sans-serif;font-weight:800;font-size:.82rem;line-height:1.15;display:block}
+.mark i{font-style:normal;color:var(--blue)}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.63rem;letter-spacing:.2em;color:var(--muted)}
+
+.shell{max-width:820px;margin:0 auto;padding:0 30px}
+
+.hero{padding:104px 0 30px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:.63rem;letter-spacing:.24em;
+        color:var(--blue);margin-bottom:24px}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4.6vw,3.3rem);
+   line-height:1.06;letter-spacing:-.025em;max-width:19ch}
+h1 em{font-style:normal;color:var(--blue)}
+.lede{margin-top:28px;font-size:1.09rem;line-height:1.74;color:#c2c8d6;max-width:62ch}
+
+/* the six — numbered, mono labels only. the label is data; the sentence is the voice. */
+.moves{margin:64px 0 0;border-top:1px solid var(--line)}
+.move{display:grid;grid-template-columns:58px 1fr;gap:22px;padding:26px 0;
+      border-bottom:1px solid var(--line)}
+.move .n{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.14em;
+         color:var(--violet);padding-top:5px}
+.move h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.06rem;margin-bottom:9px;
+         letter-spacing:-.005em}
+.move p{font-size:.95rem;line-height:1.7;color:#9aa2b2}
+.move p b{color:var(--text);font-weight:500}
+
+.turn{padding:74px 0 0}
+.turn h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3.1vw,2.1rem);
+         line-height:1.16;letter-spacing:-.015em;max-width:24ch}
+.turn h2 em{font-style:normal;color:var(--blue)}
+.turn p{margin-top:22px;font-size:1.02rem;line-height:1.74;color:#b0b7c6;max-width:62ch}
+
+/* our own failure, set apart — the only named example on the page */
+.own{margin:52px 0 0;border-left:2px solid rgba(59,130,246,.45);padding:6px 0 6px 26px}
+.own .lbl{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.18em;
+          color:var(--blue);display:block;margin-bottom:12px}
+.own p{font-size:1rem;line-height:1.74;color:#b0b7c6;max-width:60ch}
+.own p+p{margin-top:14px}
+
+/* the lineage — stated as record, not performed as a joke. the artifact does the work. */
+.since{margin:64px 0 0;border:1px solid var(--line);padding:30px 32px 28px}
+.since .lbl{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.18em;
+            color:var(--violet);display:block;margin-bottom:16px}
+.since p{font-size:1rem;line-height:1.76;color:#b0b7c6;max-width:62ch}
+.since p+p{margin-top:15px}
+.since b{color:var(--text);font-weight:500}
+.since .doctrine{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);
+                 font-family:'Syne',sans-serif;font-weight:700;font-size:1.16rem;
+                 color:var(--text);letter-spacing:-.01em;line-height:1.4}
+.since .doctrine em{font-style:normal;color:var(--blue)}
+
+.close{padding:78px 0 0}
+.close h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3.1vw,2.1rem);
+          line-height:1.16;max-width:23ch}
+.close h2 em{font-style:normal;color:var(--blue)}
+.close p{margin-top:20px;font-size:1.02rem;line-height:1.74;color:#b0b7c6;max-width:62ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.cta{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.2em;
+     color:var(--blue-lit);border:1px solid rgba(59,130,246,.4);padding:13px 22px;
+     transition:background .25s,border-color .25s}
+.cta:hover{background:rgba(59,130,246,.1);border-color:var(--blue)}
+.cta.ghost{color:var(--muted);border-color:var(--line)}
+.cta.ghost:hover{color:var(--text);border-color:var(--border,#2a2a3a);background:transparent}
+
+.foot{margin-top:92px;border-top:1px solid var(--line);padding:26px 0 44px;
+      font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.14em;color:var(--muted)}
+.note{margin-top:10px;color:#4d5364;letter-spacing:.07em}
+
+@media(max-width:640px){
+  .hero{padding:70px 0 24px}
+  .move{grid-template-columns:1fr;gap:8px}
+  .move .n{padding-top:0}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a class="mark" href="index.html">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><g transform="translate(4,1.2) scale(0.28)" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"><path d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/><path transform="rotate(180,100,110)" d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/></g><circle cx="32" cy="4" r="3" fill="#bfdbfe"/><circle cx="32" cy="60" r="3" fill="#bfdbfe"/><circle cx="32" cy="32" r="4.6" fill="none" stroke="#a855f7" stroke-width="1.6"/><circle cx="32" cy="32" r="3" fill="#dbeafe"/></svg>
+    <b>DESTRUCTIVE<br><i>AI GURUS</i></b>
+  </a>
+  <span class="tag">EVERYTHING STAYS INSIDE</span>
+</header>
+
+<div class="shell">
+
+  <section class="hero">
+    <div class="kicker">HOW IT GETS IN</div>
+    <h1>You never agreed to it. <em>You just never un-agreed.</em></h1>
+    <p class="lede">Almost everything collecting you right now was authorised once, briefly,
+       while you were busy doing something else &mdash; and then it simply never stopped.
+       That isn't a scandal. It's a design, and it's the same six moves every time.</p>
+  </section>
+
+  <section class="moves">
+
+    <div class="move">
+      <div class="n">01</div>
+      <div>
+        <h3>Consent is taken while you're mid-task</h3>
+        <p>Nobody is asked <b>may we upload your address book.</b> They're asked to
+           &ldquo;find people you know&rdquo; &mdash; during setup, when the goal is to get
+           past setup. The decision arrives disguised as a step.</p>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="n">02</div>
+      <div>
+        <h3>New features inherit old permission</h3>
+        <p>You agreed to something years ago. What it does today didn't exist then. It shipped
+           switched on, and your ancient yes quietly covered it. <b>You never agreed to that.
+           You just never un-agreed.</b></p>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="n">03</div>
+      <div>
+        <h3>The grant outlives the reason</h3>
+        <p>You connected an account once, for one purpose, and that purpose ended years ago.
+           <b>The authorisation didn't end with it.</b> Permissions rarely expire; intentions
+           always do.</p>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="n">04</div>
+      <div>
+        <h3>You're asked until you slip</h3>
+        <p>On install. After the update. After the next login. Mid-way through something
+           unrelated. <b>It has to succeed once. You have to decline forever.</b> That
+           asymmetry isn't a flaw in the design &mdash; it is the design.</p>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="n">05</div>
+      <div>
+        <h3>It never looks like collection</h3>
+        <p>It looks like a convenience. Find your colleagues. More relevant results. A better
+           experience. <b>The most complete one we ever found looked like a typeface.</b></p>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="n">06</div>
+      <div>
+        <h3>Nothing tells you it's happening</h3>
+        <p>No light, no log, no receipt, no notice. <b>The only way to find out is to go and
+           look</b> &mdash; which almost nobody does, because there's nothing to prompt them to.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="turn">
+    <h2>Six disguises, <em>one mechanism.</em></h2>
+    <p>The moment you consent is pulled apart from the moment you're collected. Agree while
+       distracted; be gathered later, indefinitely, invisibly. Every item above is that same
+       separation wearing a different coat &mdash; which is why reading the settings page more
+       carefully was never going to save anyone.</p>
+    <p><b>A setting is a request. A boundary is enforcement.</b> Asking a system not to do
+       something depends on it continuing to agree. Making it structurally unable to does not.
+       And past the boundary there is only one thing left worth having: measurement &mdash;
+       because everything short of it is a vendor describing itself.</p>
+  </section>
+
+  <section class="own">
+    <span class="lbl">WE SHIPPED ONE TOO</span>
+    <p>Every page of this site used to load its fonts from someone else's servers. To draw
+       three headlines, your browser was made to contact a third party and hand over your
+       address, your device, and the page you were reading &mdash; on every visit, before you
+       could consent to anything, with nothing on screen to indicate it.</p>
+    <p>It had been there for months. We wrote the copy about gathering nothing, and it sat in
+       our own front door the whole time, <b>because it didn't look like collection. It looked
+       like a font.</b> The fonts are ours now and no one else is contacted to render this page.</p>
+    <p>We're telling you because it's the point: <b>this is not something only careless people
+       ship.</b> It's something you find by going and looking &mdash; and then you fix it in an
+       afternoon.</p>
+  </section>
+
+  <section class="since">
+    <span class="lbl">THE DOCTRINE</span>
+    <p>Learn precisely how the taking works &mdash; in detail, without flinching &mdash; then
+       point it the other way. <b>Map the terrain, put a sensor in every cell, and know the
+       instant something touches one.</b></p>
+    <p>We have built it that way since before the web, and it has not needed revising. Only the
+       board is different, and nobody is playing for points.</p>
+    <div class="doctrine">Use the bad to do the good. <em>The edge was always protection.</em></div>
+  </section>
+
+  <section class="close">
+    <h2>The same thing is happening to your platforms. <em>Just with an invoice.</em></h2>
+    <p>Enterprise runs on the identical pattern: capability authorised once, metered forever;
+       data crossing a boundary nobody drew; per-call costs that scale with your success rather
+       than your usage; lock-in nobody signed up for and everyone now pays. It doesn't look like
+       extraction either. It looks like a platform doing its job.</p>
+    <p>We don't replace the platforms you own &mdash; they're not the problem, and we've spent
+       forty years inside them. We find where the meter hides, put a boundary where the data was
+       leaving, and turn local AI on the work that never needed to be metered at all.
+       <b>Then we measure it, so it's a fact and not a claim.</b></p>
+    <div class="ctas">
+      <a class="cta" href="work.html">SEE WHAT WE'VE BUILT →</a>
+      <a class="cta ghost" href="dashboard.html#services">THE PRACTICE</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    © 2026 DESTRUCTIVE AI GURUS, LLC · BEVERLY, MA
+  </footer>
+
+</div>
+</body>
+</html>

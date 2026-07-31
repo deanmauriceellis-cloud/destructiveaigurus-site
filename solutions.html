@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Use Case Explorer — Destructive AI Gurus</title>
+<meta name="description" content="74 AI use cases organized by enterprise platform architecture. Explore how AI augmentation helps you maximize the value of your Pega and Salesforce investments at Fortune 500 scale.">
+<meta name="author" content="Destructive AI Gurus, LLC">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://destructiveaigurus.com/solutions.html">
+<meta property="og:title" content="AI Use Case Explorer — Destructive AI Gurus">
+<meta property="og:description" content="74 AI use cases organized by enterprise platform architecture. Pega, Salesforce, and cross-platform optimization opportunities.">
+<meta property="og:site_name" content="Destructive AI Gurus">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://destructiveaigurus.com/solutions.html">
+<link href="/assets/fonts/fonts.css" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+:root {
+  --blue: #3b82f6;
+  --blue-dim: #2563eb;
+  --blue-glow: rgba(59, 130, 246, 0.12);
+  --blue-glow-strong: rgba(59, 130, 246, 0.25);
+  --bg: #050507;
+  --bg-el: #0a0a0f;
+  --bg-card: #0e0e14;
+  --text: #e8e8ed;
+  --text-dim: #8888a0;
+  --text-muted: #55556a;
+  --border: #1a1a24;
+  --border-h: #2a2a3a;
+  --green: #22c55e;
+  --green-glow: rgba(34, 197, 94, 0.12);
+  --red: #ef4444;
+  --red-glow: rgba(239, 68, 68, 0.10);
+  --purple: #a78bfa;
+  --purple-glow: rgba(167, 139, 250, 0.12);
+  --orange: #fb923c;
+  --orange-glow: rgba(251, 146, 60, 0.10);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ═══════ HEADER BAR ═══════ */
+.header {
+  height: 56px;
+  background: var(--bg-el);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 16px;
+  flex-shrink: 0;
+  z-index: 20;
+}
+.header-back {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid rgba(59,130,246,0.18);
+  border-radius: 6px;
+  background: var(--blue-glow);
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+.header-back:hover { background: var(--blue-glow-strong); }
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-logo svg { width: 22px; height: 22px; flex-shrink: 0; }
+.header-logo span {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.header-title {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ═══════ MAIN LAYOUT ═══════ */
+.main-layout {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ═══════ TREE PANEL ═══════ */
+.tree-panel {
+  width: 360px;
+  background: var(--bg-el);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.tree-controls {
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.filter-tabs {
+  display: flex;
+  gap: 4px;
+}
+.filter-tab {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.filter-tab:hover { color: var(--text-dim); border-color: var(--border-h); }
+.filter-tab.active { color: var(--blue); background: var(--blue-glow); border-color: rgba(59,130,246,0.25); }
+.filter-tab[data-filter="pega"].active { color: var(--blue); background: var(--blue-glow); border-color: rgba(59,130,246,0.25); }
+.filter-tab[data-filter="salesforce"].active { color: var(--green); background: var(--green-glow); border-color: rgba(34,197,94,0.25); }
+.filter-tab[data-filter="cross-platform"].active { color: var(--orange); background: var(--orange-glow); border-color: rgba(251,146,60,0.25); }
+.search-box {
+  position: relative;
+}
+.search-box svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 2;
+}
+.search-input {
+  width: 100%;
+  padding: 8px 10px 8px 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input::placeholder { color: var(--text-muted); }
+.search-input:focus { border-color: rgba(59,130,246,0.4); }
+
+/* ═══════ TREE NODES ═══════ */
+.tree-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+.tree-scroll::-webkit-scrollbar { width: 4px; }
+.tree-scroll::-webkit-scrollbar-track { background: transparent; }
+.tree-scroll::-webkit-scrollbar-thumb { background: var(--border-h); border-radius: 2px; }
+
+.tree-platform {
+  user-select: none;
+}
+.tree-platform-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-left: 3px solid transparent;
+}
+.tree-platform-header:hover { background: rgba(255,255,255,0.02); }
+.tree-platform-header .chevron {
+  width: 14px;
+  height: 14px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 2;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.tree-platform.open > .tree-platform-header .chevron { transform: rotate(90deg); }
+.tree-platform-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.tree-platform-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+.tree-platform[data-platform="pega"] .tree-platform-name { color: var(--blue); }
+.tree-platform[data-platform="pega"] .tree-platform-header { border-left-color: var(--blue); }
+.tree-platform[data-platform="salesforce"] .tree-platform-name { color: var(--green); }
+.tree-platform[data-platform="salesforce"] .tree-platform-header { border-left-color: var(--green); }
+.tree-platform[data-platform="cross-platform"] .tree-platform-name { color: var(--orange); }
+.tree-platform[data-platform="cross-platform"] .tree-platform-header { border-left-color: var(--orange); }
+
+.tree-children {
+  display: none;
+}
+.tree-platform.open > .tree-children,
+.tree-area.open > .tree-children {
+  display: block;
+}
+
+.tree-area-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px 7px 36px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.tree-area-header:hover { background: rgba(255,255,255,0.02); }
+.tree-area-header .chevron {
+  width: 12px;
+  height: 12px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 2;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.tree-area.open > .tree-area-header .chevron { transform: rotate(90deg); }
+.tree-area-name {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-dim);
+}
+.tree-area-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.tree-usecase {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px 6px 56px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  border-left: 2px solid transparent;
+}
+.tree-usecase:hover { color: var(--text-dim); background: rgba(255,255,255,0.02); }
+.tree-usecase.active {
+  color: var(--blue);
+  background: var(--blue-glow);
+  border-left-color: var(--blue);
+}
+.tree-usecase .proven-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.tree-usecase-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ═══════ DETAIL PANEL ═══════ */
+.detail-panel {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+}
+.detail-panel::-webkit-scrollbar { width: 6px; }
+.detail-panel::-webkit-scrollbar-track { background: transparent; }
+.detail-panel::-webkit-scrollbar-thumb { background: var(--border-h); border-radius: 3px; }
+
+/* Welcome state */
+.welcome-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 48px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+.welcome-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 28px;
+  opacity: 0.6;
+}
+.welcome-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.welcome-title .hl { color: var(--blue); }
+.welcome-sub {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+.welcome-stats {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.welcome-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 28px;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+.welcome-stat:hover { border-color: var(--border-h); }
+.welcome-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.welcome-stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.welcome-stat.pega .welcome-stat-num { color: var(--blue); }
+.welcome-stat.sf .welcome-stat-num { color: var(--green); }
+.welcome-stat.cross .welcome-stat-num { color: var(--orange); }
+.welcome-hint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* Detail content */
+.detail-content {
+  padding: 36px 48px 48px;
+  max-width: 800px;
+  animation: slideIn 0.35s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
+
+.detail-header {
+  margin-bottom: 32px;
+}
+.detail-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.detail-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.detail-tag.pega { color: var(--blue); background: var(--blue-glow); border: 1px solid rgba(59,130,246,0.18); }
+.detail-tag.salesforce { color: var(--green); background: var(--green-glow); border: 1px solid rgba(34,197,94,0.18); }
+.detail-tag.appian { color: var(--orange); background: var(--orange-glow); border: 1px solid rgba(251,146,60,0.18); }
+.detail-tag.proven { color: var(--green); background: var(--green-glow); border: 1px solid rgba(34,197,94,0.18); }
+.detail-tag.complexity-low { color: var(--green); background: var(--green-glow); border: 1px solid rgba(34,197,94,0.15); }
+.detail-tag.complexity-medium { color: var(--orange); background: var(--orange-glow); border: 1px solid rgba(251,146,60,0.15); }
+.detail-tag.complexity-high { color: var(--red); background: var(--red-glow); border: 1px solid rgba(239,68,68,0.15); }
+.detail-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.detail-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Section labels */
+.detail-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+.detail-label.red { color: var(--red); }
+.detail-label.green { color: var(--green); }
+
+/* Problem section */
+.detail-section {
+  margin-bottom: 28px;
+}
+.detail-problem-text {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* Cost box */
+.cost-box {
+  background: var(--bg-card);
+  border: 1px solid rgba(136,136,160,0.15);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 14px;
+}
+.cost-box-value {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+.cost-box-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* Solution section */
+.detail-solution-text {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+  font-weight: 300;
+  border-left: 2px solid var(--blue);
+  padding-left: 16px;
+}
+
+/* ROI box */
+.roi-box {
+  background: var(--green-glow);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+.roi-metric {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--green);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.roi-metric svg { width: 18px; height: 18px; stroke: var(--green); fill: none; stroke-width: 2; }
+.roi-meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+.roi-meta-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.roi-meta-item strong { color: var(--text-dim); font-weight: 500; }
+
+/* How we help */
+.help-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.help-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+  font-weight: 300;
+}
+.help-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* CTA */
+.detail-cta {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.detail-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--blue-dim), var(--blue));
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+.detail-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(59,130,246,0.35); }
+.detail-cta-btn svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 1.5; }
+
+/* ═══════ FOOTER STATS ═══════ */
+.footer-stats {
+  height: 44px;
+  background: var(--bg-el);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-shrink: 0;
+}
+.footer-stat {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-stat .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+.footer-stat strong { color: var(--blue); font-weight: 500; }
+
+/* ═══════ DISCLAIMER ICON + MODAL ═══════ */
+.legal-icon {
+  position: fixed;
+  bottom: 56px;
+  right: 16px;
+  z-index: 100;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.legal-icon:hover { border-color: var(--border-h); background: var(--bg-el); }
+.legal-icon svg { width: 14px; height: 14px; stroke: var(--text-muted); fill: none; stroke-width: 2; }
+.legal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(5,5,7,0.92);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+.legal-overlay.open { display: flex; }
+.legal-modal {
+  background: var(--bg-el);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 40px 48px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+}
+.legal-modal::-webkit-scrollbar { width: 4px; }
+.legal-modal::-webkit-scrollbar-thumb { background: var(--border-h); border-radius: 2px; }
+.legal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+.legal-close:hover { border-color: var(--border-h); color: var(--text); }
+.legal-modal h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+.legal-modal h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--blue);
+  margin: 16px 0 6px;
+}
+.legal-modal p {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+  font-weight: 300;
+}
+.legal-modal p + p { margin-top: 8px; }
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 900px) {
+  .tree-panel { width: 280px; }
+  .detail-content { padding: 28px 24px 36px; }
+  .tree-usecase { padding-left: 44px; }
+  .tree-area-header { padding-left: 28px; }
+}
+@media (max-width: 640px) {
+  .main-layout { flex-direction: column; }
+  .tree-panel { width: 100%; height: 45vh; border-right: none; border-bottom: 1px solid var(--border); }
+  .detail-panel { height: 55vh; }
+  .header-title { display: none; }
+  /* Welcome panel: top-align + scroll so tall content is never clipped on short viewports */
+  .welcome-state { justify-content: flex-start; overflow-y: auto; padding: 28px 20px; }
+  .welcome-icon { width: 56px; height: 56px; margin-bottom: 16px; }
+  .welcome-title { font-size: 1.4rem; }
+  .welcome-sub { margin-bottom: 18px; }
+  .welcome-stats { flex-direction: column; gap: 12px; margin-bottom: 20px; }
+}
+@media (max-width: 480px) {
+  .header { padding: 8px 12px; }
+  .header-logo span { font-size: 0.7rem; }
+  .header-back { font-size: 0.65rem; padding: 4px 8px; }
+  .filter-tabs { gap: 0; }
+  .filter-tab { font-size: 0.58rem; padding: 5px 8px; }
+  .tree-panel { height: 40vh; }
+  .detail-panel { height: 60vh; }
+  .detail-content { padding: 20px 16px 28px; }
+  .detail-title { font-size: 1.1rem; }
+  .detail-section h3 { font-size: 0.88rem; }
+  .legal-modal { padding: 24px 20px; }
+}
+.footer { text-align: center; padding: 24px; font-size: 0.7rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+
+
+/* ═══════ FIRM CREDENTIAL STRAP ═══════ */
+.firm-credential {
+  padding: 48px 28px;
+  background: linear-gradient(180deg, rgba(59,130,246,0.04) 0%, rgba(59,130,246,0.10) 100%);
+  border-top: 1px solid rgba(59,130,246,0.3);
+}
+.firm-credential-inner { max-width: 920px; margin: 0 auto; }
+.firm-credential-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #3b82f6;
+  letter-spacing: 0.18em;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.firm-credential-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #c8c8d8;
+  text-align: center;
+  font-weight: 300;
+}
+.firm-credential-text strong { color: #3b82f6; font-weight: 600; }
+@media (max-width: 560px) {
+  .firm-credential { padding: 32px 18px; }
+  .firm-credential-text { font-size: 0.92rem; line-height: 1.6; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="header">
+  <a href="index.html#solution" class="header-back">&larr; Back</a>
+  <a href="index.html" class="header-logo">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g transform="translate(4,1.2) scale(0.28)" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"><path d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/><path transform="rotate(180,100,110)" d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/></g><circle cx="32" cy="4" r="3" fill="#bfdbfe"/><circle cx="32" cy="60" r="3" fill="#bfdbfe"/><circle cx="32" cy="32" r="4.6" fill="none" stroke="#a855f7" stroke-width="1.6"/><circle cx="32" cy="32" r="3" fill="#dbeafe"/></svg>
+    <span>DESTRUCTIVE AI GURUS</span>
+  </a>
+  <span class="header-title">// AI Use Case Explorer</span>
+</header>
+
+<!-- ═══════ MAIN LAYOUT ═══════ -->
+<div class="main-layout">
+
+  <!-- TREE PANEL -->
+  <aside class="tree-panel">
+    <div class="tree-controls">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="pega">Pega</button>
+        <button class="filter-tab" data-filter="salesforce">Salesforce</button>
+        <button class="filter-tab" data-filter="cross-platform">Cross-Platform</button>
+      </div>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" placeholder="Search use cases...">
+      </div>
+    </div>
+    <div class="tree-scroll" id="treeContainer"></div>
+  </aside>
+
+  <!-- DETAIL PANEL -->
+  <main class="detail-panel" id="detailPanel">
+    <div class="welcome-state" id="welcomeState">
+      <svg class="welcome-icon" viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="8" fill="#3b82f6" opacity="0.8"/>
+        <circle cx="40" cy="12" r="4" fill="#3b82f6" opacity="0.5"/>
+        <circle cx="40" cy="68" r="4" fill="#3b82f6" opacity="0.5"/>
+        <circle cx="12" cy="40" r="4" fill="#3b82f6" opacity="0.5"/>
+        <circle cx="68" cy="40" r="4" fill="#3b82f6" opacity="0.5"/>
+        <circle cx="18" cy="18" r="3" fill="#22c55e" opacity="0.4"/>
+        <circle cx="62" cy="18" r="3" fill="#22c55e" opacity="0.4"/>
+        <circle cx="18" cy="62" r="3" fill="#fb923c" opacity="0.4"/>
+        <circle cx="62" cy="62" r="3" fill="#fb923c" opacity="0.4"/>
+        <line x1="40" y1="32" x2="40" y2="16" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
+        <line x1="40" y1="48" x2="40" y2="64" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
+        <line x1="32" y1="40" x2="16" y2="40" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
+        <line x1="48" y1="40" x2="64" y2="40" stroke="#3b82f6" stroke-width="1" opacity="0.3"/>
+        <line x1="35" y1="35" x2="21" y2="21" stroke="#22c55e" stroke-width="0.7" opacity="0.2"/>
+        <line x1="45" y1="35" x2="59" y2="21" stroke="#22c55e" stroke-width="0.7" opacity="0.2"/>
+        <line x1="35" y1="45" x2="21" y2="59" stroke="#fb923c" stroke-width="0.7" opacity="0.2"/>
+        <line x1="45" y1="45" x2="59" y2="59" stroke="#fb923c" stroke-width="0.7" opacity="0.2"/>
+      </svg>
+      <h1 class="welcome-title">74 ways to <span class="hl">take the advantage back</span>.</h1>
+      <p class="welcome-sub">Every use case below is budget you stop paying the cloud meter for &mdash; a workload you can pull off it and run on your own terms. Directed local AI augments your Pega and Salesforce deployments: same capabilities, lower cost, your data on your infrastructure.</p>
+      <p class="welcome-sub" style="margin-top:10px;"><strong>Your AI runs in your perimeter. We take nothing out.</strong> The models, the data, and the benefit all live on your side &mdash; nothing flows back to us.</p>
+      <div class="welcome-stats">
+        <div class="welcome-stat pega">
+          <div class="welcome-stat-num">38</div>
+          <div class="welcome-stat-label">Pega</div>
+        </div>
+        <div class="welcome-stat sf">
+          <div class="welcome-stat-num">31</div>
+          <div class="welcome-stat-label">Salesforce</div>
+        </div>
+        <div class="welcome-stat cross">
+          <div class="welcome-stat-num">5</div>
+          <div class="welcome-stat-label">Cross-Platform</div>
+        </div>
+      </div>
+      <p class="welcome-hint">Select a use case to explore how AI augments your platform &mdash; every playbook here is usable whether or not you ever call us</p>
+    </div>
+    <div class="detail-content" id="detailContent" style="display:none;"></div>
+  </main>
+
+</div>
+
+<!-- ═══════ LEGAL ICON + MODAL ═══════ -->
+
+<p class="wv-stamp" style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;line-height:1.6;letter-spacing:0.03em;color:#8a8aa0;margin:16px auto 4px;max-width:560px;text-align:center;">We aim AI at what drains and threatens you &mdash; never at you.</p>
+
+<!-- ═══════ FIRM CREDENTIAL ═══════ -->
+
+<div class="footer">&copy; 2026 Destructive AI Gurus, LLC. All rights reserved. &mdash; Beverly, MA</div>
+<div class="legal-icon" id="legalIcon" title="Legal &amp; Disclaimers">
+  <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+</div>
+<div class="legal-overlay" id="legalOverlay">
+  <div class="legal-modal">
+    <button class="legal-close" id="legalClose">&times;</button>
+    <h3>Legal &amp; Disclaimers</h3>
+    <h4>Independence</h4>
+    <p>Destructive AI Gurus is an independent consulting firm. We are not affiliated with, endorsed by, sponsored by, or in any partnership with Pega, Salesforce, Appian, MuleSoft, SAP, Oracle, or any other platform vendor mentioned on this site. We are not a competitor to these platforms &mdash; we help enterprises maximize the value of their existing platform investments.</p>
+    <h4>Estimates</h4>
+    <p>All cost figures, savings projections, ROI percentages, and implementation timelines presented on this site are illustrative estimates based on publicly available information and general industry experience across enterprise engagements. They do not represent guarantees, quotes, or specific vendor pricing. Actual costs, savings, and timelines vary significantly based on organization size, contract terms, deployment complexity, and other factors. These figures should not be used as the basis for financial decisions without independent verification.</p>
+    <h4>Trademarks</h4>
+    <p>Pega, Pegasystems, Customer Decision Hub, Salesforce, Einstein, MuleSoft, Marketing Cloud, Service Cloud, Sales Cloud, Lightning, Apex, Appian, SAP, Oracle, and all other product and company names are trademarks or registered trademarks of their respective owners. Use of these names is for identification and reference purposes only and does not imply any affiliation or endorsement.</p>
+    <h4>No Confidential Information</h4>
+    <p>All information presented on this site is based on publicly available documentation, published pricing guides, industry reports, and general enterprise architecture experience. No proprietary, confidential, or trade secret information from any platform vendor is used or disclosed.</p>
+    <h4>Our Role</h4>
+    <p>We work alongside your existing platforms &mdash; not in place of them. Our consulting services are designed to help enterprises optimize and augment their platform investments through AI augmentation and architectural best practices. We charge for the engagement, not per decision &mdash; no meter of ours replaces the meter we remove.</p>
+  </div>
+</div>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer-stats">
+  <span class="footer-stat"><span class="dot"></span> <strong>74</strong> Use Cases</span>
+  <span class="footer-stat"><span class="dot"></span> <strong>3</strong> Platforms</span>
+  <span class="footer-stat"><span class="dot"></span> <strong>Maximize</strong> Platform ROI</span>
+  <span class="footer-stat"><span class="dot"></span> <strong>AI-Augmented</strong> Enterprise</span>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// USE CASE DATA — 74 use cases across 3 platforms
+// ═══════════════════════════════════════════════════════
+
+const USE_CASE_TREE = {
+  platforms: [
+    {
+      id: "pega",
+      name: "Pega Platform",
+      color: "blue",
+      areas: [
+        {
+          id: "case-management",
+          name: "Case Management",
+          useCases: [
+            {
+              id: "ai-case-routing",
+              name: "AI-Powered Case Routing",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Enterprise case routing at Fortune 500 scale involves millions of decisions per month. Platform-native decisioning capabilities are powerful but may include per-decision or volume-based licensing components that grow with usage. Organizations often find that a portion of these routing decisions follow patterns well-suited to local AI classification.",
+              currentCost: "$300K–$800K/yr",
+              currentCostDesc: "Per-decision licensing fees at enterprise volume",
+              aiSolution: "Deploy a local classification model trained on your historical routing data. The model runs on your infrastructure with zero per-decision fees, handles millions of decisions per day, and continuously improves from outcomes. Pega remains the system of record — AI handles the routing intelligence.",
+              roiMetric: "70–90% routing cost reduction",
+              howWeHelp: ["Analyze your current routing decision volume and per-decision costs","Train a local classification model on your historical routing patterns","Deploy alongside Pega with automatic failover to platform-native routing","Monitor accuracy metrics and set up continuous retraining pipelines"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-case-classification",
+              name: "AI Case Type Auto-Classification",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Incoming work items require manual triage to determine case type, sub-type, and urgency. This creates bottlenecks, inconsistent classification, and delayed processing. Misclassification leads to rework and SLA breaches.",
+              currentCost: "$150K–$400K/yr",
+              currentCostDesc: "Manual triage labor + rework from misclassification",
+              aiSolution: "Deploy a multi-label NLP classifier that reads incoming requests — emails, forms, chat transcripts — and automatically assigns the correct Pega case type, sub-type, and priority. Confidence thresholds route low-certainty items to human review.",
+              roiMetric: "85% auto-classification accuracy, 60% faster intake",
+              howWeHelp: ["Audit your current case type taxonomy and classification rules","Build training datasets from historical case data","Deploy the classifier with confidence-based human escalation","Tune thresholds and retrain monthly on new data"],
+              implementationTime: "3–5 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-sla-prediction",
+              name: "Intelligent SLA Management & Prediction",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "SLA frameworks anywhere tell you after the fact unless prediction is layered on top. Teams lack visibility into which cases are at risk of breaching, making it impossible to reallocate resources proactively — that prediction layer is what we add, with Pega staying the system of record.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "SLA breach penalties + customer churn from missed commitments",
+              aiSolution: "An AI model that continuously scores every active case's probability of SLA breach based on case attributes, current workload, historical resolution patterns, and team capacity. Surfaces at-risk cases hours or days before breach, enabling proactive reassignment.",
+              roiMetric: "45% reduction in SLA breaches",
+              howWeHelp: ["Analyze your historical SLA performance and breach patterns","Build predictive models using case attributes and resolution timelines","Integrate alerts into Pega worklists and manager dashboards","Establish feedback loops for continuous model improvement"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-case-dedup",
+              name: "AI Case Merging & Deduplication",
+              isExisting: false,
+              platforms: ["pega","salesforce"],
+              problem: "Duplicate cases consume agent time, create inconsistent customer experiences, and skew metrics. Rule-based dedup catches obvious matches but misses semantic duplicates — the same issue reported in different words across different channels.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Duplicate agent effort + elevated case volumes",
+              aiSolution: "Semantic similarity models compare incoming cases against open cases in real-time, identifying duplicates even when language differs significantly. Automatically merges clear matches and flags probable duplicates for agent confirmation.",
+              roiMetric: "30% reduction in duplicate case volume",
+              howWeHelp: ["Analyze your current duplicate rate and detection gaps","Train semantic similarity models on your case corpus","Integrate with Pega case creation flow for real-time dedup","Set confidence thresholds for auto-merge vs. human review"],
+              implementationTime: "3–4 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-case-summarization",
+              name: "Automated Case Summarization",
+              isExisting: false,
+              platforms: ["pega","salesforce"],
+              problem: "Complex cases accumulate dozens of notes, attachments, and interactions over weeks or months. When a case transfers between agents or escalates, the new handler spends 15–30 minutes just reading history before they can act.",
+              currentCost: "$200K–$500K/yr",
+              currentCostDesc: "Lost agent productivity on case review",
+              aiSolution: "Local LLM generates concise, structured summaries of case history on demand — key issues, actions taken, current status, and recommended next steps. Summaries update automatically as new activity occurs.",
+              roiMetric: "80% reduction in case review time per transfer",
+              howWeHelp: ["Identify your highest-volume case transfer and escalation paths","Deploy a local LLM tuned for your domain terminology","Build summary templates that match your operational needs","Integrate summaries into Pega case views and handoff workflows"],
+              implementationTime: "3–5 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-resolution-estimation",
+              name: "Predictive Case Resolution Time",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Customer-facing teams cannot give accurate resolution time estimates. Operations cannot forecast staffing needs. Both problems stem from treating all cases as equal when resolution time varies dramatically by case attributes.",
+              currentCost: "$150K–$350K/yr",
+              currentCostDesc: "Overstaffing + customer dissatisfaction from missed estimates",
+              aiSolution: "A regression model that predicts resolution time at case creation based on case type, complexity signals, submitter history, current queue depth, and team capacity. Provides both customer-facing ETAs and internal capacity planning data.",
+              roiMetric: "40% more accurate resolution estimates",
+              howWeHelp: ["Build prediction models from your historical case resolution data","Integrate estimates into Pega case creation and customer portals","Connect predictions to workforce management dashboards","Continuously retrain as resolution patterns evolve"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            }
+          ]
+        },
+        {
+          id: "decisioning",
+          name: "Decisioning / CDH",
+          useCases: [
+            {
+              id: "local-realtime-decisioning",
+              name: "Local Real-Time Decisioning",
+              isExisting: true,
+              platforms: ["pega"],
+              problem: "Pega Customer Decision Hub delivers sophisticated real-time decisioning, but at enterprise volume the licensing investment can be substantial. Organizations processing millions of interactions may find that a significant portion of their decisioning budget goes to high-volume, pattern-based decisions that could be handled locally.",
+              currentCost: "$500K–$2M/yr",
+              currentCostDesc: "CDH per-interaction licensing at Fortune 500 volume",
+              aiSolution: "Pull the eligible high-volume, pattern-based decisions local — next-best-action, offer arbitration, treatment optimization — running on your infrastructure with zero per-interaction costs, and faster because the decision happens locally instead of round-tripping to the cloud. CDH remains the brain and the system of record — the local layer handles the volume.",
+              roiMetric: "10x faster decisions, 60–80% cost reduction",
+              howWeHelp: ["Audit your current CDH decision volume and cost per interaction","Stand up equivalent models locally for the high-volume, pattern-based tier","Run shadow-mode A/B comparison against CDH before any decisions shift","Build monitoring for model drift and decision quality metrics"],
+              implementationTime: "8–12 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-nba-replacement",
+              name: "AI Next-Best-Action Augmentation",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Pega's Next-Best-Action capability is a highly valued feature of CDH. The arbitration logic — balancing customer needs, business objectives, and channel constraints — is sophisticated. Organizations with large interaction volumes may benefit from supplementing CDH with local models trained on their specific historical patterns.",
+              currentCost: "$400K–$1.5M/yr",
+              currentCostDesc: "NBA licensing + CDH infrastructure costs",
+              aiSolution: "Train a multi-objective optimization model on your historical NBA outcomes. The local model learns your specific arbitration patterns, business rules, and constraint hierarchy. It generates next-best-actions in milliseconds with full explainability.",
+              roiMetric: "70% reduction in per-decision costs",
+              howWeHelp: ["Extract and analyze your historical NBA decision patterns","Build multi-objective models that balance your specific business constraints","Deploy with shadow-mode comparison against live CDH","Route the eligible high-volume tier local with automated quality gates — CDH keeps arbitration authority"],
+              implementationTime: "10–14 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-propensity-models",
+              name: "Propensity Model Local Training",
+              isExisting: false,
+              platforms: ["pega","salesforce"],
+              problem: "Platform-native propensity scoring tools like Pega Prediction Studio and Salesforce Einstein provide valuable ML capabilities integrated into the platform. However, organizations with mature data science practices may find that equivalent models can be trained locally using open-source ML frameworks, potentially reducing per-prediction costs while maintaining accuracy.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "Platform ML licensing + per-prediction fees",
+              aiSolution: "Train propensity models locally using your data — churn propensity, purchase propensity, engagement propensity — using open-source ML frameworks. Models deploy to your infrastructure and score in real-time without per-prediction fees.",
+              roiMetric: "80% reduction in model training and scoring costs",
+              howWeHelp: ["Inventory your current propensity models and their platform costs","Stand up equivalent models locally in open-source ML for your high-volume scoring tier","Build automated retraining pipelines on your schedule","Integrate scores back into Pega/Salesforce via lightweight APIs"],
+              implementationTime: "6–8 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-strategy-optimization",
+              name: "AI Strategy Optimization",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Pega decision strategies use A/B testing and multi-armed bandit approaches, but optimizing across dozens of strategies with complex business constraints requires manual intervention from specialized decisioning architects — time-consuming and resource-intensive to tune at scale.",
+              currentCost: "$150K–$400K/yr",
+              currentCostDesc: "Specialized architect time + suboptimal strategy performance",
+              aiSolution: "Deploy automated strategy optimization using contextual bandits and Bayesian optimization. The system continuously tests strategy variations, learns optimal configurations per segment, and adjusts allocation in real-time — no manual tuning required.",
+              roiMetric: "25% improvement in strategy effectiveness",
+              howWeHelp: ["Audit your current decision strategy portfolio and performance","Implement automated optimization algorithms","Deploy continuous experimentation framework","Build dashboards for strategy performance monitoring"],
+              implementationTime: "6–8 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-eligibility-generation",
+              name: "Eligibility Rule Auto-Generation",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Creating and maintaining eligibility rules for offers, treatments, and actions is manual, error-prone, and requires deep Pega expertise. Rule conflicts and gaps lead to customers receiving incorrect offers or missing eligible ones entirely.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Rule maintenance labor + revenue leakage from rule gaps",
+              aiSolution: "AI analyzes your product catalog, regulatory constraints, and historical eligibility patterns to auto-generate and validate eligibility rules. Detects conflicts, gaps, and redundancies automatically. Generates Pega-compatible rule specifications.",
+              roiMetric: "70% faster rule creation, 90% fewer conflicts",
+              howWeHelp: ["Map your current eligibility rule landscape and identify gaps","Deploy AI rule analysis and generation tools","Integrate with your Pega rule management workflow","Establish automated rule testing and validation"],
+              implementationTime: "5–7 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-decisioning-arbitration",
+              name: "Decisioning Arbitration via Local ML",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Arbitration across multiple decision strategies — balancing marketing, service, retention, and compliance objectives — is expensive to hand-tune anywhere: complex weighting logic, specialized architects, lengthy testing cycles for every change.",
+              currentCost: "$200K–$500K/yr",
+              currentCostDesc: "Architect costs + slow optimization cycles",
+              aiSolution: "A local reinforcement learning model that learns optimal arbitration weights across your decision strategies. It balances competing objectives dynamically based on real-time context — customer state, channel, business priorities — and adapts continuously.",
+              roiMetric: "35% improvement in cross-strategy outcomes",
+              howWeHelp: ["Analyze your current arbitration logic and objective hierarchy","Build reinforcement learning models for multi-objective optimization","Deploy with guardrails to prevent adverse outcomes","Monitor and tune the balance between business objectives"],
+              implementationTime: "8–10 weeks",
+              complexity: "high"
+            }
+          ]
+        },
+        {
+          id: "workflow",
+          name: "Process & Workflow (PRPC)",
+          useCases: [
+            {
+              id: "ai-workflow-automation",
+              name: "Workflow Automation via AI",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Enterprise platforms typically use per-user licensing models. In many organizations, a portion of licensed users primarily perform repetitive workflow tasks — approvals, data entry, status updates. AI automation can handle many of these routine tasks, potentially allowing organizations to optimize their license allocation.",
+              currentCost: "$400K–$1.2M/yr",
+              currentCostDesc: "Per-user licensing for workflow-only users",
+              aiSolution: "Deploy AI agents that handle routine workflow tasks — processing approvals against policy, extracting and entering data from documents, updating statuses based on triggers. Reduces the number of concurrent platform users needed by automating the most common repetitive workflows.",
+              roiMetric: "30–50% reduction in required user licenses",
+              howWeHelp: ["Audit your user base to identify workflow-only users and repetitive patterns","Build AI agents for your highest-volume repetitive workflows","Deploy automation with human oversight for edge cases","Track license reduction and ROI monthly"],
+              implementationTime: "6–8 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-assignment-manager",
+              name: "Intelligent Assignment Manager",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Pega's assignment rules — round-robin, skill-based, load-balanced — give you a dependable baseline. A local model adds the signals no rule set can carry: agent performance patterns, case complexity, and real-time context that shorten resolution times and even out workload distribution.",
+              currentCost: "$150K–$400K/yr",
+              currentCostDesc: "Suboptimal resolution times + agent burnout from uneven loading",
+              aiSolution: "ML-powered assignment that considers agent expertise, historical performance on similar cases, current workload, case urgency, and customer value. Optimizes for resolution speed, quality, and workload balance simultaneously.",
+              roiMetric: "25% faster average resolution time",
+              howWeHelp: ["Analyze your current assignment patterns and performance variance","Build multi-factor assignment models from historical data","Integrate with Pega work queues and assignment logic","Monitor and optimize assignment effectiveness continuously"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-straight-through",
+              name: "AI-Powered Straight-Through Processing",
+              isExisting: false,
+              platforms: ["pega","salesforce"],
+              problem: "Many cases that could be resolved automatically still require human touchpoints because the platform's decision logic isn't confident enough to auto-resolve. Conservative thresholds mean agents handle work that doesn't need human judgment.",
+              currentCost: "$300K–$800K/yr",
+              currentCostDesc: "Agent time on cases that could auto-resolve",
+              aiSolution: "AI evaluates each case at intake and identifies candidates for straight-through processing — auto-resolution with no human touch. Confidence scoring ensures only truly routine cases are auto-processed; borderline cases route to agents with AI-prepared recommendations.",
+              roiMetric: "40% of routine cases auto-resolved",
+              howWeHelp: ["Identify your case types with highest straight-through potential","Build confidence models and set appropriate auto-resolve thresholds","Implement quality monitoring for auto-resolved cases","Gradually expand automation scope based on quality metrics"],
+              implementationTime: "5–7 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-process-mining",
+              name: "Process Mining & Bottleneck Detection",
+              isExisting: false,
+              platforms: ["pega","salesforce"],
+              problem: "You can't optimize what you can't see. Enterprise workflows develop invisible bottlenecks, unnecessary steps, and variant paths that drift from designed processes. Platform analytics show what's happening but not why or where to fix it.",
+              currentCost: "$200K–$500K/yr",
+              currentCostDesc: "Process inefficiency + expensive process consulting engagements",
+              aiSolution: "AI-driven process mining that reconstructs actual process execution from platform logs, identifies bottleneck stages, variant paths, and deviation patterns. Provides specific, actionable optimization recommendations with projected impact.",
+              roiMetric: "30% reduction in average process cycle time",
+              howWeHelp: ["Extract process execution data from your Pega/Salesforce logs","Run AI process mining to map actual vs. designed processes","Identify top bottlenecks and inefficient variant paths","Implement targeted optimizations with measurable impact"],
+              implementationTime: "3–5 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-sla-enforcement",
+              name: "Dynamic Service Level Enforcement",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Static SLA rules don't account for context — a routine request and a business-critical escalation get the same service level framework. This leads to both over-service of low-priority items and under-service of high-value ones.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Misaligned service effort + customer dissatisfaction",
+              aiSolution: "AI dynamically adjusts service level targets based on case context, customer value, business impact, and current operational capacity. High-impact cases get expedited automatically; routine items are optimized for efficiency rather than speed.",
+              roiMetric: "50% improvement in high-priority case resolution",
+              howWeHelp: ["Map your current SLA structure and identify misalignment patterns","Build dynamic priority scoring models","Integrate with Pega SLA framework for real-time adjustment","Monitor customer satisfaction impact and tune models"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-rpa-local",
+              name: "RPA with Local AI Intelligence",
+              isExisting: false,
+              platforms: ["pega","salesforce"],
+              problem: "Traditional RPA is brittle — bots break when UI changes, can't handle exceptions, and lack judgment. Platform-native RPA (Pega RPA, Salesforce Flow) is built for structured, rule-based automation; it isn't designed for tasks that require understanding unstructured data or context.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "RPA licensing + maintenance of brittle bots",
+              aiSolution: "AI-enhanced RPA that understands unstructured inputs, adapts to UI variations, and makes judgment calls on exceptions. Local LLMs give bots reading comprehension, contextual awareness, and the ability to handle edge cases that would break traditional RPA.",
+              roiMetric: "60% fewer RPA failures, 3x more automatable processes",
+              howWeHelp: ["Audit your current RPA portfolio and failure patterns","Enhance existing bots with local AI capabilities","Identify new automation candidates unlocked by AI intelligence","Build monitoring and exception handling frameworks"],
+              implementationTime: "6–8 weeks",
+              complexity: "medium"
+            }
+          ]
+        },
+        {
+          id: "integration",
+          name: "Integration & Connectors",
+          useCases: [
+            {
+              id: "ai-integration-optimization",
+              name: "AI Integration Layer Optimization",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Enterprise integration layers naturally grow in complexity over time as new systems are added and business requirements evolve. Organizations often lack full visibility into their integration landscape, making it difficult to optimize data flows and manage change confidently.",
+              currentCost: "$300K–$1M/yr",
+              currentCostDesc: "Integration maintenance, redundant middleware, and change risk",
+              aiSolution: "AI maps your complete integration topology, identifies redundant connections, suggests consolidation opportunities, and predicts the impact of changes before you make them. Reduces integration maintenance burden by rationalizing the landscape.",
+              roiMetric: "40–60% reduction in integration maintenance costs",
+              howWeHelp: ["Map your current integration topology end-to-end","Identify redundant flows and consolidation opportunities","Build impact analysis models for safe change management","Design and implement a rationalized integration architecture"],
+              implementationTime: "6–10 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-smart-api-gateway",
+              name: "Smart API Gateway",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Platform APIs are a valuable integration mechanism, but call patterns often develop inefficiencies over time — redundant requests, unnecessary polling, and full-record fetches when only a few fields are needed. Optimizing these patterns can significantly improve both performance and cost efficiency.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "High API call volume charges",
+              aiSolution: "An intelligent API gateway that learns your application's data access patterns and streamlines traffic. Smart caching, predictive prefetching, delta-only updates, and request deduplication reduce your platform API call volume by 50–70% without changing application code.",
+              roiMetric: "50–70% reduction in platform API calls",
+              howWeHelp: ["Profile your current API call patterns and identify optimization opportunities","Deploy an intelligent gateway with caching and deduplication","Implement predictive prefetching for common access patterns","Monitor cost reduction and optimize cache strategies"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-middleware-replacement",
+              name: "Intelligent Middleware Optimization",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Enterprise middleware platforms like MuleSoft, TIBCO, and IBM MQ provide robust integration capabilities, but they represent a significant infrastructure investment. Organizations may find that portions of their middleware workload — particularly message routing, data transformation, and protocol bridging — can be handled by modern AI-enhanced lightweight alternatives.",
+              currentCost: "$300K–$1.2M/yr",
+              currentCostDesc: "Middleware platform licensing and infrastructure",
+              aiSolution: "Augment your middleware with AI-enhanced lightweight integration services for high-volume, routine workloads. Smart message routing, automatic data transformation with schema learning, and intelligent error handling — complementing your existing middleware for optimal cost-performance balance.",
+              roiMetric: "50–70% middleware cost reduction",
+              howWeHelp: ["Audit your middleware landscape and identify optimization opportunities","Build lightweight AI-enhanced integration services for high-volume workloads","Shift the eligible high-volume tier to the local services with zero downtime","Optimize your middleware licensing based on reduced workload"],
+              implementationTime: "10–14 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-connector-health",
+              name: "AI Connector Health Monitoring",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Any integration estate degrades quietly — external connections slow or drop without announcing themselves. By the time someone notices, data is stale, transactions have failed, and downstream processes are broken. Monitoring is typically reactive — you find out when users complain.",
+              currentCost: "$100K–$400K/yr",
+              currentCostDesc: "Incident costs from connector failures + stale data",
+              aiSolution: "AI monitors every connector's behavior continuously — response times, error rates, data freshness, payload anomalies — and predicts failures before they impact operations. Automatic alerting, failover triggering, and root cause identification.",
+              roiMetric: "80% faster connector failure detection",
+              howWeHelp: ["Instrument your Pega connector landscape for monitoring","Deploy AI anomaly detection on connector telemetry","Build automated alerting and failover procedures","Create connector health dashboards for operations teams"],
+              implementationTime: "3–5 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-datapage-cache",
+              name: "Data Page Cache Optimization",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Pega data pages are the primary mechanism for caching external data, but cache policies are typically configured static — fixed TTLs that don't account for data volatility, access patterns, or business criticality. Over-caching serves stale data; under-caching hammers external systems.",
+              currentCost: "$100K–$250K/yr",
+              currentCostDesc: "Stale data incidents + unnecessary external system load",
+              aiSolution: "AI learns the actual volatility and access patterns for each data page and dynamically adjusts cache TTLs. High-volatility, frequently-accessed data gets shorter TTLs; stable reference data gets longer ones. External system load drops while data freshness improves.",
+              roiMetric: "40% fewer external calls, 60% fresher cached data",
+              howWeHelp: ["Profile your data page access patterns and cache hit rates","Build dynamic TTL models based on data volatility analysis","Implement adaptive caching in your Pega environment","Monitor cache effectiveness and external system load reduction"],
+              implementationTime: "3–4 weeks",
+              complexity: "low"
+            }
+          ]
+        },
+        {
+          id: "data-reporting",
+          name: "Data & Reporting",
+          useCases: [
+            {
+              id: "ai-db-optimization",
+              name: "AI-Driven Database Optimization",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Pega applications at scale generate massive database workloads. Poorly optimized queries, missing indexes, and suboptimal data models create performance bottlenecks that degrade user experience and increase infrastructure costs.",
+              currentCost: "$200K–$800K/yr",
+              currentCostDesc: "Database infrastructure overprovisioning + performance incidents",
+              aiSolution: "AI continuously analyzes query execution patterns, identifies optimization opportunities, recommends index strategies, and detects problematic query patterns before they cause outages. 5–20x improvement in query performance for the worst offenders.",
+              roiMetric: "5–20x query performance improvement",
+              howWeHelp: ["Profile your database workload and identify top bottlenecks","Deploy AI query analysis and optimization recommendations","Implement index strategies and query rewrites","Establish continuous database health monitoring"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-onprem-analytics",
+              name: "Predictive Analytics On-Prem",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Platform analytics tools like Pega Prediction Studio and Salesforce Einstein Analytics provide well-integrated predictive capabilities. Organizations with significant analytics workloads may find that equivalent capabilities can be delivered using open-source ML frameworks at a different cost structure, while maintaining platform integration through lightweight APIs.",
+              currentCost: "$300K–$900K/yr",
+              currentCostDesc: "Platform analytics licensing fees",
+              aiSolution: "Deploy equivalent predictive analytics capabilities using open-source tools running on your infrastructure. Customer churn prediction, demand forecasting, risk scoring — all without per-prediction fees. Platform integration via lightweight APIs.",
+              roiMetric: "60–80% analytics cost reduction",
+              howWeHelp: ["Inventory your current analytics models and their platform costs","Stand up equivalent models locally in open-source for your high-volume workloads","Build automated model training and deployment pipelines","Integrate predictions back into your platform workflows"],
+              implementationTime: "6–8 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-report-generation",
+              name: "AI Report Generation & NL Querying",
+              isExisting: false,
+              platforms: ["pega","salesforce"],
+              problem: "Generating reports requires specialized knowledge of the platform's reporting tools, data models, and query languages. Business users wait days for reports from the BI team. Ad-hoc questions go unanswered because nobody has time to build the query.",
+              currentCost: "$150K–$400K/yr",
+              currentCostDesc: "BI team labor + delayed decision-making from slow reporting",
+              aiSolution: "Natural language querying that lets business users ask questions in plain English — 'Show me Q4 case resolution times by region' — and get instant results. AI translates questions into platform queries, generates visualizations, and explains the results.",
+              roiMetric: "80% of routine reports self-served by business users",
+              howWeHelp: ["Map your most-requested reports and BI bottlenecks","Deploy natural language query capabilities on your data","Train the system on your domain-specific terminology","Build self-service dashboards with AI-assisted exploration"],
+              implementationTime: "5–7 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-data-archival",
+              name: "Intelligent Data Archival & Purging",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Pega databases grow continuously. Static archival policies either archive too aggressively (breaking active processes) or too conservatively (ballooning storage and degrading performance). Manual archival management is time-consuming and risky.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Growing storage costs + performance degradation from database volume",
+              aiSolution: "AI analyzes data access patterns, regulatory requirements, and process dependencies to create intelligent archival policies. Data that's truly cold gets archived; data that's referenced by active processes stays live. Automated, safe, continuous.",
+              roiMetric: "40% reduction in active database size",
+              howWeHelp: ["Analyze your data growth patterns and access frequency","Build intelligent archival models respecting regulatory constraints","Implement automated archival pipelines with safety checks","Monitor database performance improvement and storage savings"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-data-integrity",
+              name: "Data Integrity Anomaly Detection",
+              isExisting: false,
+              platforms: ["pega","salesforce"],
+              problem: "Data quality issues — duplicates, inconsistencies, orphaned records, impossible values — accumulate silently and corrupt downstream processes, reports, and decisions. Manual data quality checks are infrequent and incomplete.",
+              currentCost: "$150K–$500K/yr",
+              currentCostDesc: "Bad decisions from corrupt data + cleanup labor",
+              aiSolution: "AI continuously monitors your data for anomalies — statistical outliers, referential integrity violations, temporal impossibilities, and pattern breaks. Issues are flagged in real-time with root cause analysis and suggested corrections.",
+              roiMetric: "90% of data quality issues detected automatically",
+              howWeHelp: ["Profile your data quality landscape and identify systemic issues","Deploy AI anomaly detection across critical data entities","Build automated correction workflows for common patterns","Establish data quality dashboards and trend monitoring"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            }
+          ]
+        },
+        {
+          id: "devops",
+          name: "DevOps & Pipeline",
+          useCases: [
+            {
+              id: "ai-code-review-pega",
+              name: "AI Code Review & Tech Debt Detection",
+              isExisting: true,
+              platforms: ["pega"],
+              problem: "Pega applications accumulate technical debt through guardrail violations, inefficient rule structures, and architectural drift. Manual code reviews are expensive, inconsistent, and typically only catch issues at PR time — long after the debt is introduced.",
+              currentCost: "$200K–$500K/yr",
+              currentCostDesc: "Production issues from tech debt + manual review labor",
+              aiSolution: "AI continuously scans your Pega rulebase for guardrail violations, performance anti-patterns, security vulnerabilities, and architectural drift. Issues are caught at development time, prioritized by impact, and accompanied by specific fix recommendations.",
+              roiMetric: "Prevent 3–5 production issues per quarter",
+              howWeHelp: ["Configure AI scanning for your Pega ruleset structure","Establish quality gates in your development pipeline","Build remediation plans for existing tech debt backlog","Train your team on AI-assisted development practices"],
+              implementationTime: "3–5 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-predictive-failure",
+              name: "Predictive Failure Analysis",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Deployments fail in production because testing environments don't perfectly replicate production conditions. Certain combinations of changes, configurations, and data states create failures that only manifest at scale.",
+              currentCost: "$300K–$800K/yr",
+              currentCostDesc: "Production deployment failures + rollback costs",
+              aiSolution: "AI analyzes historical deployment outcomes, change patterns, and environmental differences to predict which deployments are likely to fail and why. High-risk deployments are flagged before promotion with specific risk factors and mitigation recommendations.",
+              roiMetric: "60% reduction in deployment failures",
+              howWeHelp: ["Analyze your historical deployment success/failure patterns","Build predictive models from change attributes and outcomes","Integrate risk scoring into your deployment pipeline","Establish automated gates for high-risk deployments"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-test-gen-pega",
+              name: "AI-Powered Test Generation",
+              isExisting: true,
+              platforms: ["pega"],
+              problem: "Test coverage for Pega applications is chronically insufficient. Writing test scenarios for complex case flows, decision logic, and integration points is tedious and time-consuming. Teams ship with inadequate coverage because testing is the first thing cut when deadlines loom.",
+              currentCost: "$200K–$500K/yr",
+              currentCostDesc: "Production defects from inadequate testing + testing labor",
+              aiSolution: "AI generates comprehensive test scenarios by analyzing your Pega case types, decision strategies, and integration points. It identifies untested paths, boundary conditions, and edge cases that humans miss. 80% more coverage with 50% less manual effort.",
+              roiMetric: "80% more test coverage, 50% less testing effort",
+              howWeHelp: ["Analyze your current test coverage and identify critical gaps","Deploy AI test generation for your case types and flows","Integrate generated tests into your CI/CD pipeline","Build continuous test maintenance and regeneration processes"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-merge-conflict",
+              name: "Merge Conflict Prediction for Rulesets",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Large Pega teams working across branches and rulesets encounter merge conflicts that are expensive to resolve — especially when they involve complex decision strategies or UI rules. Conflicts are discovered at merge time, blocking releases.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Release delays + conflict resolution effort",
+              aiSolution: "AI tracks concurrent development across branches, identifies rules being modified by multiple teams, and predicts conflicts days before merge time. Teams can coordinate changes proactively or resolve conflicts incrementally rather than in a last-minute crunch.",
+              roiMetric: "70% fewer merge-time surprises",
+              howWeHelp: ["Analyze your branching strategy and historical conflict patterns","Deploy AI monitoring of concurrent rule modifications","Build proactive conflict notification workflows","Integrate with your Pega DevOps pipeline for automated alerting"],
+              implementationTime: "3–5 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-guardrail-enforcement",
+              name: "AI Guardrail Compliance Enforcement",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Pega guardrails exist for good reasons, but enforcement is inconsistent — especially under deadline pressure. Guardrail violations accumulate, creating performance problems, upgrade blockers, and maintenance nightmares that cost far more than the time 'saved' by ignoring them.",
+              currentCost: "$150K–$500K/yr",
+              currentCostDesc: "Upgrade blockers + performance issues from guardrail violations",
+              aiSolution: "AI enforces guardrail compliance at commit time — not as a report that gets ignored, but as a gate that blocks violations from entering the codebase. Provides specific remediation guidance and auto-fixes for common violations.",
+              roiMetric: "Guardrail compliance gated at commit time",
+              howWeHelp: ["Audit your current guardrail violation landscape","Implement AI-powered compliance gates in your pipeline","Build auto-fix capabilities for common violation patterns","Create remediation plans for existing violations"],
+              implementationTime: "3–4 weeks",
+              complexity: "low"
+            }
+          ]
+        },
+        {
+          id: "operations",
+          name: "Platform Operations",
+          useCases: [
+            {
+              id: "ai-anomaly-detection",
+              name: "AI Anomaly Detection",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Production monitoring is threshold-based — you set static alerts for CPU, memory, response time. But real problems emerge as subtle pattern changes that static thresholds miss until they become full-blown incidents 30–60 minutes later.",
+              currentCost: "$300K–$1M/yr",
+              currentCostDesc: "Sev1 incident costs + MTTR from late detection",
+              aiSolution: "AI learns your application's normal behavior patterns across hundreds of metrics simultaneously. Detects subtle anomalies — unusual correlation changes, gradual degradation, atypical usage patterns — 30–60 minutes before they become incidents.",
+              roiMetric: "30–60 minute earlier incident detection",
+              howWeHelp: ["Instrument your platform for comprehensive telemetry collection","Train anomaly detection models on your normal operating patterns","Build automated alerting and escalation workflows","Integrate with your incident management process"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-capacity-planning",
+              name: "AI Capacity Planning",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Capacity planning typically balances two approaches: reactive scaling after demand spikes, or conservative overprovisioning to prevent them. Real demand patterns are complex — seasonal trends, campaign spikes, organic growth — and manual forecasting struggles to keep pace.",
+              currentCost: "$200K–$800K/yr",
+              currentCostDesc: "Infrastructure overprovisioning or performance incidents",
+              aiSolution: "AI predicts capacity needs weeks in advance by analyzing historical patterns, planned events, growth trends, and external factors. Right-size infrastructure dynamically — scale up before spikes, scale down during valleys — without human intervention.",
+              roiMetric: "Predict load spikes weeks in advance, 30% infra savings",
+              howWeHelp: ["Analyze your historical capacity utilization patterns","Build demand forecasting models incorporating business events","Implement auto-scaling recommendations or policies","Monitor forecast accuracy and continuously improve models"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-chaos-engineering",
+              name: "Chaos Engineering with AI",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "Traditional chaos engineering is random — injecting failures and seeing what breaks. This is valuable but inefficient and risky. You spend most of your chaos budget testing resilience that already works, while missing the failure modes that would actually cause outages.",
+              currentCost: "$150K–$400K/yr",
+              currentCostDesc: "Undirected chaos testing costs + undiscovered failure modes",
+              aiSolution: "AI-directed chaos engineering that identifies the most likely and most impactful failure scenarios based on your architecture, dependency map, and historical incident patterns. Tests are targeted at real risk areas, maximizing discovery of critical weaknesses.",
+              roiMetric: "3x more critical findings per chaos test cycle",
+              howWeHelp: ["Map your architecture's dependency graph and failure domains","Build AI models of your most likely failure scenarios","Design and execute targeted chaos experiments","Remediate findings and build resilience playbooks"],
+              implementationTime: "6–8 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-root-cause",
+              name: "Automated Root Cause Analysis",
+              isExisting: true,
+              platforms: ["pega","salesforce"],
+              problem: "When a Sev1 hits, engineers spend hours correlating logs, traces, and metrics across systems to find root cause. The investigation is sequential — check this, then check that — while the business bleeds money every minute. Tribal knowledge is required; it doesn't scale.",
+              currentCost: "$300K–$800K/yr",
+              currentCostDesc: "Extended MTTR during Sev1 incidents",
+              aiSolution: "AI correlates logs, metrics, traces, and change records across your entire stack in minutes, not hours. Identifies the most probable root cause, provides supporting evidence, and suggests remediation steps. Reduces MTTR from hours to minutes.",
+              roiMetric: "70% reduction in mean time to root cause",
+              howWeHelp: ["Integrate your telemetry sources for cross-system correlation","Train root cause models on your historical incident data","Build automated investigation playbooks","Integrate with your incident management workflow"],
+              implementationTime: "5–7 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-node-health",
+              name: "Node Health Prediction & Auto-Healing",
+              isExisting: false,
+              platforms: ["pega"],
+              problem: "Nodes in any long-running application cluster degrade gradually — memory leaks, thread pool exhaustion, connection pool saturation. By the time monitoring catches it, the node is already affecting users. Restarts are manual and disruptive.",
+              currentCost: "$100K–$400K/yr",
+              currentCostDesc: "User impact from degraded nodes + manual restart disruption",
+              aiSolution: "AI monitors node-level health metrics and predicts degradation trajectories. When a node is heading toward trouble, it's automatically drained and restarted during low-traffic windows before users are affected. Zero-impact maintenance.",
+              roiMetric: "90% reduction in user-impacting node degradation",
+              howWeHelp: ["Instrument your Pega cluster for node-level telemetry","Build degradation prediction models for each failure mode","Implement automated drain-and-restart orchestration","Monitor node health trends and optimize restart scheduling"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "salesforce",
+      name: "Salesforce Platform",
+      color: "green",
+      areas: [
+        {
+          id: "crm-core",
+          name: "CRM Core (Sales & Service Cloud)",
+          useCases: [
+            {
+              id: "ai-local-nlp",
+              name: "Local NLP for Customer Service",
+              isExisting: true,
+              platforms: ["salesforce","pega"],
+              problem: "Platform-native NLP capabilities like Salesforce Einstein and Pega NLP provide integrated sentiment analysis, intent detection, and entity extraction. At Fortune 500 interaction volumes, the cumulative licensing investment can be significant. Modern open-source NLP models have reached comparable accuracy levels, offering organizations an alternative for high-volume processing.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "Per-interaction NLP licensing fees",
+              aiSolution: "Deploy local NLP models for sentiment analysis, intent classification, and entity extraction. Modern open-source models match or exceed platform-native accuracy. Run on your infrastructure with zero per-interaction fees.",
+              roiMetric: "70–85% NLP cost reduction",
+              howWeHelp: ["Benchmark platform-native NLP against open-source alternatives on your data","Train and fine-tune local models for your domain vocabulary","Deploy with A/B testing against platform models","Monitor accuracy and continuously improve"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-email-triage",
+              name: "AI-Driven Email & Communication Triage",
+              isExisting: true,
+              platforms: ["salesforce","pega"],
+              problem: "Every inbound email, chat, and message needs to be read, categorized, prioritized, and routed to the right team. Platform-native processing charges per-message, and manual triage creates bottlenecks that delay response times.",
+              currentCost: "$150K–$400K/yr",
+              currentCostDesc: "Per-message processing fees + manual triage labor",
+              aiSolution: "Local AI reads every inbound communication, extracts key information, determines category and urgency, and routes to the correct queue — all in milliseconds with no per-message fees. Handles multi-language and multi-channel inputs consistently.",
+              roiMetric: "85% auto-categorization accuracy, 60% faster routing",
+              howWeHelp: ["Analyze your current triage patterns and routing rules","Train multi-channel classification models on your historical data","Deploy with escalation paths for low-confidence items","Monitor accuracy and expand automation coverage"],
+              implementationTime: "3–5 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-lead-scoring",
+              name: "AI Lead Scoring & Opportunity Prediction",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Platform-native lead scoring tools provide valuable baseline capabilities. Custom models trained on your own win/loss data can capture your specific market dynamics, sales cycle nuances, and unique customer signals — tuned to how your pipeline actually converts.",
+              currentCost: "$150K–$500K/yr",
+              currentCostDesc: "Einstein licensing + the revenue left in an unranked pipeline",
+              aiSolution: "Custom ML models trained on YOUR win/loss data, engagement signals, and firmographic data. Tuned to your specific sales patterns — they learn how your pipeline actually converts. Scores update in real-time as new signals arrive.",
+              roiMetric: "35% improvement in lead-to-opportunity conversion",
+              howWeHelp: ["Analyze your historical win/loss patterns and engagement signals","Build custom scoring models tailored to your sales cycle","Integrate scores into Salesforce lead views and assignment rules","A/B test against Einstein scores and continuously optimize"],
+              implementationTime: "5–7 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-escalation-routing",
+              name: "Intelligent Escalation & Omnichannel Routing",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Salesforce Omni-Channel provides a dependable routing backbone; a local model adds the context signals on top — agent performance, customer history, real-time context. Escalations are often unnecessary — the original agent could have resolved the issue with better information.",
+              currentCost: "$150K–$400K/yr",
+              currentCostDesc: "Unnecessary escalations + suboptimal agent matching",
+              aiSolution: "AI-powered routing that considers agent expertise, customer sentiment trajectory, case complexity, and predicted resolution path. Reduces escalations by providing agents with AI-generated resolution suggestions before they escalate.",
+              roiMetric: "40% reduction in unnecessary escalations",
+              howWeHelp: ["Analyze your current escalation patterns and identify preventable ones","Build intelligent routing models from agent performance data","Deploy AI resolution suggestions to reduce escalation need","Monitor escalation rates and customer satisfaction impact"],
+              implementationTime: "5–7 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-knowledge-recommendation",
+              name: "AI Knowledge Article Recommendation",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Salesforce Knowledge contains valuable articles, but at enterprise volume the right one is hard to surface in the moment — keyword queries return plenty of results without the context of the case at hand. Agents spend minutes searching when the answer exists — just buried.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Agent time searching for knowledge + inconsistent service quality",
+              aiSolution: "AI reads the case context and proactively recommends the most relevant knowledge articles — before the agent even searches. Semantic matching understands intent, not just keywords. Articles are ranked by predicted helpfulness for the specific case.",
+              roiMetric: "50% faster knowledge retrieval, 30% higher FCR",
+              howWeHelp: ["Analyze your knowledge base content and agent search patterns","Build semantic search and recommendation models","Integrate proactive recommendations into the case view","Monitor article utilization and identify content gaps"],
+              implementationTime: "3–5 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-customer-360",
+              name: "Customer 360 Enrichment via Local AI",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Achieving a truly unified customer view across multiple clouds and data sources is challenging. Organizations may find that cross-cloud data unification, third-party enrichment, and real-time insight generation require additional investment beyond the core platform.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "Data enrichment services + premium Salesforce add-ons",
+              aiSolution: "Local AI unifies customer data across all your systems — not just Salesforce — into a true 360 view. Entity resolution, data enrichment from public sources, behavioral pattern analysis, and relationship mapping. All running locally with no per-record fees.",
+              roiMetric: "60% reduction in data enrichment costs",
+              howWeHelp: ["Map your customer data sources and identify unification gaps","Build local entity resolution and enrichment pipelines","Deploy AI-powered behavioral and relationship analysis","Integrate enriched profiles back into Salesforce"],
+              implementationTime: "6–8 weeks",
+              complexity: "high"
+            }
+          ]
+        },
+        {
+          id: "marketing-cloud",
+          name: "Marketing Cloud & Engagement",
+          useCases: [
+            {
+              id: "ai-journey-optimization",
+              name: "AI Journey Optimization",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Journey Builder provides powerful journey orchestration capabilities, but optimization is often limited to manual design and basic A/B testing. Marketers looking for individual-level personalization and continuous optimization may find that AI augmentation can significantly accelerate the optimization cycle.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "Marketing Cloud premium features + suboptimal campaign performance",
+              aiSolution: "AI continuously optimizes journey paths for each individual — which message, which channel, which timing, which content — based on real-time engagement signals. Every customer gets a personalized journey that adapts as they interact.",
+              roiMetric: "30% improvement in journey conversion rates",
+              howWeHelp: ["Analyze your current journey performance and identify optimization opportunities","Build individual-level journey optimization models","Integrate with Marketing Cloud for real-time path adjustment","Monitor conversion lift and continuously improve"],
+              implementationTime: "6–8 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-audience-segmentation",
+              name: "Local Audience Segmentation",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Salesforce audience segmentation gives you a dependable framework of criteria and clusters. True micro-segmentation — finding nuanced behavioral cohorts that respond differently — requires data science expertise and compute resources that most marketing teams don't have.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Generic segmentation leading to poor targeting + data science costs",
+              aiSolution: "AI discovers natural audience segments from your behavioral data — segments you wouldn't think to look for. Micro-segmentation at scale finds the cohorts that respond to specific messages, channels, and offers, enabling precision targeting.",
+              roiMetric: "25% improvement in campaign response rates",
+              howWeHelp: ["Analyze your customer behavioral data for natural clustering","Build AI segmentation models beyond traditional demographics","Integrate micro-segments into Marketing Cloud audiences","Test and validate segment-specific campaign strategies"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-content-personalization",
+              name: "AI Content Personalization Engine",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Template-based personalization has a scale ceiling anywhere — swap a name, change a product image. True content personalization — tone, length, topics, value propositions tailored to each recipient — is manual in any tool, and manual doesn't scale.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Generic content performance + creative production costs",
+              aiSolution: "Local LLMs generate personalized content variations at scale — subject lines, body copy, CTAs — optimized for each recipient's engagement history, preferences, and predicted response. Every email, every message is individually crafted.",
+              roiMetric: "40% improvement in email engagement rates",
+              howWeHelp: ["Analyze your content performance data and identify personalization opportunities","Deploy local LLMs for content generation with your brand voice","Build A/B testing frameworks for personalized content","Monitor engagement metrics and optimize generation parameters"],
+              implementationTime: "5–7 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-send-time",
+              name: "Send-Time Optimization",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Marketing emails go out in batch sends at times the marketing team guesses are optimal. In reality, every recipient has different engagement patterns — some check email at 6am, others at 10pm. Batch sending guarantees suboptimal timing for most recipients.",
+              currentCost: "$50K–$150K/yr",
+              currentCostDesc: "Lower open rates from suboptimal send timing",
+              aiSolution: "AI learns each recipient's individual engagement patterns and delivers messages at their predicted peak engagement window. Every message arrives when that specific person is most likely to open and act on it.",
+              roiMetric: "20% improvement in open rates",
+              howWeHelp: ["Analyze your email engagement patterns by recipient","Build individual send-time prediction models","Integrate with Marketing Cloud send scheduling","Monitor open rate improvement and optimize"],
+              implementationTime: "3–4 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-churn-prediction",
+              name: "Churn Prediction & Proactive Retention",
+              isExisting: false,
+              platforms: ["salesforce","pega"],
+              problem: "By the time a customer signals they want to leave, it's usually too late. Traditional churn indicators — declined usage, support ticket volume — fire late by nature. The subtle behavioral signals that predict churn weeks in advance go undetected.",
+              currentCost: "$200K–$800K/yr",
+              currentCostDesc: "Customer churn that could have been prevented",
+              aiSolution: "AI monitors hundreds of behavioral signals per customer and identifies churn risk weeks before traditional indicators trigger. Proactive retention actions — personalized outreach, offers, engagement campaigns — are triggered automatically for at-risk customers.",
+              roiMetric: "25% reduction in preventable churn",
+              howWeHelp: ["Analyze your historical churn patterns and identify leading indicators","Build multi-signal churn prediction models","Design and automate proactive retention workflows","Monitor retention impact and continuously improve predictions"],
+              implementationTime: "6–8 weeks",
+              complexity: "high"
+            }
+          ]
+        },
+        {
+          id: "analytics-einstein",
+          name: "Analytics & Einstein",
+          useCases: [
+            {
+              id: "ai-sf-analytics",
+              name: "On-Prem Predictive Analytics",
+              isExisting: true,
+              platforms: ["salesforce"],
+              problem: "Einstein Analytics provides well-integrated predictive capabilities including forecasting, trend analysis, and anomaly detection. Organizations looking to scale their analytics workloads may find that open-source ML alternatives can deliver similar capabilities with a different cost model, while maintaining integration with Salesforce as the presentation layer.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "Einstein Analytics licensing fees",
+              aiSolution: "Deploy equivalent analytics capabilities locally using open-source ML. Same algorithms, same accuracy, your infrastructure, no per-user licensing. Lightweight API integration keeps Salesforce as the presentation layer.",
+              roiMetric: "70% analytics cost reduction",
+              howWeHelp: ["Inventory your Einstein Analytics usage and licensing costs","Stand up equivalent capabilities locally using open-source alternatives","Build API integration for seamless Salesforce display","Transition users with minimal workflow disruption"],
+              implementationTime: "5–7 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-data-enrichment",
+              name: "Smart Data Enrichment",
+              isExisting: true,
+              platforms: ["salesforce"],
+              problem: "Third-party data enrichment services provide valuable data but typically charge per-record fees that scale with volume. Organizations at Fortune 500 scale may find that a significant portion of enrichment data can be sourced from publicly available information using AI extraction and structuring.",
+              currentCost: "$100K–$400K/yr",
+              currentCostDesc: "Third-party data enrichment service fees",
+              aiSolution: "Local AI extracts and structures enrichment data from public sources — company websites, SEC filings, LinkedIn profiles, news articles. Continuous enrichment without per-record fees. Data stays on your infrastructure.",
+              roiMetric: "60–80% enrichment cost reduction",
+              howWeHelp: ["Audit your current enrichment sources, costs, and data quality","Build local enrichment pipelines from public data sources","Validate enrichment quality against paid services","Transition to local enrichment with fallback to paid sources"],
+              implementationTime: "5–7 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-dashboard-autogen",
+              name: "AI Dashboard Auto-Generation",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Building Salesforce dashboards requires admin expertise, and stakeholders wait days or weeks for the dashboards they need. The dashboard backlog grows while business decisions are made without data visibility.",
+              currentCost: "$100K–$250K/yr",
+              currentCostDesc: "Admin labor + delayed data visibility for business users",
+              aiSolution: "AI generates dashboards from natural language descriptions — 'Show me regional sales pipeline by stage with quarter-over-quarter trends.' Stakeholders describe what they want to see, and the system builds it automatically with appropriate visualizations.",
+              roiMetric: "70% reduction in dashboard creation time",
+              howWeHelp: ["Analyze your dashboard request backlog and common patterns","Deploy AI dashboard generation capabilities","Train the system on your reporting standards and conventions","Empower business users with self-service dashboard creation"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-metric-anomaly",
+              name: "Business Metric Anomaly Detection",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "KPI dashboards show you what happened but not when something unusual is happening. Revenue dips, conversion rate changes, and pipeline shifts are noticed days or weeks late because nobody monitors every metric continuously.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Late detection of business metric changes",
+              aiSolution: "AI monitors all your business metrics continuously and alerts when any metric deviates significantly from expected patterns — accounting for seasonality, trends, and known events. You learn about problems and opportunities in real-time, not in next week's report.",
+              roiMetric: "Real-time anomaly detection across all business metrics",
+              howWeHelp: ["Identify your critical business metrics and baseline patterns","Deploy continuous anomaly monitoring","Build alert routing and escalation workflows","Integrate with your existing reporting and BI tools"],
+              implementationTime: "3–5 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-forecast-replacement",
+              name: "Local Pipeline Forecast AI",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Platform-native forecasting tools provide valuable baseline predictions. Custom models trained on your historical data can capture the specific nuances of your sales cycle, market dynamics, and team behavior patterns — tuned to your specific business context.",
+              currentCost: "$150K–$400K/yr",
+              currentCostDesc: "Einstein Forecasting licensing at per-user scale",
+              aiSolution: "Custom forecasting models trained on your historical pipeline data, win/loss patterns, sales cycle dynamics, and seasonal trends. Tuned to your specific business — they learn your pipeline, your win/loss patterns, your cycle — with no per-user licensing.",
+              roiMetric: "30% more accurate pipeline forecasts, zero licensing",
+              howWeHelp: ["Analyze your historical forecast accuracy and identify gaps","Build custom models from your pipeline and outcome data","Integrate forecasts into Salesforce reporting","Continuously retrain as market conditions evolve"],
+              implementationTime: "5–7 weeks",
+              complexity: "medium"
+            }
+          ]
+        },
+        {
+          id: "sf-integration",
+          name: "Integration & APIs (MuleSoft)",
+          useCases: [
+            {
+              id: "ai-sf-integration-opt",
+              name: "AI Integration Optimization",
+              isExisting: true,
+              platforms: ["salesforce"],
+              problem: "Salesforce integration layers — often built on MuleSoft — accumulate complexity as requirements evolve. Some API flows and synchronization patterns become redundant over time, and transformation logic grows beyond current needs, creating optimization opportunities.",
+              currentCost: "$200K–$800K/yr",
+              currentCostDesc: "MuleSoft licensing + redundant integration maintenance",
+              aiSolution: "AI analyzes your complete Salesforce integration landscape, identifies redundant flows, unnecessary sync operations, and optimization opportunities. Rationalizes your integration architecture to reduce costs and complexity.",
+              roiMetric: "40–50% reduction in integration costs",
+              howWeHelp: ["Map your Salesforce integration topology end-to-end","Identify redundant flows and consolidation opportunities","Design a rationalized integration architecture","Implement changes incrementally with zero downtime"],
+              implementationTime: "6–10 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-sf-api-gateway",
+              name: "Smart API Gateway for Salesforce",
+              isExisting: true,
+              platforms: ["salesforce"],
+              problem: "Salesforce API limits are a constant constraint — daily limits, concurrent limits, bulk limits. Exceeding them breaks integrations. Staying under them often means accepting stale data or building complex throttling logic.",
+              currentCost: "$100K–$400K/yr",
+              currentCostDesc: "API limit management + premium API access licensing",
+              aiSolution: "An intelligent gateway that optimizes every Salesforce API interaction — batching requests, caching responses, predicting which data will be needed, and scheduling non-urgent syncs for off-peak windows. Stay well under limits while keeping data fresher.",
+              roiMetric: "50–70% reduction in API call consumption",
+              howWeHelp: ["Profile your Salesforce API usage patterns","Deploy intelligent caching and batching","Implement predictive prefetching for common patterns","Monitor API consumption and optimize strategies"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-data-migration",
+              name: "AI-Powered Data Migration",
+              isExisting: true,
+              platforms: ["salesforce","pega"],
+              problem: "Data migrations to, from, or between platforms are expensive, risky, and slow. Manual mapping, transformation rules, and quality validation demand heavy effort and still result in data quality issues that take months to clean up.",
+              currentCost: "$500K–$2M",
+              currentCostDesc: "Migration project costs (one-time, but recurrent across projects)",
+              aiSolution: "AI automates schema mapping, data transformation, and quality validation. It learns mapping patterns from samples, identifies data quality issues before migration, and validates migrated data automatically. Faster, cheaper, and higher quality than manual migration.",
+              roiMetric: "60% faster migrations with higher data quality",
+              howWeHelp: ["Analyze source and target schemas for AI-assisted mapping","Build transformation pipelines with automated quality checks","Execute migration with continuous validation","Post-migration quality assurance and issue resolution"],
+              implementationTime: "6–10 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-event-stream",
+              name: "Event Stream Optimization",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Salesforce Platform Events and Change Data Capture generate high volumes of events that downstream systems must process. Many events are irrelevant to downstream consumers, creating unnecessary processing load and costs.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "High event processing costs + infrastructure for event handling",
+              aiSolution: "AI filters and prioritizes event streams — learning which events matter to which consumers, suppressing duplicates, batching related events, and predicting which events will trigger downstream actions. Downstream systems process only what matters.",
+              roiMetric: "50% reduction in event processing volume",
+              howWeHelp: ["Profile your event streams and downstream consumption patterns","Build intelligent event filtering and prioritization","Deploy optimized event routing to consumers","Monitor processing reduction and data freshness"],
+              implementationTime: "4–5 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-api-batching",
+              name: "Intelligent API Call Batching",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Applications make many small Salesforce API calls that could be batched but aren't — each call incurs overhead and counts against limits. Developers don't batch because batch logic is complex and varies by API version and object type.",
+              currentCost: "$50K–$200K/yr",
+              currentCostDesc: "Redundant API calls + engineering time on optimization",
+              aiSolution: "An intelligent batching layer that automatically groups API calls by type, timing, and dependency. Applications make simple calls; the AI layer optimizes them into efficient batches transparently. No application code changes required.",
+              roiMetric: "40% fewer API calls with zero code changes",
+              howWeHelp: ["Profile your API call patterns and identify batching opportunities","Deploy transparent batching layer","Test thoroughly for data consistency","Monitor API reduction and response time improvement"],
+              implementationTime: "3–4 weeks",
+              complexity: "low"
+            }
+          ]
+        },
+        {
+          id: "sf-governance",
+          name: "Governance & Compliance",
+          useCases: [
+            {
+              id: "ai-license-optimization",
+              name: "AI License Usage Optimization",
+              isExisting: true,
+              platforms: ["salesforce","pega"],
+              problem: "Enterprise license allocation is typically based on projected needs at contract time, but actual usage patterns often diverge over time. Some users may be on higher tiers than their usage warrants, while others may be underutilizing their allocation. Without continuous usage visibility, optimization opportunities go unnoticed.",
+              currentCost: "$200K–$800K/yr",
+              currentCostDesc: "License overspend from mismatched tiers and unused seats",
+              aiSolution: "AI continuously monitors actual license usage — who uses what features, how often, and what tier they actually need. Identifies unused licenses, over-provisioned tiers, and consolidation opportunities with specific recommendations for your next renewal.",
+              roiMetric: "20–40% license cost reduction",
+              howWeHelp: ["Analyze your current license allocation vs. actual usage","Build usage models for optimal tier recommendations","Present findings for your next license negotiation","Implement ongoing monitoring to prevent license drift"],
+              implementationTime: "3–4 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-compliance-monitoring",
+              name: "Automated Compliance Monitoring",
+              isExisting: true,
+              platforms: ["salesforce","pega"],
+              problem: "GDPR, HIPAA, SOX, and industry-specific regulations require continuous compliance monitoring. Manual audits are periodic, expensive, and always playing catch-up. Between audits, compliance gaps accumulate undetected.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "Audit costs + manual compliance review hours",
+              aiSolution: "AI monitors your platform continuously for compliance violations — data retention breaches, access control gaps, unauthorized data sharing, PII exposure. Real-time detection supplements periodic audits, catching issues as they occur rather than months later.",
+              roiMetric: "Real-time compliance monitoring, 80% faster violation detection",
+              howWeHelp: ["Map your regulatory requirements to platform-specific checks","Deploy continuous compliance monitoring","Build automated remediation workflows for common violations","Generate audit-ready compliance reports"],
+              implementationTime: "5–7 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-security-assessment",
+              name: "AI Security Posture Assessment",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Salesforce security configuration is complex — profiles, permission sets, sharing rules, field-level security, org-wide defaults. Security reviews are manual, infrequent, and miss subtle misconfigurations that create data exposure risks.",
+              currentCost: "$100K–$400K/yr",
+              currentCostDesc: "Security assessment cycles + manual review effort",
+              aiSolution: "AI continuously evaluates your Salesforce security configuration against best practices and your specific requirements. Identifies misconfigurations, overly broad permissions, unused admin accounts, and potential data exposure paths before they become risks.",
+              roiMetric: "Continuous security assessment, 70% faster misconfiguration detection",
+              howWeHelp: ["Audit your current Salesforce security configuration","Deploy AI security scanning and monitoring","Prioritize findings by risk severity and exposure","Implement automated security enforcement policies"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-fls-anomaly",
+              name: "Field-Level Security Anomaly Detection",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Field-level security in Salesforce drifts over time — new fields inherit incorrect security, permission changes cascade unexpectedly, and nobody audits FLS systematically. Sensitive data becomes accessible to users who shouldn't see it.",
+              currentCost: "$50K–$200K/yr",
+              currentCostDesc: "Manual FLS audit hours across profiles and permission sets",
+              aiSolution: "AI maps your complete field-level security landscape, identifies anomalies — fields with inconsistent security across profiles, sensitive fields with overly broad access, security gaps from recent changes — and recommends corrections.",
+              roiMetric: "FLS monitored across every profile and permission set",
+              howWeHelp: ["Map your complete FLS configuration","Deploy anomaly detection for security drift","Build automated alerting for high-risk changes","Establish FLS governance processes"],
+              implementationTime: "3–4 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-governor-limits",
+              name: "Apex Governor Limit Prediction",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Apex governor limit violations crash transactions at runtime. They're hard to predict because limits depend on execution context, data volume, and trigger cascades. Load testing catches some, but production data patterns are unique.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Transaction failures + emergency code fixes",
+              aiSolution: "AI analyzes your Apex code paths, data volumes, and trigger chains to predict which transactions are at risk of governor limit violations under production conditions. Identifies risks before deployment, not after production failures.",
+              roiMetric: "80% reduction in governor limit violations in production",
+              howWeHelp: ["Analyze your Apex codebase for governor limit risk patterns","Build prediction models based on your data volumes","Integrate limit checking into your CI/CD pipeline","Monitor production execution patterns and refine predictions"],
+              implementationTime: "4–5 weeks",
+              complexity: "medium"
+            }
+          ]
+        },
+        {
+          id: "sf-devops",
+          name: "Development & DevOps",
+          useCases: [
+            {
+              id: "ai-code-review-sf",
+              name: "AI Code Review for Apex & LWC",
+              isExisting: true,
+              platforms: ["salesforce"],
+              problem: "Salesforce Apex and Lightning Web Component code reviews are manual, inconsistent, and bottleneck the development pipeline. Reviewers miss security vulnerabilities, performance anti-patterns, and governor limit risks that only manifest in production.",
+              currentCost: "$150K–$400K/yr",
+              currentCostDesc: "Production defects + manual review bottleneck",
+              aiSolution: "AI reviews every code change for security vulnerabilities, performance issues, governor limit risks, and best practice violations. Catches issues at PR time with specific fix recommendations. Consistent quality enforcement across all developers.",
+              roiMetric: "60% fewer code-related production issues",
+              howWeHelp: ["Configure AI code review for your Apex and LWC codebase","Integrate with your version control and CI pipeline","Establish quality gates based on AI findings","Train developers on common issue patterns"],
+              implementationTime: "3–4 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-test-gen-sf",
+              name: "AI Test Generation for Salesforce",
+              isExisting: true,
+              platforms: ["salesforce"],
+              problem: "Salesforce requires 75% code coverage for deployment, but achieving meaningful test coverage — not just line coverage — is tedious and time-consuming. Teams write minimal tests to pass the coverage gate, missing real bugs.",
+              currentCost: "$150K–$400K/yr",
+              currentCostDesc: "Production defects from inadequate testing + testing labor",
+              aiSolution: "AI generates comprehensive test classes that go beyond line coverage — testing boundary conditions, negative cases, bulk data scenarios, and governor limit edge cases. Meaningful coverage that actually catches bugs, not just satisfies the deployment gate.",
+              roiMetric: "80% meaningful test coverage, 50% less testing effort",
+              howWeHelp: ["Analyze your current test coverage quality and gaps","Deploy AI test generation for your Apex classes and triggers","Integrate into your development workflow","Monitor test effectiveness and continuously improve"],
+              implementationTime: "3–5 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-sandbox-management",
+              name: "Intelligent Sandbox Management",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Salesforce sandbox management presents challenges as environments scale — refresh cycles are time-consuming, configurations drift from production, and sandbox limits require teams to coordinate. Developers spend significant time managing sandbox issues instead of building features.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Developer productivity loss + sandbox licensing costs",
+              aiSolution: "AI optimizes sandbox usage — predicting refresh needs, identifying configuration drift before it causes test failures, suggesting sandbox consolidation, and prioritizing refresh scheduling for maximum team productivity.",
+              roiMetric: "40% reduction in developer time spent on sandbox management",
+              howWeHelp: ["Audit your sandbox landscape and usage patterns","Deploy AI monitoring for configuration drift","Optimize refresh scheduling and sandbox allocation","Implement automated drift detection and correction"],
+              implementationTime: "3–4 weeks",
+              complexity: "low"
+            },
+            {
+              id: "ai-deployment-risk",
+              name: "Deployment Risk Scoring",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Salesforce deployments fail in production due to unforeseen dependencies, data volume differences, and configuration gaps between environments. Each failed deployment costs hours of rollback effort and erodes team confidence.",
+              currentCost: "$100K–$300K/yr",
+              currentCostDesc: "Failed deployments + rollback effort + delayed releases",
+              aiSolution: "AI scores each deployment package based on historical failure patterns, component complexity, dependency analysis, and environmental differences. High-risk deployments are flagged with specific risk factors and recommended mitigations before promotion.",
+              roiMetric: "50% reduction in deployment failures",
+              howWeHelp: ["Analyze your historical deployment success and failure patterns","Build risk scoring models from deployment metadata","Integrate scoring into your release management process","Establish automated gates for high-risk deployments"],
+              implementationTime: "4–5 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-metadata-analysis",
+              name: "Metadata Dependency Analysis",
+              isExisting: false,
+              platforms: ["salesforce"],
+              problem: "Metadata dependency webs grow invisible over time. Changing a field, deleting a class, or modifying a flow can break things in unexpected places. Manual impact analysis misses dependencies, leading to deployment failures and production issues.",
+              currentCost: "$100K–$250K/yr",
+              currentCostDesc: "Broken deployments + time spent on manual impact analysis",
+              aiSolution: "AI maps your complete Salesforce metadata dependency graph and provides instant impact analysis for any proposed change. Shows every component affected, predicts breakage risk, and suggests the safest change sequence.",
+              roiMetric: "90% accuracy in change impact prediction",
+              howWeHelp: ["Build your complete metadata dependency map","Deploy AI impact analysis tools","Integrate with your change management process","Monitor prediction accuracy and improve"],
+              implementationTime: "3–5 weeks",
+              complexity: "medium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "cross-platform",
+      name: "Cross-Platform",
+      color: "orange",
+      areas: [
+        {
+          id: "cross-platform-solutions",
+          name: "Multi-Platform Solutions",
+          useCases: [
+            {
+              id: "ai-document-processing",
+              name: "AI Document Processing",
+              isExisting: true,
+              platforms: ["pega","salesforce","appian"],
+              problem: "Document processing — extraction, classification, validation — is a critical enterprise capability. Platform-native tools and third-party solutions provide excellent functionality, but organizations processing high volumes may benefit from augmenting with local AI to handle the scale at a predictable cost structure.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "Per-page/per-document processing fees",
+              aiSolution: "Local AI handles document classification, data extraction, and validation with equal or better accuracy than platform-native tools. Processes invoices, contracts, forms, correspondence, and any document type — on your infrastructure, with zero per-document fees.",
+              roiMetric: "70–85% document processing cost reduction",
+              howWeHelp: ["Audit your current document processing volumes and costs","Train local models on your document types and formats","Deploy with quality monitoring and human review for edge cases","Scale processing capacity as volume grows — at fixed cost"],
+              implementationTime: "5–7 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-intelligent-caching",
+              name: "Intelligent Caching & Precomputation",
+              isExisting: true,
+              platforms: ["pega","salesforce","appian"],
+              problem: "Applications make redundant computations and data fetches because caching is primitive. Static TTLs don't match data volatility, cache invalidation is manual, and precomputation isn't used because nobody can predict what data will be needed.",
+              currentCost: "$100K–$400K/yr",
+              currentCostDesc: "Compute and API costs from redundant operations",
+              aiSolution: "AI learns your application's data access and computation patterns, builds intelligent caches with adaptive TTLs, and precomputes results before they're requested. Reduces redundant operations by 50–70% while improving response times.",
+              roiMetric: "50–70% fewer redundant API calls and computations",
+              howWeHelp: ["Profile your application's data access and computation patterns","Deploy intelligent caching with adaptive TTL management","Build precomputation pipelines for predictable access patterns","Monitor cache effectiveness and optimize continuously"],
+              implementationTime: "4–6 weeks",
+              complexity: "medium"
+            },
+            {
+              id: "ai-edge-workloads",
+              name: "Edge AI for Distributed Workloads",
+              isExisting: true,
+              platforms: ["pega","salesforce","appian"],
+              problem: "Centralized processing creates latency for global operations. Every interaction round-trips to a central data center, adding 100–500ms of latency that degrades user experience and limits real-time processing capabilities.",
+              currentCost: "$150K–$500K/yr",
+              currentCostDesc: "Latency impact on user experience + centralized infrastructure costs",
+              aiSolution: "Deploy AI inference at the edge — regional processing nodes that handle decisions, classifications, and recommendations locally. Users get sub-10ms responses regardless of location, and central systems only handle aggregation and model updates.",
+              roiMetric: "40% latency reduction for global operations",
+              howWeHelp: ["Analyze your workload geography and latency patterns","Design edge AI deployment architecture","Deploy regional inference nodes with centralized model management","Monitor performance and optimize placement"],
+              implementationTime: "8–12 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-license-consolidation",
+              name: "Multi-Platform License Consolidation",
+              isExisting: false,
+              platforms: ["pega","salesforce","appian"],
+              problem: "Enterprises running multiple platforms — Pega, Salesforce, Appian, plus middleware — have overlapping capabilities across platforms. Features bought in one platform duplicate what another platform already provides, but nobody has cross-platform visibility.",
+              currentCost: "$500K–$2M/yr",
+              currentCostDesc: "Duplicate capabilities across platform licenses",
+              aiSolution: "AI analyzes your complete platform landscape, maps capabilities across platforms, identifies overlaps, and recommends optimization. Helps you understand where each platform's strengths are best leveraged, ensuring maximum value from every license dollar.",
+              roiMetric: "15–30% reduction in total platform licensing",
+              howWeHelp: ["Inventory capabilities across all your enterprise platforms","Map feature overlaps and usage patterns","Build a consolidation roadmap with risk assessment","Execute license optimization for your next renewal cycle"],
+              implementationTime: "6–8 weeks",
+              complexity: "high"
+            },
+            {
+              id: "ai-process-harmonization",
+              name: "Cross-Platform Process Harmonization",
+              isExisting: false,
+              platforms: ["pega","salesforce","appian"],
+              problem: "The same business process — customer onboarding, claims processing, order fulfillment — often runs on different platforms across different business units. Inconsistent processes create varying customer experiences and prevent operational optimization.",
+              currentCost: "$200K–$600K/yr",
+              currentCostDesc: "Inconsistent customer experience + operational inefficiency",
+              aiSolution: "AI maps equivalent processes across platforms, identifies inconsistencies, and recommends harmonization. Creates a unified view of business processes regardless of the underlying platform, enabling consistent optimization across the enterprise.",
+              roiMetric: "30% improvement in cross-platform process consistency",
+              howWeHelp: ["Map business processes across all platforms","Identify inconsistencies and harmonization opportunities","Design unified process standards","Implement harmonized processes with platform-specific adaptations"],
+              implementationTime: "8–10 weeks",
+              complexity: "high"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// ═══════════════════════════════════════════════════════
+// TREE RENDERING
+// ═══════════════════════════════════════════════════════
+
+const chevronSVG = '<svg class="chevron" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>';
+let activeUseCaseId = null;
+
+function renderTree(filter, searchTerm) {
+  const container = document.getElementById('treeContainer');
+  container.innerHTML = '';
+  const search = (searchTerm || '').toLowerCase().trim();
+
+  USE_CASE_TREE.platforms.forEach(platform => {
+    if (filter !== 'all' && platform.id !== filter) return;
+
+    let platformHasMatch = false;
+    const platformEl = document.createElement('div');
+    platformEl.className = 'tree-platform';
+    platformEl.dataset.platform = platform.id;
+
+    let totalUseCases = 0;
+    platform.areas.forEach(a => totalUseCases += a.useCases.length);
+
+    platformEl.innerHTML = `<div class="tree-platform-header">${chevronSVG}<span class="tree-platform-name">${platform.name}</span><span class="tree-platform-count">${totalUseCases}</span></div>`;
+    const platformChildren = document.createElement('div');
+    platformChildren.className = 'tree-children';
+
+    platform.areas.forEach(area => {
+      let areaHasMatch = false;
+      const areaEl = document.createElement('div');
+      areaEl.className = 'tree-area';
+      areaEl.innerHTML = `<div class="tree-area-header">${chevronSVG}<span class="tree-area-name">${area.name}</span><span class="tree-area-count">${area.useCases.length}</span></div>`;
+      const areaChildren = document.createElement('div');
+      areaChildren.className = 'tree-children';
+
+      area.useCases.forEach(uc => {
+        if (search && !uc.name.toLowerCase().includes(search) && !uc.problem.toLowerCase().includes(search) && !uc.aiSolution.toLowerCase().includes(search)) return;
+
+        areaHasMatch = true;
+        platformHasMatch = true;
+        const ucEl = document.createElement('div');
+        ucEl.className = 'tree-usecase' + (activeUseCaseId === uc.id ? ' active' : '');
+        ucEl.dataset.id = uc.id;
+        ucEl.innerHTML = `${uc.isExisting ? '<span class="proven-dot"></span>' : ''}<span class="tree-usecase-name">${uc.name}</span>`;
+        ucEl.addEventListener('click', () => selectUseCase(platform, area, uc));
+        areaChildren.appendChild(ucEl);
+      });
+
+      areaEl.appendChild(areaChildren);
+      if (!search || areaHasMatch) {
+        platformChildren.appendChild(areaEl);
+        if (search && areaHasMatch) areaEl.classList.add('open');
+      }
+    });
+
+    platformEl.appendChild(platformChildren);
+    if (!search || platformHasMatch) {
+      container.appendChild(platformEl);
+      if (search && platformHasMatch) platformEl.classList.add('open');
+    }
+  });
+
+  // Toggle handlers for platform & area headers
+  container.querySelectorAll('.tree-platform-header').forEach(h => {
+    h.addEventListener('click', (e) => {
+      e.stopPropagation();
+      h.parentElement.classList.toggle('open');
+    });
+  });
+  container.querySelectorAll('.tree-area-header').forEach(h => {
+    h.addEventListener('click', (e) => {
+      e.stopPropagation();
+      h.parentElement.classList.toggle('open');
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// DETAIL PANEL RENDERING
+// ═══════════════════════════════════════════════════════
+
+function selectUseCase(platform, area, uc) {
+  activeUseCaseId = uc.id;
+
+  // Update tree active states
+  document.querySelectorAll('.tree-usecase').forEach(el => el.classList.remove('active'));
+  const activeEl = document.querySelector(`.tree-usecase[data-id="${uc.id}"]`);
+  if (activeEl) activeEl.classList.add('active');
+
+  // Hide welcome, show detail
+  document.getElementById('welcomeState').style.display = 'none';
+  const detail = document.getElementById('detailContent');
+  detail.style.display = 'block';
+
+  // Platform tags
+  const platformTags = uc.platforms.map(p => {
+    const cls = p === 'appian' ? 'appian' : p;
+    const label = p.charAt(0).toUpperCase() + p.slice(1);
+    return `<span class="detail-tag ${cls}">${label}</span>`;
+  }).join('');
+
+  const provenTag = uc.isExisting ? '<span class="detail-tag proven" title="A pattern in production use across the industry — the approach, not a promise about your environment">Established</span>' : '';
+  const provenLegend = uc.isExisting ? '<p class="detail-tag-legend" style="margin-top:16px;font-size:0.68rem;font-style:italic;color:#8a8aa0;">Established &middot; a pattern in production use across the industry &mdash; the approach, not a promise about your environment.</p>' : '';
+  const complexityTag = `<span class="detail-tag complexity-${uc.complexity}">${uc.complexity}</span>`;
+
+  const helpItems = uc.howWeHelp.map(h => `<li>${h}</li>`).join('');
+
+  detail.innerHTML = `
+    <div class="detail-header">
+      <div class="detail-tags">${platformTags}${provenTag}${complexityTag}</div>
+      <h2 class="detail-title">${uc.name}</h2>
+      <div class="detail-breadcrumb">${platform.name} &rsaquo; ${area.name}</div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-label">// The Opportunity</div>
+      <p class="detail-problem-text">${uc.problem}</p>
+      <div class="cost-box">
+        <div class="cost-box-desc" style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;font-family:'JetBrains Mono',monospace;">Current Estimated Investment</div>
+        <div class="cost-box-value">${uc.currentCost}</div>
+        <div class="cost-box-desc">${uc.currentCostDesc}</div>
+        <div class="cost-box-desc" style="margin-top:6px;font-style:italic;font-size:0.68rem;">* Illustrative range based on publicly available information. Actual investment varies by organization and contract.</div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-label">// The AI-Augmented Approach</div>
+      <p class="detail-solution-text">${uc.aiSolution}</p>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-label green">// Potential ROI</div>
+      <div class="roi-box">
+        <div class="roi-metric">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          ${uc.roiMetric}
+        </div>
+        <div class="roi-meta">
+          <span class="roi-meta-item"><strong>Typical Timeline:</strong> ${uc.implementationTime}</span>
+          <span class="roi-meta-item"><strong>Complexity:</strong> ${uc.complexity.charAt(0).toUpperCase() + uc.complexity.slice(1)}</span>
+        </div>
+        <div class="roi-meta" style="margin-top:4px;"><span class="roi-meta-item" style="font-style:italic;">* Projected outcomes vary by engagement scope and organizational context.</span></div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-label">// How We Help</div>
+      <ul class="help-list">${helpItems}</ul>
+    </div>
+
+    <div class="detail-cta">
+      <a href="mailto:contact@destructiveaigurus.com?subject=AI Use Case: ${encodeURIComponent(uc.name)}&body=${encodeURIComponent('I\'d like to discuss how ' + uc.name + ' can help our organization.')}" class="detail-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Talk to Dean About This
+      </a>
+    </div>
+    ${provenLegend}
+  `;
+
+  // Reset scroll
+  document.getElementById('detailPanel').scrollTop = 0;
+
+  // Update hash
+  history.replaceState(null, '', `#${platform.id}/${area.id}/${uc.id}`);
+}
+
+function showWelcome() {
+  activeUseCaseId = null;
+  document.getElementById('welcomeState').style.display = '';
+  document.getElementById('detailContent').style.display = 'none';
+  document.querySelectorAll('.tree-usecase').forEach(el => el.classList.remove('active'));
+  history.replaceState(null, '', window.location.pathname);
+}
+
+// ═══════════════════════════════════════════════════════
+// FILTER & SEARCH
+// ═══════════════════════════════════════════════════════
+
+let currentFilter = 'all';
+
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    currentFilter = tab.dataset.filter;
+    renderTree(currentFilter, document.querySelector('.search-input').value);
+  });
+});
+
+document.querySelector('.search-input').addEventListener('input', (e) => {
+  renderTree(currentFilter, e.target.value);
+});
+
+// ═══════════════════════════════════════════════════════
+// HASH ROUTING
+// ═══════════════════════════════════════════════════════
+
+function loadFromHash() {
+  const hash = window.location.hash.slice(1);
+  if (!hash) return;
+  const parts = hash.split('/');
+  if (parts.length !== 3) return;
+
+  const [platformId, areaId, useCaseId] = parts;
+  for (const platform of USE_CASE_TREE.platforms) {
+    if (platform.id !== platformId) continue;
+    for (const area of platform.areas) {
+      if (area.id !== areaId) continue;
+      for (const uc of area.useCases) {
+        if (uc.id !== useCaseId) continue;
+        // Expand tree to this node
+        renderTree('all', '');
+        const platformEl = document.querySelector(`.tree-platform[data-platform="${platformId}"]`);
+        if (platformEl) {
+          platformEl.classList.add('open');
+          const areas = platformEl.querySelectorAll('.tree-area');
+          areas.forEach(a => {
+            const nameEl = a.querySelector('.tree-area-name');
+            if (nameEl && nameEl.textContent === area.name) {
+              a.classList.add('open');
+            }
+          });
+        }
+        selectUseCase(platform, area, uc);
+        return;
+      }
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════
+
+renderTree('all', '');
+loadFromHash();
+
+window.addEventListener('hashchange', loadFromHash);
+
+// Legal modal
+document.getElementById('legalIcon').addEventListener('click', () => {
+  document.getElementById('legalOverlay').classList.add('open');
+});
+document.getElementById('legalClose').addEventListener('click', () => {
+  document.getElementById('legalOverlay').classList.remove('open');
+});
+document.getElementById('legalOverlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) e.currentTarget.classList.remove('open');
+});
+</script>
+</body>
+</html>
