@@ -58,30 +58,47 @@ a{color:inherit;text-decoration:none}
 .toy{border-top:1px solid var(--line);padding:60px 0 0}
 .face{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:54px;align-items:center}
 .toy:nth-of-type(even) .art{order:-1}
+/* keep the art column the same width on both sides of the alternation */
+.toy:nth-of-type(even) .face{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
 .face h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.55rem,3.1vw,2.3rem);
          line-height:1.08;letter-spacing:-.024em;margin-bottom:7px}
 .face .what{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.2em;
             color:var(--muted);margin-bottom:20px}
 .face p{font-size:1.04rem;line-height:1.78;color:#c2c8d6;max-width:46ch}
-.buy{display:inline-block;margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:.58rem;
-     letter-spacing:.2em;color:var(--ember);border:1px solid rgba(232,163,61,.35);
-     border-radius:2px;padding:9px 14px}
-.buy b{font-family:'Syne',sans-serif;font-weight:800;font-size:.92rem;letter-spacing:-.01em;
-       color:#fff;margin-right:5px}
+/* the price is a price — not a chip stapled to the corner */
+.buy{display:flex;align-items:center;gap:14px;margin-top:26px;padding-left:15px;
+     border-left:2px solid rgba(232,163,61,.5)}
+.buy b{font-family:'Syne',sans-serif;font-weight:800;font-size:1.62rem;letter-spacing:-.03em;
+       color:#fff;line-height:1}
+.buy span{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.17em;
+          color:var(--muted);line-height:1.95}
+/* the free one is the one he wants taken first, so it reads differently */
+.buy.free{border-left-color:var(--blue)}
+.buy.free b{color:var(--blue-lit)}
 
 .art{position:relative;border:1px solid var(--line);border-radius:3px;overflow:hidden;
-     background:var(--deep);aspect-ratio:16/10}
-.art.duo{display:grid;grid-template-columns:1fr 1fr}
+     background:var(--deep);aspect-ratio:16/10;transition:border-color .3s}
+.toy:hover .art{border-color:rgba(59,130,246,.26)}
 .art img{width:100%;height:100%;object-fit:cover;display:block}
-.pending{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;
-  width:100%;height:100%;
-  background:repeating-linear-gradient(135deg,rgba(255,255,255,.014) 0 11px,transparent 11px 22px)}
-.pending span{font-family:'JetBrains Mono',monospace;font-size:.57rem;letter-spacing:.2em;
-              color:var(--muted);text-align:center;line-height:2}
-.pending svg{width:38px;height:38px;opacity:.3}
+/* hero image with an inset detail — reads as one composition, not two near-identical photos */
+.art.duo img:nth-child(2){position:absolute;left:15px;bottom:15px;width:36%;height:auto;
+  aspect-ratio:1;border:1px solid rgba(255,255,255,.2);border-radius:2px;
+  box-shadow:0 12px 34px rgba(0,0,0,.66)}
+/* honest label — these two are drawings of the thing, never a capture of it */
+.art .drawn{position:absolute;left:0;right:0;bottom:0;padding:9px 13px;
+  font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.17em;
+  color:var(--muted);background:linear-gradient(0deg,rgba(5,5,7,.94),rgba(5,5,7,0));
+  border-top:1px solid rgba(255,255,255,.05)}
+
+/* ── the seam: the page says "look underneath", so the reveal hangs below ─ */
+.seam{position:relative;height:36px}
+.seam::before{content:'';position:absolute;left:0;top:2px;bottom:8px;width:1px;
+  background:linear-gradient(180deg,rgba(59,130,246,0),rgba(59,130,246,.6))}
+.seam i{position:absolute;left:-2.5px;bottom:0;width:6px;height:6px;border-radius:50%;
+  background:var(--blue);box-shadow:0 0 0 4px rgba(59,130,246,.12)}
 
 /* ── the reveal — visually COLDER than the toy above it ───────────────── */
-.reveal{margin:34px 0 0;border:1px solid rgba(59,130,246,.16);border-radius:3px;
+.reveal{margin:0;border:1px solid rgba(59,130,246,.16);border-radius:3px;
         background:linear-gradient(180deg,rgba(59,130,246,.05),var(--steel));overflow:hidden}
 .reveal .rh{display:flex;align-items:baseline;gap:13px;flex-wrap:wrap;
             padding:17px 26px;border-bottom:1px solid rgba(59,130,246,.14)}
@@ -117,11 +134,20 @@ footer{border-top:1px solid var(--line);padding:40px 0 60px;font-family:'JetBrai
   font-size:.6rem;letter-spacing:.14em;color:var(--muted);line-height:2.2}
 footer a{color:var(--blue-lit)}
 
+a:focus-visible{outline:2px solid var(--blue-lit);outline-offset:3px;border-radius:2px}
+
 @media(max-width:900px){
   .shell{padding:0 26px}.bar{padding:15px 26px}.nav{display:none}
-  .face{grid-template-columns:1fr;gap:28px}.toy:nth-of-type(even) .art{order:0}
+  /* must restate the even-row selector: a media query adds no specificity, so the
+     bare `.face` rule loses to `.toy:nth-of-type(even) .face` above */
+  .face,
+  .toy:nth-of-type(even) .face{grid-template-columns:1fr;gap:28px}
+  .toy:nth-of-type(even) .art{order:0}
   .rbody{grid-template-columns:1fr}
   .rbody > div:first-child{border-right:none;border-bottom:1px solid rgba(59,130,246,.12)}
+  .art.duo img:nth-child(2){width:42%;left:11px;bottom:11px}
+  .buy b{font-size:1.42rem}
+  .art .drawn{font-size:.47rem;letter-spacing:.11em;padding:8px 11px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -167,7 +193,9 @@ footer a{color:var(--blue-lit)}
           harbour is, and where the nearest restroom is when you actually need one. Katrina walks
           it with you and tells you what she knows.
         </p>
-        <div class="buy"><b>$24.99</b> ONE-TIME &middot; NO SUBSCRIPTION &middot; COMING TO BOTH STORES</div>
+        <div class="buy">
+          <b>$24.99</b><span>ONE-TIME &middot; NO SUBSCRIPTION<br>COMING TO BOTH STORES</span>
+        </div>
       </div>
       <div class="art duo">
         <img src="/lma/katrina-hero.jpg" alt="Katrina, the guide's cat, against the Salem waterfront at night">
@@ -175,6 +203,7 @@ footer a{color:var(--blue-lit)}
       </div>
     </div>
 
+    <div class="seam" aria-hidden="true"><i></i></div>
     <div class="reveal">
       <div class="rh"><em>WHAT IT ACTUALLY IS</em><b>A field-operations platform wearing a cat.</b></div>
       <div class="rbody">
@@ -222,20 +251,17 @@ footer a{color:var(--blue-lit)}
           quickest way to see what we mean by turning a pile of survey numbers into somewhere you
           can go. Take the free one first.
         </p>
-        <div class="buy"><b>FREE</b> &middot; THE TASTE &middot; IN BUILD, RUNNING ON REAL DEVICES</div>
+        <div class="buy free">
+          <b>FREE</b><span>THE TASTE &middot; TAKE THIS ONE FIRST<br>IN BUILD, RUNNING ON REAL DEVICES</span>
+        </div>
       </div>
       <div class="art">
-        <div class="pending">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <path d="M8 68 L34 40 L52 56 L74 28 L92 44" fill="none" stroke="#7d8496"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="74" cy="28" r="4" fill="#e8a33d"/>
-          </svg>
-          <span>NO CAPTURE YET<br>&mdash;<br>ARTWORK PENDING</span>
-        </div>
+        <img src="/assets/art/flying-terrain.svg" alt="A grid of elevation values drawn as a ridgeline landscape, with five marked sites standing on the ground">
+        <div class="drawn">DRAWN, NOT CAPTURED &mdash; HOW A HEIGHTFIELD BECOMES GROUND</div>
       </div>
     </div>
 
+    <div class="seam" aria-hidden="true"><i></i></div>
     <div class="reveal">
       <div class="rh"><em>WHAT IT ACTUALLY IS</em><b>Telemetry, rendered as somewhere you can go &mdash; and it cost us nothing.</b></div>
       <div class="rbody">
@@ -282,19 +308,17 @@ footer a{color:var(--blue-lit)}
           testimony, the paperwork. Read aloud, one at a time, so the history arrives as something
           you are standing inside rather than something you are looking at.
         </p>
-        <div class="buy"><b>$9.99</b> ONE-TIME &middot; IN BUILD</div>
+        <div class="buy">
+          <b>$9.99</b><span>ONE-TIME<br>IN BUILD</span>
+        </div>
       </div>
       <div class="art">
-        <div class="pending">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <rect x="26" y="16" width="34" height="52" rx="2" fill="none" stroke="#7d8496" stroke-width="2.6"/>
-            <rect x="40" y="30" width="34" height="52" rx="2" fill="none" stroke="#a855f7" stroke-width="2.6" opacity=".7"/>
-          </svg>
-          <span>DECK ART CLEARED,<br>NOT YET IMPORTED</span>
-        </div>
+        <img src="/assets/art/tarot-cards.svg" alt="Three tarot cards dealt face down in a spread, each back carrying the Magus Axis mark">
+        <div class="drawn">THE CARD BACKS &mdash; DECK ARTWORK CLEARED, NOT YET IMPORTED</div>
       </div>
     </div>
 
+    <div class="seam" aria-hidden="true"><i></i></div>
     <div class="reveal">
       <div class="rh"><em>WHAT IT ACTUALLY IS</em><b>A knowledge base with the best interface ever invented for one.</b></div>
       <div class="rbody">

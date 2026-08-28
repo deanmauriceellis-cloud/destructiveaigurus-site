@@ -75,9 +75,10 @@ a{color:inherit;text-decoration:none}
 
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;
   background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-top:32px}
-.stats div{background:var(--deep);padding:22px 24px}
-.stats b{font-family:'Syne',sans-serif;font-weight:800;font-size:1.55rem;display:block;
-         letter-spacing:-.02em;color:#fff}
+.stats div{background:var(--deep);padding:24px 24px 22px;transition:background .25s}
+.stats div:hover{background:#0c0c15}
+.stats b{font-family:'Syne',sans-serif;font-weight:800;font-size:2.15rem;display:block;
+         letter-spacing:-.03em;color:#fff;line-height:1}
 .stats span{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.16em;
             color:var(--muted);display:block;margin-top:7px;line-height:1.7}
 
@@ -89,11 +90,20 @@ a{color:inherit;text-decoration:none}
 .modes span{display:block;margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:.54rem;
             letter-spacing:.14em;color:var(--blue-lit)}
 
-.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
-.shots figure{border:1px solid var(--line);border-radius:3px;overflow:hidden;background:#000}
-.shots img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover}
+/* the instrument screens are the strongest evidence on this page — one leads, two support */
+.shots{display:grid;grid-template-columns:1.58fr 1fr;gap:12px;margin-top:26px}
+.shots figure{border:1px solid var(--line);border-radius:3px;overflow:hidden;background:#000;
+  display:flex;flex-direction:column;transition:border-color .3s}
+.shots figure:hover{border-color:rgba(59,130,246,.32)}
+.shots figure:first-child{grid-row:1/3}
+/* trim the OS window chrome: it is visual noise, and it carries the instrument's
+   name + wordmark, which this page deliberately does not state */
+.shots img{width:100%;display:block;object-fit:cover;transform:scale(1.22);
+           transform-origin:50% 100%}
+.shots figure:first-child img{flex:1;min-height:0}
+.shots figure:not(:first-child) img{aspect-ratio:16/9}
 .shots figcaption{font-family:'JetBrains Mono',monospace;font-size:.53rem;letter-spacing:.14em;
-                  color:var(--muted);padding:9px 11px;border-top:1px solid var(--line)}
+                  color:var(--muted);padding:9px 11px;border-top:1px solid var(--line);margin-top:auto}
 
 .detect{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
 .detect span{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.11em;
@@ -127,8 +137,14 @@ footer{border-top:1px solid var(--line);padding:40px 0 60px;font-family:'JetBrai
   font-size:.6rem;letter-spacing:.14em;color:var(--muted);line-height:2.2}
 footer a{color:var(--blue-lit)}
 
+a:focus-visible{outline:2px solid var(--blue-lit);outline-offset:3px;border-radius:2px}
+
 @media(max-width:860px){
-  .shell{padding:0 26px}.bar{padding:15px 26px}.nav{display:none}.shots{grid-template-columns:1fr}
+  .shell{padding:0 26px}.bar{padding:15px 26px}.nav{display:none}
+  .shots{grid-template-columns:1fr}
+  .shots figure:first-child{grid-row:auto}
+  .shots figure:first-child img{aspect-ratio:16/9}
+  .stats b{font-size:1.85rem}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
