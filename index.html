@@ -1,21 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Destructive AI Gurus — We Don't Replace Your Platforms. We Free Them.</title>
-<meta name="description" content="Use AI to your advantage — don't be its victim. Destructive AI Gurus turns directed local AI on runaway cloud cost, surveillance, and lock-in: 40+ years of Fortune 500 architecture for the Pega and Salesforce platforms you already run. We don't replace your platforms — we free them.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Destructive AI Gurus</title>
+<meta name="description" content="Friendly apps about Salem, Massachusetts, for iOS and Android. Enterprise and custom software from a small Massachusetts company.">
+<link rel="canonical" href="https://destructiveaigurus.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://destructiveaigurus.com/">
-<meta property="og:title" content="Destructive AI Gurus — We Don't Replace Your Platforms. We Free Them.">
-<meta property="og:description" content="Use AI to your advantage — don't be its victim. 40+ years of Fortune 500 architecture plus directed local AI, aimed at the platforms you already run. We don't replace your platforms — we free them.">
 <meta property="og:site_name" content="Destructive AI Gurus">
+<meta property="og:title" content="Destructive AI Gurus">
+<meta property="og:description" content="Friendly apps about Salem, Massachusetts, for iOS and Android. Enterprise and custom software from a small Massachusetts company.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Destructive AI Gurus — We Don't Replace Your Platforms. We Free Them.">
-<meta name="twitter:description" content="Use AI to your advantage — don't be its victim. Fortune 500 architecture + directed local AI. We don't replace your platforms; we free them.">
-<meta name="keywords" content="enterprise AI consulting, platform cost optimization, Pega consulting, Salesforce consulting, local AI, enterprise architecture, cloud-to-local AI, Fortune 500 consulting">
-<meta name="author" content="Destructive AI Gurus, LLC">
-<link rel="canonical" href="https://destructiveaigurus.com/">
+<meta name="twitter:title" content="Destructive AI Gurus">
+<meta name="twitter:description" content="Friendly apps about Salem, Massachusetts, for iOS and Android. Enterprise and custom software from a small Massachusetts company.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,226 +34,218 @@
   "knowsAbout": ["Pega", "Salesforce", "Enterprise Architecture", "Local AI", "LLM Deployment", "Cloud Architecture"]
 }
 </script>
-<link href="/assets/fonts/fonts.css" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <style>
-:root{
-  --void:#020204; --blue:#3b82f6; --blue-lit:#93c5fd; --violet:#a855f7;
-  --text:#e8eaf0; --muted:#767d8e; --line:rgba(255,255,255,.07);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:var(--void); color:var(--text); min-height:100vh;
-  font-family:'DM Sans',system-ui,sans-serif; font-weight:300;
-  -webkit-font-smoothing:antialiased; overflow-x:hidden;
-  display:flex; flex-direction:column;
-}
-/* the world, shut out: nothing lives past the edge of the circuit.
-   Sits above the field but below the chrome, so the wordmark stays legible. */
-body::after{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:1;
-  background:radial-gradient(ellipse at 50% 46%,transparent 34%,rgba(2,2,4,.34) 70%,rgba(2,2,4,.78) 100%);
-}
-.bar,.foot{position:relative;z-index:4}
-.wrap{position:relative;z-index:2}
-.bar{display:flex;align-items:center;justify-content:space-between;padding:22px 34px}
-.mark{display:flex;align-items:center;gap:11px}
-.mark svg{width:26px;height:26px}
-.mark b{font-family:'Syne',sans-serif;font-weight:800;font-size:.82rem;line-height:1.15;display:block}
-.mark i{font-style:normal;color:var(--blue)}
-.tag{font-family:'JetBrains Mono',monospace;font-size:.63rem;letter-spacing:.2em;color:var(--muted)}
-
-.wrap{flex:1;display:grid;place-items:center;padding:0 24px 40px}
-.field{position:relative;width:min(88vw,640px);aspect-ratio:1}
-.field svg.sigil{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-
-/* the circuit itself is the navigation: dim by default, a limb lights on focus */
-.limb{stroke:var(--blue);stroke-width:1;opacity:.10;transition:opacity .3s}
-.limb.lit{opacity:.85}
-.ring{fill:none;stroke:var(--violet);stroke-width:1;stroke-dasharray:4 9;opacity:.26}
-
-/* six destinations pinned to the six points of the mark */
-.pt{
-  position:absolute;transform:translate(-50%,-50%);
-  background:none;border:0;cursor:pointer;padding:12px;
-  font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.15em;
-  color:var(--muted);transition:color .25s;display:flex;flex-direction:column;
-  align-items:center;gap:10px;white-space:nowrap;text-decoration:none;
-}
-.pt .dot{
-  width:13px;height:13px;border-radius:50%;
-  border:1.5px solid rgba(147,197,253,.6); background:var(--void);
-  transition:.25s;
-}
-.pt:hover,.pt:focus-visible{color:var(--text)}
-.pt:hover .dot,.pt:focus-visible .dot{
-  background:var(--blue);border-color:var(--blue);
-  box-shadow:0 0 16px 3px rgba(59,130,246,.55);transform:scale(1.25);
-}
-
-/* the core reports what you are pointing at — this is the whole interface.
-   The scrim is load-bearing: it clears the circuit so the readout stays legible. */
-.core{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:min(42%,242px);text-align:center;pointer-events:none;
-}
-.core::before{
-  content:'';position:absolute;left:50%;top:50%;
-  width:132%;height:150%;transform:translate(-50%,-50%);
-  background:radial-gradient(ellipse,rgba(2,2,4,.97) 0%,rgba(2,2,4,.9) 45%,rgba(2,2,4,0) 72%);
-  z-index:-1;
-}
-.core .k{
-  font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.24em;
-  color:var(--violet);display:block;margin-bottom:11px;min-height:.8em;
-}
-.core h1{
-  font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.03em;
-  font-size:clamp(.95rem,1.9vw,1.22rem);line-height:1.16;margin-bottom:10px;
-  text-wrap:balance;
-}
-.core p{font-size:.74rem;line-height:1.5;color:#a2a9b8;min-height:3em}
-.core .em{color:var(--blue)}
-
-.foot{
-  display:flex;justify-content:center;gap:26px;flex-wrap:wrap;
-  padding:16px 34px 26px;border-top:1px solid var(--line);
-  font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.16em;color:var(--muted);
-}
-.foot b{color:var(--text);font-weight:500}
-
-/* ── the seal: the circuit draws itself closed on arrival ── */
-.seal{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 2.2s cubic-bezier(.4,0,.2,1) forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.bar,.foot,.pt,.core{animation:rise .9s ease 1.5s both}
-@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
-.pt{animation-name:riseP}
-@keyframes riseP{from{opacity:0}to{opacity:1}}
-.core{animation-name:riseC}
-@keyframes riseC{from{opacity:0}to{opacity:1}}
-
-/* ── going deeper: the circuit opens toward the point you chose ── */
-.field{transition:transform 1.05s cubic-bezier(.65,0,.35,1),opacity .8s ease .25s}
-body.deeper .field{opacity:0}
-body.deeper .bar,body.deeper .foot{opacity:0;transition:opacity .45s}
-body.deeper::after{background:radial-gradient(ellipse at 50% 46%,transparent 0%,rgba(2,2,4,.2) 60%,var(--void) 100%);transition:background .9s}
-
-@media (max-width:640px){
-  .pt{font-size:.53rem;letter-spacing:.1em;padding:8px}
-  .core p{font-size:.76rem}
-  .bar{padding:18px 20px}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-:focus-visible{outline:2px solid var(--blue);outline-offset:4px;border-radius:2px}
+  :root{--bg:#050507;--panel:#0b0b10;--line:#1c1c26;--text:#e8e8ee;--muted:#8a8a99;--blue:#3b82f6;--violet:#a855f7}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 "DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  h1,h2,h3{font-family:"Syne","DM Sans",system-ui,sans-serif;font-weight:700;letter-spacing:-.01em}
+  .mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  a{color:var(--blue)}
+  .frame{display:grid;min-height:100vh;grid-template-columns:240px 1fr;grid-template-rows:auto 1fr auto auto}
+  .cell{border:1px solid var(--line);padding:18px 22px}
+  /* row 1 */
+  .icon{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .icon img{width:56px;height:56px}
+  .company{grid-column:2;grid-row:1;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+  .company h1{margin:0;font-size:20px;letter-spacing:.08em;text-transform:uppercase}
+  .company .tag{color:var(--muted);font-size:15px}
+  /* rows 2–6 */
+  .nav{grid-column:1;grid-row:2;display:flex;flex-direction:column;gap:6px;padding:14px}
+  .nav button,.contact button{all:unset;box-sizing:border-box;display:block;width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;cursor:pointer;color:var(--text);font:inherit}
+  .nav button:hover,.contact button:hover{border-color:var(--blue)}
+  .nav button:focus-visible,.contact button:focus-visible,.tile:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  .nav button[aria-current="true"],.contact button[aria-current="true"]{border-color:var(--blue);background:rgba(59,130,246,.10)}
+  .nav .group{margin:10px 0 2px 4px}
+  .panel{grid-column:2;grid-row:2;background:var(--panel);min-height:420px}
+  .panel h2{margin:0 0 6px;font-size:30px;line-height:1.15}
+  .panel .sub{color:var(--muted);margin:0 0 18px}
+  .panel p{max-width:68ch;margin:0 0 12px;font-size:17px}
+  .panel p.small{color:var(--muted);font-size:15px}
+  .media{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;margin:18px 0 16px}
+  .media img,.wide img{width:100%;height:100%;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block}
+  .media img{height:360px}
+  .spread{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:18px 0 8px}
+  .spread img{width:100%;aspect-ratio:600/877;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block;background:#07070b}
+  .wide{margin:18px 0 8px}
+  .wide img{aspect-ratio:21/9;object-fit:cover;background:#07070b}
+  .caption{margin:6px 0 16px}
+  .links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:8px}
+  .b2b{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 16px}
+  .b2b div{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:#07070b}
+  .b2b h3{margin:0 0 6px;font-size:16px}
+  .b2b p{margin:0;font-size:15px;color:var(--muted);max-width:none}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  .tile{all:unset;box-sizing:border-box;cursor:pointer;display:block;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#07070b}
+  .tile:hover{border-color:var(--blue)}
+  .tile img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .tile div{padding:10px 12px}
+  .tile b{display:block;font-family:"Syne",sans-serif;font-size:15px}
+  .tile span{color:var(--muted);font-size:14px}
+  /* row 7 */
+  .contact{grid-column:1;grid-row:3;padding:14px}
+  .strip{grid-column:2;grid-row:3;color:var(--muted);font-size:16px}
+  .strip b{color:var(--text)}
+  /* row 8 — privacy / legal */
+  .legal{grid-column:1 / span 2;grid-row:4;display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;font-size:14px;color:var(--muted)}
+  .legal .pending{border-bottom:1px dashed #33334a;cursor:help}
+  [hidden]{display:none!important}
+  @media (max-width:820px){
+    .frame{grid-template-columns:1fr;grid-template-rows:auto auto auto auto auto auto auto}
+    .icon{grid-column:1;grid-row:1}
+    .company{grid-column:1;grid-row:2}
+    .nav{grid-column:1;grid-row:3;flex-direction:row;flex-wrap:wrap}
+    .nav .group{flex-basis:100%;margin:6px 0 0 4px}
+    .nav button{width:auto;flex:1 1 140px}
+    .panel{grid-column:1;grid-row:4;min-height:0}
+    .strip{grid-column:1;grid-row:5}
+    .contact{grid-column:1;grid-row:6}
+    .legal{grid-column:1;grid-row:7}
+    .panel h2{font-size:24px}
+    .panel p{font-size:16px}
+    .media,.tiles,.b2b{grid-template-columns:1fr}
+    .media img{height:auto;aspect-ratio:4/3}
+    .wide img{aspect-ratio:16/10}
+    .spread{grid-template-columns:repeat(2,1fr)}
+  }
 </style>
 </head>
 <body>
+<div class="frame">
 
-<header class="bar">
-  <div class="mark">
-    <svg viewBox="0 0 64 64" aria-hidden="true"><g transform="translate(4,1.2) scale(0.28)" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"><path d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/><path transform="rotate(180,100,110)" d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/></g><circle cx="32" cy="4" r="3" fill="#bfdbfe"/><circle cx="32" cy="60" r="3" fill="#bfdbfe"/><circle cx="32" cy="32" r="4.6" fill="none" stroke="#a855f7" stroke-width="1.6"/><circle cx="32" cy="32" r="3" fill="#dbeafe"/></svg>
-    <b>DESTRUCTIVE<br><i>AI GURUS</i></b>
-  </div>
-  <span class="tag">EVERYTHING STAYS INSIDE</span>
-</header>
+  <!-- ROW 1 -->
+  <div class="cell icon" id="home" title="Start"><img src="assets/brand/magus-axis.svg" alt="Destructive AI Gurus"></div>
+  <header class="cell company"><h1>Destructive AI Gurus</h1><span class="tag">Use AI. Don't be used by it.</span></header>
 
-<main class="wrap">
-  <div class="field">
-    <svg class="sigil" viewBox="0 0 640 640" aria-hidden="true">
-      <circle class="ring seal" cx="320" cy="320" r="296"/>
-      <g transform="translate(40,12) scale(2.8)" fill="none" stroke="#3b82f6"
-         stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" opacity=".22">
-        <path class="seal" d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/>
-        <path class="seal" transform="rotate(180,100,110)" d="m100,10l86.602539,150l-86.602539,-50l62.460411,25.85787l-62.460411,-105.85787l-62.460411,105.85787l62.460411,-25.85787l-86.602539,50l86.602539,-150z"/>
-      </g>
-      <g id="limbs">
-        <line class="limb" data-k="opportunity" x1="320" y1="320" x2="320" y2="40"/>
-        <line class="limb" data-k="solution"    x1="320" y1="320" x2="562" y2="180"/>
-        <line class="limb" data-k="services"    x1="320" y1="320" x2="562" y2="460"/>
-        <line class="limb" data-k="work"        x1="320" y1="320" x2="320" y2="600"/>
-        <line class="limb" data-k="about"       x1="320" y1="320" x2="78"  y2="460"/>
-        <line class="limb" data-k="contact"     x1="320" y1="320" x2="78"  y2="180"/>
-      </g>
-      <circle cx="320" cy="320" r="7" fill="none" stroke="#a855f7" stroke-width="1.4"/>
-    </svg>
+  <!-- ROWS 2–6 : nav -->
+  <nav class="cell nav" aria-label="Topics">
+    <div class="group mono">Products</div>
+    <button data-topic="katrina">Katrina</button>
+    <button data-topic="tarot">Qubalah 1692</button>
+    <button data-topic="flying">Flying Salem</button>
+    <button data-topic="salemb2b">Salem B2B Solutions</button>
+    <div class="group mono">Practice</div>
+    <button data-topic="enterprise">Enterprise Solutions</button>
+    <button data-topic="custom">Custom Business Solutions</button>
+  </nav>
 
-    <a class="pt" data-k="opportunity" href="how-it-gets-in.html"  style="left:50%;top:6.25%"><span class="dot"></span>THE OPPORTUNITY</a>
-    <a class="pt" data-k="solution"    href="what-we-do.html" style="left:87.8%;top:28.1%"><span class="dot"></span>THE SOLUTION</a>
-    <a class="pt" data-k="services"    href="dashboard.html#services"          style="left:87.8%;top:71.9%"><span class="dot"></span>SERVICES</a>
-    <a class="pt" data-k="work"        href="work.html"        style="left:50%;top:93.75%"><span class="dot"></span>THE WORK</a>
-    <a class="pt" data-k="about"       href="dashboard.html#about"    style="left:12.1%;top:71.9%"><span class="dot"></span>ABOUT</a>
-    <a class="pt" data-k="contact"     href="dashboard.html#contact"  style="left:12.1%;top:28.1%"><span class="dot"></span>CONTACT</a>
+  <!-- ROWS 2–6 : content panel -->
+  <main class="cell panel" id="panel">
 
-    <div class="core" aria-live="polite">
-      <span class="k" id="k"></span>
-      <h1 id="h">We don't replace your platforms.<br><span class="em">We free them.</span></h1>
-      <p id="p">Six ways in. Point at one.</p>
-    </div>
-  </div>
-</main>
+    <section data-panel="intro">
+      <h2>Small apps about Salem. Serious work underneath.</h2>
+      <p>We are a small Massachusetts company. We make friendly apps about Salem for your phone, and we bring the same habits to enterprise work: keep your data on your own hardware, use AI where it actually helps, and never be used by it.</p>
+      <div class="tiles">
+        <button class="tile" data-topic="katrina"><img src="/lma/katrina-hero.jpg" alt="Katrina, the guide's cat"><div><b>Katrina's Mystic Visitors Guide</b><span>A guide to all of Salem</span></div></button>
+        <button class="tile" data-topic="tarot"><img src="assets/tarot/cover.webp" alt="The deck's cover: Katrina the cat under an arch" style="object-position:50% 28%"><div><b>Qubalah 1692</b><span>Salem, one card at a time</span></div></button>
+        <button class="tile" data-topic="flying"><img src="assets/art/flying-terrain.svg" alt="A ridgeline drawing of terrain"><div><b>Flying Salem</b><span>Fly over the real town</span></div></button>
+      </div>
+    </section>
 
-<footer class="foot">
-  <span><b>40+</b> YEARS ARCHITECTURE</span>
-  <span><b>FORTUNE 500</b> EXPERIENCE</span>
-  <span><b>200K+</b> USERS AT SCALE</span>
-  <span>© 2026 DESTRUCTIVE AI GURUS, LLC · BEVERLY, MA</span>
-</footer>
+    <section data-panel="katrina" hidden>
+      <h2>Katrina's Mystic Visitors Guide</h2>
+      <p class="sub">For iOS and Android &middot; coming to both stores</p>
+      <div class="media">
+        <img src="/lma/katrina-hero.jpg" alt="Katrina, the guide's cat, in Salem">
+        <img src="/lma/katrina-feature.jpg" alt="Katrina, detail">
+      </div>
+      <p>A guide to all of Salem, with a cat. Find what you are looking for, wander the streets with a narrator in your ear, and take a tour told by a working PhD historian. It works without a signal, so it works on the day you are actually there.</p>
+      <p class="small">For visitors, and for the people who live and work here.</p>
+    </section>
 
+    <section data-panel="tarot" hidden>
+      <h2>Qubalah 1692</h2>
+      <p class="sub">For iOS and Android &middot; coming to both stores</p>
+      <div class="spread">
+        <img src="assets/tarot/cover.webp" alt="The deck's cover">
+        <img src="assets/tarot/the-fool.webp" alt="The Fool">
+        <img src="assets/tarot/justice.webp" alt="Justice: a magistrate at a table with documents">
+        <img src="assets/tarot/the-world.webp" alt="The World: the meeting house and its congregation">
+        <img src="assets/tarot/the-star.webp" alt="The Star: a sealed petition">
+      </div>
+      <div class="caption mono">The cover and four cards from the deck.</div>
+      <p>A full tarot deck drawn from what actually happened here in 1692: the neighbours, the testimony, the paperwork. Read aloud, one card at a time, so the history arrives as something you are standing inside rather than something you are looking at. It teaches. It does not predict.</p>
+    </section>
+
+    <section data-panel="flying" hidden>
+      <h2>Flying Salem</h2>
+      <p class="sub">For iOS and Android &middot; coming to both stores</p>
+      <div class="wide"><img src="assets/art/flying-terrain.svg" alt="A ridgeline drawing of the ground around Salem"></div>
+      <div class="caption mono">Drawing, not a screenshot. Flight captures come next.</div>
+      <p>Fly over the real Salem and the towns around it: real ground, real shoreline, real streets, with the historic places sitting where they sit in life. It is built from the Commonwealth's own public survey data, and it is our small demonstration of what data looks like when you can move through it.</p>
+      <p class="small mono" style="text-transform:none;letter-spacing:.04em">Data: MassGIS &middot; MassDOT &middot; USGS 3DEP &middot; MACRIS</p>
+    </section>
+
+    <section data-panel="salemb2b" hidden>
+      <h2>Salem B2B Solutions</h2>
+      <p class="sub">For the businesses, owners and organisations of Salem</p>
+      <p>The guide covers the whole town, which means it covers you. This is the door for talking to us directly: to correct what we say about your business, to be included if we have missed you, to ask us to take something down, or to ask about reaching the people using the guide.</p>
+      <div class="b2b">
+        <div><h3>Something about us is wrong</h3><p>A name, an address, a description, a photograph, anything. Tell us and we will fix it. If you would rather not appear at all, say so and you will not.</p></div>
+        <div><h3>We are not in it</h3><p>Salem is more than the famous few streets. If your business is missing, write to us and we will get you in.</p></div>
+        <div><h3>You want to reach our audience</h3><p>Write to us and we will tell you honestly what exists today and what does not. Nothing is on sale yet, and we will not pretend otherwise.</p></div>
+      </div>
+      <p><a href="mailto:contact@destructiveaigurus.com?subject=Salem%20business">contact@destructiveaigurus.com</a> &mdash; a person reads it and answers.</p>
+      <p class="small">A fuller form is coming here. Until then, email reaches the same place. We are an independent Massachusetts company; we speak only for ourselves.</p>
+    </section>
+
+    <section data-panel="enterprise" hidden>
+      <h2>Enterprise Solutions</h2>
+      <p class="sub">For the platforms you already run</p>
+      <p>Large enterprises run their business on platforms like Pega and Salesforce. We help them get more from what they already own: sharper architecture, lower running cost, and local AI for the work that never needed to leave the building. We don't replace your platforms. We free them.</p>
+      <p class="small">Behind it is four decades of enterprise architecture, including fifteen years with Pegasystems, most of them as a Principal Technical Architect, on systems serving hundreds of thousands of users.</p>
+      <div class="links"><a href="/dashboard.html#services">The services</a><a href="/solutions.html">The use-case explorer</a><a href="/services/why-we-can.html">Why we can do this</a></div>
+    </section>
+
+    <section data-panel="custom" hidden>
+      <h2>Custom Business Solutions</h2>
+      <p class="sub">Built for you, run on your hardware</p>
+      <p>Not every problem is an enterprise problem. We build what a business actually needs: private AI on your own machines, maps and location tools from public data, applications for phones and desktops, and defensive instrumentation for premises you own. It observes; it does not attack.</p>
+      <p class="small">Tell us the problem. We will tell you honestly whether it needs AI at all.</p>
+    </section>
+
+    <section data-panel="contact" hidden>
+      <h2>Contact us</h2>
+      <p><a href="mailto:contact@destructiveaigurus.com">contact@destructiveaigurus.com</a></p>
+      <p class="small">One address, read by a person. Beverly, Massachusetts.</p>
+    </section>
+
+  </main>
+
+  <!-- ROW 7 -->
+  <div class="cell contact"><button data-topic="contact">Contact us</button></div>
+  <aside class="cell strip" id="strip"></aside>
+
+  <!-- ROW 8 — privacy / legal -->
+  <footer class="cell legal">
+    <span class="pending" title="Coming. The policy is with counsel.">Privacy Policy</span>
+    <span>&copy; 2026 Destructive AI Gurus, LLC &middot; Beverly, Massachusetts</span>
+  </footer>
+
+</div>
 <script>
-(function(){
-  const COPY={
-    opportunity:['01 · THE OPPORTUNITY','Cost that scales with your success.','Per-call fees, overlapping licences, integration glue nobody owns.'],
-    solution:   ['02 · THE SOLUTION','Directed local AI.','Same capability, running in your environment, on hardware you control.'],
-    services:   ['03 · SERVICES','Eight places spend leaks.','Licensing, runtime, egress, resilience, governance, Sev1, advisory.'],
-    work:       ['04 · THE WORK','Built, shipped, running.','Katrina\\'s Mystic Visitors Guide, the WWWatcher observatory, and TigerLine GIS.'],
-    about:      ['05 · ABOUT','Forty years of enterprise architecture.','Fifteen years in Pegasystems global performance. Systems serving 200,000+ users.'],
-    contact:    ['06 · CONTACT','One conversation.','contact@destructiveaigurus.com — no form, no funnel, no follow-up sequence.']
+  const strips = {
+    intro:      '<b>Start with a project on the left.</b> The apps are coming to iOS and Android. The practice is what we did for large enterprises for a long time before that.',
+    katrina:    '<b>Katrina.</b> Salem is more than one street and more than one story. This is the guide to the whole town.',
+    tarot:      '<b>Qubalah 1692.</b> Every card is a way you might have been in 1692: the accused, the neighbour who repeated the rumour, the magistrate who wrote it down.',
+    flying:     '<b>Flying Salem.</b> Anything that varies across a map can become ground you fly over. Salem is the first one.',
+    salemb2b:   '<b>Salem B2B Solutions.</b> If we have got your business wrong, or left it out, this is the door. Say so and we will fix it.',
+    enterprise: '<b>Enterprise Solutions.</b> Augment, don\'t replace. The platform stays at the center; the cost comes down.',
+    custom:     '<b>Custom Business Solutions.</b> Small teams, real problems, software that runs where you are.',
+    contact:    '<b>Contact us.</b> Email is the whole front door.'
   };
-  const DEF=['','We don\'t replace your platforms.<br><span class="em">We free them.</span>','Six ways in. Point at one.'];
-  const k=document.getElementById('k'),h=document.getElementById('h'),p=document.getElementById('p');
-  const limbs=[...document.querySelectorAll('.limb')];
-
-  function show(key){
-    const c=key?COPY[key]:DEF;
-    k.textContent=c[0]; h.innerHTML=c[1]; p.textContent=c[2];
-    limbs.forEach(l=>l.classList.toggle('lit',!!key&&l.dataset.k===key));
+  const buttons = document.querySelectorAll('[data-topic]');
+  function show(topic, fromClick){
+    if(!strips[topic]) topic = 'intro';
+    document.querySelectorAll('[data-panel]').forEach(s => s.hidden = s.dataset.panel !== topic);
+    buttons.forEach(b => { if(b.tagName === 'BUTTON' && !b.classList.contains('tile')) b.setAttribute('aria-current', b.dataset.topic === topic ? 'true' : 'false'); });
+    document.getElementById('strip').innerHTML = strips[topic];
+    if(fromClick && window.matchMedia('(max-width:820px)').matches) document.getElementById('panel').scrollIntoView({block:'start'});
   }
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // The seal: give every stroke its own length so the circuit draws itself closed.
-  if(!reduce){
-    document.querySelectorAll('.seal').forEach(el=>{
-      const L=el.getTotalLength();
-      el.style.setProperty('--len',L);
-    });
-  } else {
-    document.querySelectorAll('.seal').forEach(el=>el.classList.remove('seal'));
-    document.querySelectorAll('.bar,.foot,.pt,.core').forEach(el=>el.style.animation='none');
-  }
-
-  const field=document.querySelector('.field');
-
-  document.querySelectorAll('.pt').forEach(b=>{
-    const key=b.dataset.k;
-    ['mouseenter','focus'].forEach(e=>b.addEventListener(e,()=>show(key)));
-    ['mouseleave','blur'].forEach(e=>b.addEventListener(e,()=>show(null)));
-
-    // Going deeper: the circuit opens toward the point you chose, then releases.
-    b.addEventListener('click',ev=>{
-      if(reduce||ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.button!==0) return;
-      ev.preventDefault();
-      const r=b.getBoundingClientRect(), f=field.getBoundingClientRect();
-      // push the chosen point toward the centre of the screen as the field opens
-      const dx=(f.left+f.width/2)-(r.left+r.width/2);
-      const dy=(f.top+f.height/2)-(r.top+r.height/2);
-      field.style.transformOrigin=`${r.left-f.left+r.width/2}px ${r.top-f.top+r.height/2}px`;
-      field.style.transform=`translate(${dx*.35}px,${dy*.35}px) scale(3.4)`;
-      document.body.classList.add('deeper');
-      setTimeout(()=>{location.href=b.getAttribute('href')},780);
-    });
-  });
-  show(null);
-})();
+  buttons.forEach(b => b.addEventListener('click', () => { history.replaceState(null,'','#'+b.dataset.topic); show(b.dataset.topic, true); }));
+  document.getElementById('home').addEventListener('click', () => { history.replaceState(null,'',' '); show('intro', true); });
+  show((location.hash||'').slice(1) || 'intro');
 </script>
 </body>
 </html>
