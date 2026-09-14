@@ -115,6 +115,11 @@ a{color:inherit;text-decoration:none}
           color:var(--muted);margin-bottom:14px}
 .rbody ul{list-style:none;font-size:.93rem;line-height:2;color:#b0b8c7}
 .rbody li::before{content:'— ';color:var(--blue)}
+/* a reveal with no side list is one column and has no divider; (0,3,1) also outranks
+   the phone query's border-bottom below, since a media query adds no specificity */
+.rbody.solo{grid-template-columns:1fr}
+.rbody.solo > div:first-child{border-right:none;border-bottom:none}
+.rbody.solo p{max-width:49ch}
 
 /* ── the closer ───────────────────────────────────────────────────────── */
 .closer{border-top:1px solid var(--line);margin-top:74px;padding:86px 0;
@@ -240,7 +245,7 @@ a:focus-visible{outline:2px solid var(--blue-lit);outline-offset:3px;border-radi
         <h2>Flying Salem</h2>
         <div class="what">FIND YOUR OWN ROOF, FROM THE AIR &middot; START HERE</div>
         <p>
-          The ground underneath you is not a drawing. It is the Commonwealth&rsquo;s public survey
+          The ground underneath you is not a drawing. It is a public survey
           of Salem and the towns around it &mdash; real elevations, real shoreline, real streets
           &mdash; with the Massachusetts Historical Commission&rsquo;s historic records sitting
           exactly where they sit in life. You can spot your own house. That is
@@ -265,7 +270,7 @@ a:focus-visible{outline:2px solid var(--blue-lit);outline-offset:3px;border-radi
     <div class="seam" aria-hidden="true"><i></i></div>
     <div class="reveal">
       <div class="rh"><em>WHAT IT ACTUALLY IS</em><b>Telemetry, rendered as somewhere you can go &mdash; and it cost us nothing.</b></div>
-      <div class="rbody">
+      <div class="rbody solo">
         <div>
           <p>
             The renderer&rsquo;s whole world is <strong>one grid of values, one classification
@@ -273,9 +278,7 @@ a:focus-visible{outline:2px solid var(--blue-lit);outline-offset:3px;border-radi
             elevation.
           </p>
           <p>
-            <strong>It has no idea those numbers were metres.</strong> Load population per cell
-            instead and you are flying over demographics. Load signal strength and you are flying
-            over your coverage gaps. Same program &mdash; we changed a file.
+            <strong>It has no idea those numbers were metres.</strong>
           </p>
           <p>
             ★ <strong>This is the one we give away, and that is the argument.</strong> It is a
@@ -284,15 +287,6 @@ a:focus-visible{outline:2px solid var(--blue-lit);outline-offset:3px;border-radi
             <strong>ask what the same pipeline does to a quarter of your telemetry</strong> &mdash;
             the readings nobody looks at because they only ever arrive as rows.
           </p>
-        </div>
-        <div>
-          <h5>THE SAME ENGINE, ELSEWHERE</h5>
-          <ul>
-            <li>population &mdash; fly over demographics</li>
-            <li>coverage &mdash; fly over the dead zones</li>
-            <li>revenue, claims, churn</li>
-            <li>exposure &mdash; fly over your own risk</li>
-          </ul>
         </div>
       </div>
     </div>
