@@ -83,6 +83,11 @@
   .tile div{padding:10px 12px}
   .tile b{display:block;font-family:"Syne",sans-serif;font-size:15px}
   .tile span{color:var(--muted);font-size:14px}
+  .vtile{cursor:default}
+  .vtile video{width:100%;aspect-ratio:4/3;object-fit:contain;display:block;background:#000}
+  .tile-cap{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;padding:10px 12px}
+  .tile-cap:hover b{color:var(--blue-lit)}
+  .tile-cap:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
   /* row 7 */
   .contact{grid-column:1;grid-row:3;padding:14px}
   .strip{grid-column:2;grid-row:3;color:var(--muted);font-size:16px}
@@ -122,7 +127,7 @@
   <nav class="cell nav" aria-label="Topics">
     <div class="group mono">Products</div>
     <button data-topic="katrina">Katrina</button>
-    <button data-topic="tarot">Qubalah 1692</button>
+    <button data-topic="tarot">Qabalah 1692</button>
     <button data-topic="flying">Flying Salem</button>
     <button data-topic="salemb2b">Salem B2B Solutions</button>
     <div class="group mono">Practice</div>
@@ -137,9 +142,9 @@
       <h2>Small apps about Salem. Serious work underneath.</h2>
       <p>We are a small Massachusetts company. We make friendly apps about Salem for your phone, and we bring the same habits to enterprise work: keep your data on your own hardware, use AI where it actually helps, and never be used by it.</p>
       <div class="tiles">
-        <button class="tile" data-topic="katrina"><img src="/lma/katrina-hero.jpg" alt="Katrina, the guide's cat"><div><b>Katrina's Mystic Visitors Guide</b><span>A guide to all of Salem</span></div></button>
-        <button class="tile" data-topic="tarot"><img src="assets/tarot/cover.webp" alt="The deck's cover: Katrina the cat under an arch" style="object-position:50% 28%"><div><b>Qubalah 1692</b><span>Salem, one card at a time</span></div></button>
-        <button class="tile" data-topic="flying"><img src="assets/art/flying-terrain.svg" alt="A ridgeline drawing of terrain"><div><b>Flying Salem</b><span>Fly over the real town</span></div></button>
+        <div class="tile vtile"><video controls preload="metadata" playsinline poster="assets/demo/katrina-poster.jpg" aria-label="Katrina's Mystic Visitors Guide: a demo recorded on the phone"><source src="assets/demo/katrina-demo.mp4" type="video/mp4"></video><button class="tile-cap" data-topic="katrina"><b>Katrina's Mystic Visitors Guide</b><span>A guide to all of Salem</span></button></div>
+        <div class="tile vtile"><video controls preload="metadata" playsinline poster="assets/demo/qabalah-1692-poster.jpg" aria-label="Qabalah 1692: a demo recorded on the phone"><source src="assets/demo/qabalah-1692-demo.mp4" type="video/mp4"></video><button class="tile-cap" data-topic="tarot"><b>Qabalah 1692</b><span>Salem, one card at a time</span></button></div>
+        <div class="tile vtile"><video controls preload="metadata" playsinline poster="assets/demo/flying-salem-poster.jpg" aria-label="Flying Salem: a demo of the self-flying tour"><source src="assets/demo/flying-salem-demo.mp4" type="video/mp4"></video><button class="tile-cap" data-topic="flying"><b>Flying Salem</b><span>Fly over the real town</span></button></div>
       </div>
     </section>
 
@@ -155,7 +160,7 @@
     </section>
 
     <section data-panel="tarot" hidden>
-      <h2>Qubalah 1692</h2>
+      <h2>Qabalah 1692</h2>
       <p class="sub">For iOS and Android &middot; coming to both stores</p>
       <div class="spread">
         <img src="assets/tarot/cover.webp" alt="The deck's cover">
@@ -228,7 +233,7 @@
   const strips = {
     intro:      '<b>Start with a project on the left.</b> The apps are coming to iOS and Android. The practice is what we did for large enterprises for a long time before that.',
     katrina:    '<b>Katrina.</b> Salem is more than one street and more than one story. This is the guide to the whole town.',
-    tarot:      '<b>Qubalah 1692.</b> Every card is a way you might have been in 1692: the accused, the neighbour who repeated the rumour, the magistrate who wrote it down.',
+    tarot:      '<b>Qabalah 1692.</b> Every card is a way you might have been in 1692: the accused, the neighbour who repeated the rumour, the magistrate who wrote it down.',
     flying:     '<b>Flying Salem.</b> Anything that varies across a map can become ground you fly over. Salem is the first one.',
     salemb2b:   '<b>Salem B2B Solutions.</b> If we have got your business wrong, or left it out, this is the door. Say so and we will fix it.',
     enterprise: '<b>Enterprise Solutions.</b> Augment, don\'t replace. The platform stays at the center; the cost comes down.',
@@ -239,7 +244,7 @@
   function show(topic, fromClick){
     if(!strips[topic]) topic = 'intro';
     document.querySelectorAll('[data-panel]').forEach(s => s.hidden = s.dataset.panel !== topic);
-    buttons.forEach(b => { if(b.tagName === 'BUTTON' && !b.classList.contains('tile')) b.setAttribute('aria-current', b.dataset.topic === topic ? 'true' : 'false'); });
+    buttons.forEach(b => { if(b.tagName === 'BUTTON' && !b.closest('.tiles')) b.setAttribute('aria-current', b.dataset.topic === topic ? 'true' : 'false'); });
     document.getElementById('strip').innerHTML = strips[topic];
     if(fromClick && window.matchMedia('(max-width:820px)').matches) document.getElementById('panel').scrollIntoView({block:'start'});
   }
