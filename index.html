@@ -88,6 +88,7 @@
   .tile-cap{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;padding:10px 12px}
   .tile-cap:hover b{color:var(--blue-lit)}
   .tile-cap:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+  .tile .tile-credit{margin:0;padding:0 12px 12px;max-width:none;font-size:12px;line-height:1.45;color:var(--muted)}
   /* row 7 */
   .contact{grid-column:1;grid-row:3;padding:14px}
   .strip{grid-column:2;grid-row:3;color:var(--muted);font-size:16px}
@@ -142,7 +143,7 @@
       <h2>Small apps about Salem. Serious work underneath.</h2>
       <p>We are a small Massachusetts company. We make friendly apps about Salem for your phone, and we bring the same habits to enterprise work: keep your data on your own hardware, use AI where it actually helps, and never be used by it.</p>
       <div class="tiles">
-        <div class="tile vtile"><video controls preload="metadata" playsinline poster="assets/demo/katrina-poster.jpg" aria-label="Katrina's Mystic Visitors Guide: a demo recorded on the phone"><source src="assets/demo/katrina-demo.mp4" type="video/mp4"></video><button class="tile-cap" data-topic="katrina"><b>Katrina's Mystic Visitors Guide</b><span>A guide to all of Salem</span></button></div>
+        <div class="tile vtile"><video controls preload="metadata" playsinline poster="assets/demo/katrina-poster.jpg" aria-label="Katrina's Mystic Visitors Guide: a demo recorded on the phone"><source src="assets/demo/katrina-demo.mp4" type="video/mp4"></video><button class="tile-cap" data-topic="katrina"><b>Katrina's Mystic Visitors Guide</b><span>A guide to all of Salem</span></button><p class="tile-credit">Map data © OpenStreetMap contributors, licensed under ODbL 1.0 (openstreetmap.org/copyright). Vector tile schema © OpenMapTiles (openmaptiles.org), licensed CC BY 4.0. Structure, parcel and historic-inventory data courtesy of MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts, EOTSS.</p></div>
         <div class="tile vtile"><video controls preload="metadata" playsinline poster="assets/demo/qabalah-1692-poster.jpg" aria-label="Qabalah 1692: a demo recorded on the phone"><source src="assets/demo/qabalah-1692-demo.mp4" type="video/mp4"></video><button class="tile-cap" data-topic="tarot"><b>Qabalah 1692</b><span>Salem, one card at a time</span></button></div>
         <div class="tile vtile"><video controls preload="metadata" playsinline poster="assets/demo/flying-salem-poster.jpg" aria-label="Flying Salem: a demo of the self-flying tour"><source src="assets/demo/flying-salem-demo.mp4" type="video/mp4"></video><button class="tile-cap" data-topic="flying"><b>Flying Salem</b><span>Fly over the real town</span></button></div>
       </div>
@@ -224,7 +225,7 @@
 
   <!-- ROW 8 — privacy / legal -->
   <footer class="cell legal">
-    <span class="pending" title="Coming. The policy is with counsel.">Privacy Policy</span>
+    <a href="/privacy/">Privacy Policy</a>
     <span>&copy; 2026 Destructive AI Gurus, LLC &middot; Beverly, Massachusetts</span>
   </footer>
 
