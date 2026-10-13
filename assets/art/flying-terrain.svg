@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-labelledby="ft-t ft-d">
-<title id="ft-t">Flying Salem — a grid of values drawn as ground</title>
+<title id="ft-t">FlyingSalem — a grid of values drawn as ground</title>
 <desc id="ft-d">Diagram: a heightfield rendered as a ridgeline landscape with marked sites standing on it. Hand-authored illustration, not a screen capture.</desc>
 <defs>
 <radialGradient id="ftglow" cx="60%" cy="14%" r="66%">
