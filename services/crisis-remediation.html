@@ -1107,7 +1107,6 @@ a { color: inherit; text-decoration: none; }
       <h2 class="deep-title">What <span class="hl">platforms</span> are affected?</h2>
       <p class="deep-sub">Select all platforms involved in the crisis.</p>
       <div class="deep-grid cols-3" id="platformGrid">
-        <button class="deep-chip" data-val="pega">Pega</button>
         <button class="deep-chip" data-val="salesforce">Salesforce</button>
         <button class="deep-chip" data-val="sap">SAP</button>
         <button class="deep-chip" data-val="oracle">Oracle</button>
@@ -1985,7 +1984,6 @@ a { color: inherit; text-decoration: none; }
     if (userData.crisis.includes('performance-degradation')) recs.push('Performance profiling: thread dumps, connection pool analysis, query tracing');
     if (userData.crisis.includes('data-issues')) recs.push('Data integrity audit: validate sync pipelines, check replication lag');
     if (userData.crisis.includes('integration-failures')) recs.push('Integration health check: API gateway logs, middleware queue depths');
-    if (userData.platforms.includes('pega')) recs.push('Pega-specific: review requestor pools, agent schedules, rule assembly');
     if (userData.platforms.includes('salesforce')) recs.push('Salesforce-specific: check governor limits, API usage, async job queues');
     if (userData.tried.includes('restarted') && urgencyScore >= 5) recs.push('Restarts alone suggest deeper root cause — systematic diagnosis needed');
     if (userData.tried.includes('vendor') && urgencyScore >= 5) recs.push('Vendor escalation in progress — we add hands-on remediation alongside it');
