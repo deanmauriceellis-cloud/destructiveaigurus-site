@@ -128,12 +128,12 @@
   .tile div{padding:10px 12px}
   .tile b{display:block;font-family:"Syne",sans-serif;font-size:15px}
   .tile span{color:var(--muted);font-size:14px}
-  .vtile{cursor:default}
-  .vtile video{width:100%;aspect-ratio:4/3;object-fit:contain;display:block;background:#000}
-  .tile-cap{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;padding:10px 12px}
-  .tile-cap:hover b{color:var(--blue-lit)}
-  .tile-cap:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
-  .tile .tile-credit{margin:0;padding:0 12px 12px;max-width:none;font-size:12px;line-height:1.45;color:var(--muted)}
+  .tile:hover b{color:var(--blue-lit)}
+  .tile img.tile-tall{object-position:50% 30%}
+  .tile img.tile-card{object-fit:contain;background:#07070b}
+  .demo{margin:24px 0 0}
+  .demo video{width:100%;aspect-ratio:1600/720;object-fit:contain;display:block;background:#000;border-radius:8px;border:1px solid var(--line)}
+  .demo .credit{margin:0;max-width:none;font-size:12px;line-height:1.45;color:var(--muted)}
   /* row 7 */
   .contact{grid-column:1;grid-row:3;padding:14px}
   .strip{grid-column:2;grid-row:3;color:var(--muted);font-size:16px}
@@ -188,9 +188,9 @@
       <h2>Small apps about Salem. Serious work underneath.</h2>
       <p>We are a small Massachusetts company. We make friendly apps about Salem for your phone, and we bring the same habits to enterprise work: keep your data on your own hardware, use AI where it actually helps, and never be used by it.</p>
       <div class="tiles">
-        <div class="tile vtile"><video controls preload="metadata" playsinline poster="assets/demo/katrina-poster.jpg" aria-label="Katrina's Mystic Visitors Guide: a demo recorded on the phone"><source src="assets/demo/katrina-demo.mp4" type="video/mp4"></video><button class="tile-cap" data-topic="katrina"><b>Katrina's Mystic Visitors Guide</b><span>A guide to all of Salem</span></button><p class="tile-credit">Map data © OpenStreetMap contributors, licensed under ODbL 1.0 (openstreetmap.org/copyright). Vector tile schema © OpenMapTiles (openmaptiles.org), licensed CC BY 4.0. Structure, parcel and historic-inventory data courtesy of MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts, EOTSS.</p></div>
-        <div class="tile vtile"><video controls preload="metadata" playsinline poster="assets/demo/qabalah-1692-poster.jpg" aria-label="Qabalah 1692: a demo recorded on the phone"><source src="assets/demo/qabalah-1692-demo.mp4" type="video/mp4"></video><button class="tile-cap" data-topic="tarot"><b>Qabalah 1692</b><span>Salem, one card at a time</span></button></div>
-        <div class="tile vtile"><video controls preload="metadata" playsinline poster="assets/demo/flying-salem-poster.jpg" aria-label="FlyingSalem: a demo of the self-flying tour"><source src="assets/demo/flying-salem-demo.mp4" type="video/mp4"></video><button class="tile-cap" data-topic="flying"><b>FlyingSalem</b><span>Fly over the real town</span></button></div>
+        <button class="tile" data-topic="katrina"><img class="tile-tall" src="/lma/katrina-hero.jpg" alt="Katrina, the guide&rsquo;s cat, in Salem"><div><b>Katrina's Mystic Visitors Guide</b><span>A guide to all of Salem</span></div></button>
+        <button class="tile" data-topic="tarot"><img class="tile-card" src="assets/tarot/the-fool.webp" alt="The Fool, a card from the deck"><div><b>Qabalah 1692</b><span>Salem, one card at a time</span></div></button>
+        <button class="tile" data-topic="flying"><img src="assets/flyingsalem/downtown-rooftops-and-cove.webp" alt="FlyingSalem&rsquo;s view over downtown Salem"><div><b>FlyingSalem</b><span>Fly over the real town</span></div></button>
       </div>
     </section>
 
@@ -233,6 +233,7 @@
         <p class="small">For visitors, and for the people who live and work here.</p>
         <p class="fine">This app uses AI-generated content: the narration is built from real voices, AI-simulated with permission from the narrators&rsquo; own recordings, and the illustrated artwork is AI-generated. The Oracle newspapers and the 1692 history and people texts are AI-written, and some photographs have AI-widened edges. Dr.&nbsp;K&rsquo;s historic-site stories are her own work, not AI-generated; only her voice reading them is AI-simulated, with her permission. &middot; Map data &copy; OpenStreetMap contributors, licensed under ODbL 1.0 (opendatacommons.org/licenses/odbl/1-0/). Basemap rendered by Destructive AI Gurus, LLC.</p>
       </div>
+      <div class="demo"><video controls preload="metadata" playsinline poster="assets/demo/katrina-poster.jpg" aria-label="Katrina's Mystic Visitors Guide: a demo recorded on the phone"><source src="assets/demo/katrina-demo.mp4" type="video/mp4"></video><div class="caption mono">A demo recorded on the phone.</div><p class="credit">Map data © OpenStreetMap contributors, licensed under ODbL 1.0 (openstreetmap.org/copyright). Vector tile schema © OpenMapTiles (openmaptiles.org), licensed CC BY 4.0. Structure, parcel and historic-inventory data courtesy of MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts, EOTSS.</p></div>
       <div class="helpdocs">
         <h3>Help</h3>
         <p><b>Android:</b> <a href="/katrina/help/Katrinas-Mystic-Visitors-Guide-User-Manual-release-2026-10-18-r2.pdf">User manual (PDF)</a></p>
@@ -252,6 +253,7 @@
       </div>
       <div class="caption mono">The cover and four cards from the deck.</div>
       <p>A full tarot deck drawn from what actually happened here in 1692: the neighbours, the testimony, the paperwork. Read aloud, one card at a time, so the history arrives as something you are standing inside rather than something you are looking at. It teaches. It does not predict.</p>
+      <div class="demo"><video controls preload="metadata" playsinline poster="assets/demo/qabalah-1692-poster.jpg" aria-label="Qabalah 1692: a demo recorded on the phone"><source src="assets/demo/qabalah-1692-demo.mp4" type="video/mp4"></video><div class="caption mono">A demo recorded on the phone.</div></div>
       <div class="helpdocs">
         <h3>Help</h3>
         <p><b>iPhone and iPad:</b> <a href="/qabalah-1692/help/Qabalah-1692-User-Guide-2026-10-10.pdf">User guide (PDF)</a></p>
@@ -266,6 +268,7 @@
       <div class="caption mono">Screenshot from the app, over downtown Salem. Its controls are cropped out.</div>
       <p>Fly over the real Salem and the towns around it: real ground, real shoreline, real streets, with the historic places sitting where they sit in life. It is built from public survey data, and it is our small demonstration of what data looks like when you can move through it.</p>
       <p class="small mono" style="text-transform:none;letter-spacing:.04em">Data: MassGIS &middot; MassDOT &middot; USGS 3DEP &middot; MACRIS</p>
+      <div class="demo"><video controls preload="metadata" playsinline poster="assets/demo/flying-salem-poster.jpg" aria-label="FlyingSalem: a demo of the self-flying tour"><source src="assets/demo/flying-salem-demo.mp4" type="video/mp4"></video><div class="caption mono">A demo of the self-flying tour.</div></div>
       <div class="helpdocs">
         <h3>Help</h3>
         <p><b>Android:</b> <a href="/flyingsalem/help/FlyingSalem-User-Manual-2026-10-18.pdf">User manual (PDF)</a></p>
