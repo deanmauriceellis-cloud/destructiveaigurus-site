@@ -1,3 +1,27 @@
+# destructiveaigurus.com - Destructive AI Gurus, LLC
+# Search engines and AI search assistants are welcome to crawl, index, quote and link to this site.
+# Training AI models on this site's content is not permitted.
+# Destructive AI Gurus, LLC expressly reserves this site's content from text and data mining for AI training, under Article 4(3) of Directive (EU) 2019/790.
+
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+# Test-version documents stay out of search until customer editions replace them
+Disallow: /qabalah-1692/help/Qabalah-1692-User-Manual-for-testers-2026-10-04.pdf
+Disallow: /katrina/help/Katrina-iPhone-TestFlight-Install-Help-2026-10-10.pdf
 Allow: /
+
+# Crawlers that collect content for AI model training
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: meta-externalagent
+User-agent: cohere-ai
+User-agent: MistralAI-Training
+User-agent: Diffbot
+Disallow: /
+
 Sitemap: https://destructiveaigurus.com/sitemap.xml
