@@ -7,7 +7,6 @@ User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 # Test-version documents stay out of search until customer editions replace them
 Disallow: /qabalah-1692/help/Qabalah-1692-User-Manual-for-testers-2026-10-04.pdf
-Disallow: /katrina/help/Katrina-iPhone-TestFlight-Install-Help-2026-10-10.pdf
 Allow: /
 
 # Crawlers that collect content for AI model training

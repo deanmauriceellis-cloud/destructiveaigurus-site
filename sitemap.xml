@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://destructiveaigurus.com/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -140,13 +140,19 @@
   </url>
   <url>
     <loc>https://destructiveaigurus.com/katrina/help/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://destructiveaigurus.com/katrina/help/Katrinas-Mystic-Visitors-Guide-User-Manual-release-2026-10-18-r2.pdf</loc>
     <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://destructiveaigurus.com/katrina/help/Katrinas-Mystic-Visitors-Guide-iPhone-User-Guide-release-2026-10-19-r2.pdf</loc>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
