@@ -158,13 +158,19 @@
   </url>
   <url>
     <loc>https://destructiveaigurus.com/flyingsalem/help/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://destructiveaigurus.com/flyingsalem/help/FlyingSalem-User-Manual-2026-10-18.pdf</loc>
     <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://destructiveaigurus.com/flyingsalem/help/FlyingSalem-iPhone-User-Guide-2026-10-21.pdf</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

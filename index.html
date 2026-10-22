@@ -117,6 +117,9 @@
   .wide img{aspect-ratio:21/9;object-fit:cover;background:#07070b}
   .caption{margin:6px 0 16px}
   .links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:8px}
+  .get{display:inline-block;margin:0 0 18px;padding:10px 16px;border:1px solid var(--blue);border-radius:6px;color:var(--text);text-decoration:none;font-weight:500}
+  .get:hover{background:rgba(59,130,246,.10)}
+  .get:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
   .b2b{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 16px}
   .b2b div{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:#07070b}
   .b2b h3{margin:0 0 6px;font-size:16px}
@@ -196,7 +199,8 @@
 
     <section data-panel="katrina" hidden>
       <h2>Katrina's Mystic Visitors Guide</h2>
-      <p class="sub">For iOS and Android &middot; coming to both stores</p>
+      <p class="sub">For iOS and Android &middot; on Google Play &middot; coming to the App Store</p>
+      <p><a class="get" href="https://play.google.com/store/apps/details?id=com.destructiveaigurus.katrinasmysticvisitorsguide" target="_blank" rel="noopener">Get it on Google Play &rarr;</a></p>
       <div class="media">
         <img src="/lma/katrina-hero.jpg" alt="Katrina, the guide's cat, in Salem">
         <img src="/lma/katrina-feature.jpg" alt="Katrina, detail">
@@ -273,6 +277,7 @@
       <div class="helpdocs">
         <h3>Help</h3>
         <p><b>Android:</b> <a href="/flyingsalem/help/FlyingSalem-User-Manual-2026-10-18.pdf">User manual (PDF)</a></p>
+        <p><b>iPhone and iPad (coming to the App Store):</b> <a href="/flyingsalem/help/FlyingSalem-iPhone-User-Guide-2026-10-21.pdf">User guide (PDF)</a></p>
         <p><a href="/flyingsalem/help/">Help page and contact &rarr;</a></p>
       </div>
     </section>
@@ -326,7 +331,7 @@
 </div>
 <script>
   const strips = {
-    intro:      '<b>Start with a project on the left.</b> The apps are coming to iOS and Android. The practice is what we did for large enterprises for a long time before that.',
+    intro:      '<b>Start with a project on the left.</b> The apps are arriving on Google Play first, then the App Store. The practice is what we did for large enterprises for a long time before that.',
     katrina:    '<b>Katrina.</b> Salem is more than one street and more than one story. This is the guide to the whole town.',
     tarot:      '<b>Qabalah 1692.</b> Every card is a way you might have been in 1692: the accused, the neighbour who repeated the rumour, the magistrate who wrote it down.',
     flying:     '<b>FlyingSalem.</b> Anything that varies across a map can become ground you fly over. Salem is the first one.',
