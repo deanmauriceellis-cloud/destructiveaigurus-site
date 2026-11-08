@@ -1,0 +1,63 @@
+{
+ "attribution": "© OpenStreetMap contributors",
+ "build_label": "20261017.1",
+ "contact": "contact@destructiveaigurus.com",
+ "export": "OpenStreetMap-derived data — Katrina's Mystic Visitors Guide",
+ "files": {
+  "LICENSE-ODbL-1.0.txt": "607680718977f6f6c9607972afd98f208573f19251315ed1362a8589b51beaf5",
+  "places-osm-derived.csv": "7ee548ace4e850d706a299eecad45b862ca66ac5edd89319b0ad606e9a2e1355",
+  "places-osm-derived.geojson": "f3974a4e1911c3efbba35f9d74987a0c9bf7f13bc5dfc45af41566213909ea5f",
+  "walking-route-network.geojson": "8317c163501ca27247d6b0fb77573fdc310060bea22fd34ceec666d837e75fdf",
+  "walking-route-network.sqlite": "536f0d26148c0b5dfbb337ec81d8c07bc7f459a63c794a0b89a1f8575e557053"
+ },
+ "generator": "tools/odbl-export/build_odbl_export.py",
+ "inputs": {
+  "app-salem/src/main/assets/routing/salem-routing-graph.sqlite": "536f0d26148c0b5dfbb337ec81d8c07bc7f459a63c794a0b89a1f8575e557053",
+  "app-salem/src/main/assets/salem_content.db": "f72b7cc7fa7e16f7e12fee85dfb97c2a62f95b90bd6e1ad0fb6acd3d9964980b",
+  "tools/salem-data/lodging-import-2026-06-17.json": "2bb89a90a7bac6d411f9d45e12ded851a298e929d307380caec4a7150ee2c340"
+ },
+ "licence": "ODbL-1.0 (opendatacommons.org/licenses/odbl/1-0/)",
+ "places": {
+  "by_class": {
+   "lodging_osm": 32,
+   "relabelled": 180,
+   "relabelled_si_linked": 245
+  },
+  "field_rule": {
+   "fields equal to the frozen OSM import (S363)": 32,
+   "name/category only — SI overwrote the rest (Apr 2026)": 245,
+   "name/category/coordinates — other fields untraceable": 180
+  },
+  "rows": 457,
+  "with_coordinates": 212
+ },
+ "source_commit": "b41d82cf132ad0e3c19c8abfd5dce58d04a6e1fc",
+ "walking_route_network": {
+  "edges": 46349,
+  "graph_meta": {
+   "bbox": "42.446000,-70.997000,42.607000,-70.776000",
+   "built_at": "2026-04-27T21:02:34+00:00",
+   "edge_count": "46349",
+   "node_count": "43087",
+   "schema_version": "1",
+   "source_db": "tiger",
+   "source_summary": "salem.edges intersect bbox @ 2026-04-27 (TigerLine source — see SalemTourMapRouting.md); S179 edge-split min=60m target=40m; S190 vertex-merge tol=3.0m + island-bridge tol=60m max_island=30; components=49→46→14",
+   "source_tables": "salem.edges, salem.edges_vertices_pgr",
+   "walkable_node_count": "43087",
+   "walking_pace_mps": "1.4"
+  },
+  "mtfcc": {
+   "OSMP": 30,
+   "PEDPT": 1783,
+   "S1100": 1767,
+   "S1200": 3941,
+   "S1400": 38402,
+   "S1500": 2,
+   "S1710": 216,
+   "S1740": 105,
+   "S1780": 71,
+   "SYNTH_BRIDGE": 32
+  },
+  "nodes": 43087
+ }
+}

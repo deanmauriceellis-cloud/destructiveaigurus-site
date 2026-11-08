@@ -1,0 +1,458 @@
+id,name,category,subcategory,lat,lng,address,phone,website,osm_origin
+100_derby_country_store,100 Derby Country Store,SHOPPING,SHOPPING__convenience_stores,,,,,,relabelled_si_linked
+10_perfect_nails,10 Perfect Nails,SHOPPING,SHOPPING__beauty_spa,,,,,,relabelled_si_linked
+1925_at_the_hawthorne,1925 At The Hawthorne,SHOPPING,,,,,,,relabelled_si_linked
+4_seasons_cleaners,4 Seasons Cleaners,SHOPPING,,42.5349617,-70.9157831,,,,relabelled
+adams_auto_repair,Adam's Auto Repair,AUTO_SERVICES,AUTO_SERVICES__repair_shops,,,,,,relabelled_si_linked
+administration_lot,Administration Lot,PARKING,,42.5038487,-70.8906021,,,,relabelled
+adriatic_restaurant_bar,Adriatic Restaurant & Bar,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+advance_auto_parts,Advance Auto Parts,AUTO_SERVICES,AUTO_SERVICES__parts_stores,,,,,,relabelled_si_linked
+advantage_self_storage,Advantage Self Storage,SHOPPING,SHOPPING__storage_rentals,,,,,,relabelled_si_linked
+aleris_salem_dental_center,Aleris Salem Dental Center,HEALTHCARE,HEALTHCARE__dentists,,,,,,relabelled_si_linked
+alex_cuts_barber_shop,Alex Cuts Barber Shop,SHOPPING,SHOPPING__barber_shops,,,,,,relabelled_si_linked
+all_creatures_veterinary_hospital,All Creatures Veterinary Hospital,HEALTHCARE,HEALTHCARE__veterinary,,,,,,relabelled_si_linked
+all_souls_lounge,All Souls Lounge,FOOD_DRINK,FOOD_DRINK__bars,,,,,,relabelled_si_linked
+alumni_field,Alumni Field,CIVIC,,42.5046243,-70.8940385,,,,relabelled
+apex_production,Apex Production,OFFICES,OFFICES__companies,,,,,,relabelled_si_linked
+armory_park,Armory Park,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__monuments,42.52225728891166,-70.89191615581514,,,,relabelled
+artemisia_botanicals,Artemisia Botanicals,WITCH_SHOP,WITCH_SHOP__herb_shops,,,,,,relabelled_si_linked
+aspire_developmental_services,Aspire Developmental Services,SERVICES,,42.5091673,-70.8906087,,,,relabelled
+au_gratin,Au Gratin,FOOD_DRINK,FOOD_DRINK__cafes,,,,,,relabelled_si_linked
+avalon_motel_saugus,Avalon Motel,LODGING,LODGING__motels,42.454925,-71.024077,,+1 781 2334200,http://www.avalon-motel.com/,lodging_osm
+back_alley_bacon,Back Alley Bacon,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+backyard_store,Backyard Store,SHOPPING,,,,,,,relabelled_si_linked
+bada_bing_barbershop_shave_parlor,Bada-Bing Barbershop & Shave Parlor,SHOPPING,SHOPPING__hair_salons,,,,,,relabelled_si_linked
+bambolina,Bambolina,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+banville_optical,Banville Optical,SHOPPING,SHOPPING__opticians,42.5186788,-70.8934406,,,,relabelled
+barrio_tacos,Barrio Tacos,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+bates_elementary_school,Bates Elementary School,CIVIC,,,,,,,relabelled_si_linked
+batting_cage,Batting Cage,ENTERTAINMENT,,42.5071339,-70.8858046,,,,relabelled
+beijing_herbal_foot_spa,Beijing Herbal Foot Spa,SHOPPING,SHOPPING__beauty_spa,,,,,,relabelled_si_linked
+bella_verona,Bella Verona,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+benjamin_punchard_shoreman,"Benjamin Punchard, Shoreman",HISTORICAL_LANDMARKS,,,,,,,relabelled_si_linked
+bentley_academy_charter_school,Bentley Academy Charter School,CIVIC,,42.527635,-70.8811477,,,,relabelled
+bertram_field,Bertram Field,PARKS_REC,PARKS_REC__sports_fields,42.5127229,-70.904793,,,,relabelled
+berube_sons_funeral_home,Berube & Sons Funeral Home,OFFICES,OFFICES__companies,,,,,,relabelled_si_linked
+best_western_plus_north_shore_hotel_danvers,Best Western Plus North Shore Hotel,LODGING,LODGING__hotels,42.569988,-70.975292,50 Dayton Street,+1 978-777-1700,https://www.bestwestern.com/,lodging_osm
+bewitched_sculpture_samantha_statue,Bewitched Sculpture – Samantha Statue,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__monuments,,,,,,relabelled_si_linked
+bill_bobs_roast_beef,Bill & Bob's Roast Beef,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+black_cat_tours,Black Cat Tours,TOUR_COMPANIES,TOUR_COMPANIES__ghost_tours,,,,,,relabelled_si_linked
+black_veil_shoppe_for_the_grim_hearted,Black Veil Shoppe for the Grim Hearted,SHOPPING,SHOPPING__clothing,,,,,,relabelled_si_linked
+boston_burger_company,Boston Burger Company,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+boston_marriott_peabody_peabody,Boston Marriott Peabody,LODGING,LODGING__hotels,42.524498,-70.957394,8 Centennial Drive,,,lodging_osm
+botanica_of_salem,Botanica of Salem,WITCH_SHOP,WITCH_SHOP__herb_shops,42.52152511700805,-70.89738048613071,,,,relabelled
+brew_box,Brew Box,FOOD_DRINK,FOOD_DRINK__cafes,,,,,,relabelled_si_linked
+brick_box,Brick Box,SHOPPING,,,,,,,relabelled_si_linked
+broad_street_cemetery,Broad Street Cemetery,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__cemeteries,,,,,,relabelled_si_linked
+broad_street_park,Broad Street Park,PARKS_REC,PARKS_REC__parks,42.514864,-70.9039077,,,,relabelled
+broadway_lot,Broadway Lot,PARKING,,42.5040564,-70.8953688,,,,relabelled
+buckley_field,Buckley Field,PARKS_REC,PARKS_REC__sports_fields,42.5315698,-70.9252465,,,,relabelled
+bung_hole_liquor_store,Bung Hole Liquor Store,SHOPPING,SHOPPING__liquor_store,,,,,,relabelled_si_linked
+burba_dental_partners,Burba Dental Partners,HEALTHCARE,HEALTHCARE__dentists,42.508734,-70.9112487,,,,relabelled
+burger_king,Burger King,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+busa_wine_spirits,Busa Wine & Spirits,FOOD_DRINK,FOOD_DRINK__liquor_stores,,,,,,relabelled_si_linked
+cabot_farm_playground,Cabot Farm Playground,PARKS_REC,PARKS_REC__playgrounds,42.5348945,-70.8991781,,,,relabelled
+cabot_wealth_management,Cabot Wealth Management,SHOPPING,,42.5215679,-70.8950616,,,,relabelled
+canal_auto_shop,Canal Auto Shop,AUTO_SERVICES,AUTO_SERVICES__repair_shops,,,,,,relabelled_si_linked
+canal_street_cycles,Canal Street Cycles,SHOPPING,SHOPPING__bicycle_shops,,,,,,relabelled_si_linked
+canal_street_lot,Canal Street Lot,PARKING,,42.5021675,-70.8954379,,,,relabelled
+candlewood_suites_danvers,Candlewood Suites,LODGING,LODGING__hotels,42.561114,-70.979424,238 Andover Street,+1 978-777-6222,https://www.ihg.com/candlewood/hotels/us/en/danvers/bosdv/hoteldetail,lodging_osm
+caramel,Caramel,FOOD_DRINK,FOOD_DRINK__candy_stores,,,,,,relabelled_si_linked
+carlton_school,Carlton School,CIVIC,,42.53187183966569,-70.89058041572572,,,,relabelled
+carly_cat_little_free_library,Carly Cat Little Free Library,EDUCATION,EDUCATION__libraries,42.5212583,-70.9036623,,,,relabelled
+casa_tequila,Casa Tequila,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+castle_hill_park,Castle Hill Park,PARKS_REC,PARKS_REC__parks,42.5048504,-70.9044228,,,,relabelled
+catholic_charities,Catholic Charities,SHOPPING,,42.5170299,-70.893569,,,,relabelled
+central_wharf,Central Wharf,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+chambers_of_terror,Chambers of Terror,TOUR_COMPANIES,TOUR_COMPANIES__ghost_tours,,,,,,relabelled_si_linked
+charlotte_forten_park,Charlotte Forten Park,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+charter_street_cemetery,Charter Street Cemetery,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__cemeteries,,,,,,relabelled_si_linked
+charter_street_historic_district,Charter Street Historic District,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+cheese_shop_of_salem,Cheese Shop of Salem,FOOD_DRINK,FOOD_DRINK__restaurants,42.5200264,-70.8932471,,,,relabelled
+chezcasa,ChezCasa,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+chisholm_s_motor_inn_saugus,Chisholm's Motor Inn,LODGING,LODGING__motels,42.453893,-71.022801,,,https://www.chisholmsmotorinn.com/,lodging_osm
+christinas_famous_roast_beef,Christina's Famous Roast Beef,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+circle_k,Circle K,SHOPPING,SHOPPING__convenience_stores,,,,,,relabelled_si_linked
+city_smoke_shop,City Smoke Shop,SHOPPING,SHOPPING__tobacco_shops,,,,,,relabelled_si_linked
+clam_shack,Clam Shack,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+clarion_inn_wakefield,Clarion Inn,LODGING,LODGING__hotels,42.515296,-71.084786,595 North Avenue,+1 781 2456100,,lodging_osm
+collins_cove_park,Collins Cove Park,PARKS_REC,PARKS_REC__parks,42.5298101,-70.8868183,,,,relabelled
+collins_middle_school,Collins Middle School,CIVIC,,42.514760708032,-70.9055417776108,,,,relabelled
+colonial_traveler_inn_saugus,Colonial Traveler Inn,LODGING,LODGING__motels,42.449816,-71.026946,1753 Broadway,+1 781 2336700,,lodging_osm
+columbus_society_of_salem,Columbus Society of Salem,SERVICES,,42.5244522,-70.9012619,,,,relabelled
+comfort_inn_and_suites_revere,Comfort Inn and Suites,LODGING,LODGING__hotels,42.411777,-71.00126,85 American Legion Highway,+1 781-485-3600,https://www.choicehotels.com/massachusetts/woburn/comfort-inn-hotels,lodging_osm
+connelly_park,Connelly Park,PARKS_REC,PARKS_REC__parks,42.5321419,-70.919674,,,,relabelled
+conservation_land,Conservation Land,PARKS_REC,PARKS_REC__nature_reserves,42.5020845,-70.914272,,,,relabelled
+conservation_land_1,Conservation Land,PARKS_REC,PARKS_REC__nature_reserves,42.5001948,-70.9176762,,,,relabelled
+conservation_land_2,Conservation Land,PARKS_REC,PARKS_REC__nature_reserves,42.5075144,-70.9073881,,,,relabelled
+cottage_street_playground,Cottage Street Playground,PARKS_REC,PARKS_REC__playgrounds,42.5183216,-70.9239813,,,,relabelled
+counter,Counter,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+crabs,Crabs,PARKS_REC,,42.5187667,-70.8941932,,,,relabelled
+craft_witch_diy_crafting_studio,Craft Witch: DIY Crafting Studio,ENTERTAINMENT,ENTERTAINMENT__arts_centres,42.52044451147907,-70.88804773986341,,,,relabelled
+crave,Crave,FOOD_DRINK,FOOD_DRINK__bakeries,,,,,,relabelled_si_linked
+creedons_transmissions,Creedon's Transmissions,AUTO_SERVICES,AUTO_SERVICES__repair_shops,,,,,,relabelled_si_linked
+crosbys_marketplace,Crosby's Marketplace,SHOPPING,SHOPPING__supermarkets,,,,,,relabelled_si_linked
+crow_haven_corner,Crow Haven Corner,WITCH_SHOP,WITCH_SHOP__witchcraft_shops,,,,,,relabelled_si_linked
+crowninshield_bentley_house,Crowninshield-Bentley House,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__home_sites,,,,,,relabelled_si_linked
+curly_girl_candy_shop,Curly Girl Candy Shop,FOOD_DRINK,FOOD_DRINK__candy_stores,,,,,,relabelled_si_linked
+curtis_park,Curtis Park,PARKS_REC,PARKS_REC__parks,42.532761428035364,-70.88978109758564,,,,relabelled
+custom_house,Custom House,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+cvs_pharmacy_1,CVS Pharmacy,HEALTHCARE,HEALTHCARE__pharmacies,42.52165633035619,-70.89436903595924,,,,relabelled
+cvs_pharmacy_3,CVS Pharmacy,HEALTHCARE,HEALTHCARE__pharmacies,42.501036,-70.8965935,,,,relabelled
+d_t_nails,D&T Nails,SHOPPING,SHOPPING__beauty_spa,42.5202052,-70.9115982,,,,relabelled
+dave_engs_flowers,Dave Eng’s Flowers,SHOPPING,SHOPPING__florists,42.522133,-70.8855454,,,,relabelled
+david_j_beattie_park,David J. Beattie Park,PARKS_REC,PARKS_REC__parks,42.5254808,-70.8818145,,,,relabelled
+derby_house,Derby House,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+derby_powderhouse_wharf,Derby Powderhouse Wharf,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+derby_street_laundry,Derby Street Laundry,SHOPPING,SHOPPING__laundromats,,,,,,relabelled_si_linked
+derby_waterfront_district,Derby Waterfront District,CIVIC,,42.52131631177099,-70.88731348514558,,,,relabelled
+dibiase_park,Dibiase Park,PARKS_REC,PARKS_REC__parks,42.5111859,-70.9201317,,,,relabelled
+dire_wolf_tavern,Dire Wolf Tavern,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+djohnny_multi_services,D’Johnny Multi Services,OFFICES,OFFICES__companies,42.5177537,-70.8906429,,,,relabelled
+dotties,Dottie's,SHOPPING,,42.5227329,-70.9199905,,,,relabelled
+doubletree_by_hilton_boston_north_shore_danvers,DoubleTree by Hilton Boston North Shore,LODGING,LODGING__hotels,42.597132,-70.96943,50 Village Drive;Ferncroft Road,,https://www.hilton.com/en/hotels/bosnsdt-doubletree-boston-north-shore/,lodging_osm
+dr_stan_garber_dmd,Dr. Stan Garber DMD,HEALTHCARE,HEALTHCARE__doctors,42.5105593,-70.8915219,,,,relabelled
+dunkin,Dunkin',FOOD_DRINK,FOOD_DRINK__fast_food,42.520276970233596,-70.89583419263364,,,,relabelled
+dunkin_1,Dunkin',FOOD_DRINK,FOOD_DRINK__fast_food,42.5070235,-70.8957412,,,,relabelled
+dunkin_2,Dunkin',FOOD_DRINK,FOOD_DRINK__fast_food,42.5194994,-70.909869,,,,relabelled
+dunkin_3,Dunkin',FOOD_DRINK,FOOD_DRINK__fast_food,42.5045213,-70.922465,,,,relabelled
+east_end_veterans_memorial_park,East End Veterans Memorial Park,PARKS_REC,PARKS_REC__parks,42.5261292,-70.9237447,,,,relabelled
+east_regiment_beer_company,East Regiment Beer Company,FOOD_DRINK,FOOD_DRINK__bars,,,,,,relabelled_si_linked
+eastern_bank,Eastern Bank,FINANCE,FINANCE__banks,,,,,,relabelled_si_linked
+eastern_bank_1,Eastern Bank,FINANCE,FINANCE__banks,42.52006395991885,-70.88979318737984,,,,relabelled
+eastern_bank_2,Eastern Bank,FINANCE,FINANCE__banks,42.5019045,-70.9235179,,,,relabelled
+econo_lodge_danvers,Econo Lodge,LODGING,LODGING__motels,42.54795,-70.93799,152 Endicott Street,+1 978-777-1030,,lodging_osm
+econo_lodge_malden,Econo Lodge,LODGING,LODGING__motels,42.4339,-71.038332,321 Broadway,+1 781-324-8500,https://www.choicehotels.com/massachusetts/woburn/comfort-inn-hotels,lodging_osm
+ellison_campus_center_lot,Ellison Campus Center Lot,PARKING,,42.5030204,-70.8917934,,,,relabelled
+endicott_school,Endicott School,CIVIC,,42.5214844,-70.9125493,,,,relabelled
+engine_house_pizza,Engine House Pizza,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+espacio_el_punto,Espacio El Punto,CIVIC,,42.5156482,-70.8891594,,,,relabelled
+essex_county_court_buildings,Essex County Court Buildings,CIVIC,,42.523108498200614,-70.89727789163591,,,,relabelled
+essex_county_craftsmen_inc,Essex County Craftsmen Inc,SERVICES,SERVICES__plumbing_heating,,,,,,relabelled_si_linked
+essex_institute_museum_building,Essex Institute Museum Building,HISTORICAL_BUILDINGS,,42.52243915680883,-70.8912241458893,,,,relabelled
+essex_law_library,Essex Law Library,EDUCATION,EDUCATION__libraries,42.5231903446879,-70.89629352092744,,,,relabelled
+essex_street_dental_medicine,Essex Street Dental Medicine,HEALTHCARE,HEALTHCARE__dentists,,,,,,relabelled_si_linked
+family_dollar,Family Dollar,SHOPPING,SHOPPING__variety_stores,,,,,,relabelled_si_linked
+farnsworth_school,Farnsworth School,CIVIC,,42.5334286,-70.9278276,,,,relabelled
+fatima_s_psychic_studio,Fatima’s Psychic Studio,WITCH_SHOP,WITCH_SHOP__witchcraft_shops,,,,,,relabelled_si_linked
+feline_hospital,Feline Hospital,HEALTHCARE,HEALTHCARE__veterinary,,,,,,relabelled_si_linked
+fidelia_bridges_guest_house,Fidelia Bridges Guest House,LODGING,LODGING__guest_houses,42.522634861889436,-70.88896036148073,,,,relabelled
+first_baptist_church_of_salem,First Baptist Church of Salem,WORSHIP,,42.50784059736711,-70.89163184165956,,,,relabelled
+first_church_in_salem,First Church in Salem,WORSHIP,,,,,,,relabelled_si_linked
+first_united_methodist_church,First United Methodist Church,WORSHIP,,42.523151,-70.9239384,,,,relabelled
+fix_master,Fix Master,OFFICES,OFFICES__companies,,,,,,relabelled_si_linked
+flying_saucer_pizza_company,Flying Saucer Pizza Company,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+fort_lee,Fort Lee,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+four_points_boston_logan_international_airport_revere,Four Points Boston Logan International Airport,LODGING,LODGING__hotels,42.429322,-71.015148,407;427 Squire Road,+17812847200,,lodging_osm
+four_points_by_sheraton_wakefield_boston_hotel_conference_center_wakefield,Four Points by Sheraton Wakefield Boston Hotel & Conference Center,LODGING,LODGING__hotels,42.514118,-71.039555,1 Audubon Road,,http://www.fourpointswakefieldboston.com,lodging_osm
+frederick_e_berry_library,Frederick E. Berry Library,CIVIC,,,,,,,relabelled_si_linked
+fresh_express_laundry_center,Fresh Express Laundry Center,SHOPPING,SHOPPING__laundromats,,,,,,relabelled_si_linked
+friendly_mini_mart,Friendly Mini Mart,SHOPPING,SHOPPING__convenience_stores,,,,,,relabelled_si_linked
+friends_burial_ground_quaker_cemetary,Friends Burial Ground Quaker Cemetery,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__cemeteries,42.518635635336686,-70.90470492839815,,,,relabelled
+friendship_of_salem,Friendship of Salem,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+furlong_park,Furlong Park,PARKS_REC,PARKS_REC__parks,42.5283749,-70.8975598,,,,relabelled
+gallows_hill_museum_theatre,Gallows Hill Museum/Theatre,ENTERTAINMENT,ENTERTAINMENT__theatres,42.5221296,-70.8966569,,,,relabelled
+gallows_hill_park,Gallows Hill Park,PARKS_REC,PARKS_REC__parks,42.5158335,-70.9123422,,,,relabelled
+gasset_fitness_center,Gasset FItness Center,ENTERTAINMENT,ENTERTAINMENT__fitness,42.5051666,-70.8946078,,,,relabelled
+gonyea_park,Gonyea Park,PARKS_REC,PARKS_REC__parks,42.527784255084676,-70.89327335357667,,,,relabelled
+gulu_gulu_cafe,Gulu-Gulu Cafe,FOOD_DRINK,FOOD_DRINK__cafes,,,,,,relabelled_si_linked
+h_h_propeller_shop,H&H Propeller Shop,ENTERTAINMENT,ENTERTAINMENT__marinas,,,,,,relabelled_si_linked
+h_r_block,H&R Block,OFFICES,OFFICES__tax_advisors,,,,,,relabelled_si_linked
+habanero_bicycles,Habanero Bicycles,SHOPPING,SHOPPING__bicycle_shops,,,,,,relabelled_si_linked
+hampton_danvers,,LODGING,LODGING__hotels,42.526442,-70.993912,59 Newbury Street,+1-978-536-2020,https://www.hilton.com/en/hotels/bospbhx-hampton-boston-peabody/,lodging_osm
+hampton_inn_salem,Hampton Inn Salem,LODGING,LODGING__bed_and_breakfast,42.5184215,-70.8947147,,,,relabelled
+harrisons_comics,Harrison's Comics,SHOPPING,SHOPPING__bookstores,,,,,,relabelled_si_linked
+hatches_wharf,Hatches Wharf,PARKS_REC,,42.5208922,-70.8871476,,,,relabelled
+hathaway_house,Hathaway House,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+haus_witch,Haus Witch,WITCH_SHOP,WITCH_SHOP__witchcraft_shops,,,,,,relabelled_si_linked
+hawkes_house,Hawkes House,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+hawthorne_cove_marina,Hawthorne Cove Marina,ENTERTAINMENT,ENTERTAINMENT__marinas,42.522693871189745,-70.88193297386171,,,,relabelled
+health_sciences_library,Health Sciences Library,CIVIC,,42.5115442,-70.9067745,,,,relabelled
+high_street_park,High Street Park,PARKS_REC,PARKS_REC__parks,42.51830943898403,-70.89715987443925,,,,relabelled
+hive_workspace,Hive Workspace,SHOPPING,,42.5182981,-70.8950184,,,,relabelled
+holiday_inn_express_saugus,Holiday Inn Express,LODGING,LODGING__hotels,42.471179,-71.025736,,+1 781-233-1800,http://www.saugushotel.com/,lodging_osm
+holiday_inn_suites_peabody,Holiday Inn & Suites,LODGING,LODGING__hotels,42.519033,-70.997794,1 Newbury Street,+1-978-535-4600,https://www.ihg.com/holidayinn/hotels/us/en/peabody/bospb/hoteldetail,lodging_osm
+home_decor_group,Home Decor Group,SHOPPING,SHOPPING__hardware_stores,,,,,,relabelled_si_linked
+homewood_suites_danvers,Homewood Suites,LODGING,LODGING__hotels,42.525752,-70.994113,57 Newbury Street,+1 978 5365050,,lodging_osm
+house_of_boo,House Of Boo,SHOPPING,SHOPPING__souvenirs,,,,,,relabelled_si_linked
+howard_street_cemetery,Howard Street Cemetery,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__cemeteries,,,,,,relabelled_si_linked
+howling_wolf_taqueria,Howling Wolf Taqueria,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+ihop,IHOP,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+immaculate_conception_church,Immaculate Conception Church,WORSHIP,,42.5213768,-70.8896216,,,,relabelled
+inkperial,InkPerial,SHOPPING,,42.5177441,-70.8897043,,,,relabelled
+irving_oil,Irving Oil,SHOPPING,,,,,,,relabelled_si_linked
+irzyk_park,Irzyk Park,PARKS_REC,PARKS_REC__parks,42.5269954,-70.8809596,,,,relabelled
+jaho_coffee,Jaho Coffee,FOOD_DRINK,FOOD_DRINK__bakeries,,,,,,relabelled_si_linked
+jeggle_island,Jeggle Island,PARKS_REC,,42.5020112,-70.8854683,,,,relabelled
+jims_collision,Jim's Collision,AUTO_SERVICES,AUTO_SERVICES__repair_shops,,,,,,relabelled_si_linked
+joes_fish_prints,Joe’s Fish Prints,SHOPPING,SHOPPING__gift_shops,,,,,,relabelled_si_linked
+jolie_tea_company,Jolie Tea Company,FOOD_DRINK,,,,,,,relabelled_si_linked
+jubilee_yacht_club,Jubilee Yacht Club,ENTERTAINMENT,ENTERTAINMENT__marinas,42.5400286,-70.878934,,,,relabelled
+kakawa_chocolate_house,Kakawa Chocolate House,FOOD_DRINK,FOOD_DRINK__candy_stores,,,,,,relabelled_si_linked
+kernwood_country_club,Kernwood Country Club,ENTERTAINMENT,,42.5397258,-70.9038705,,,,relabelled
+king_lewis_engraving_gifts,King Lewis Engraving & Gifts,SHOPPING,SHOPPING__gift_shops,,,,,,relabelled_si_linked
+kings_roast_beef,King's Roast Beef,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+kissable_paws,Kissable Paws,SHOPPING,,,,,,,relabelled_si_linked
+knights_inn_danvers,Knights Inn,LODGING,LODGING__motels,42.57945,-70.96774,255 Newbury Street,,,lodging_osm
+koto_grill_sushi,Koto Grill & Sushi,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+la_delicia,La Delicia,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+lafayette_park,Lafayette Park,PARKS_REC,PARKS_REC__parks,42.51739724674569,-70.89338332414628,,,,relabelled
+lappel_du_vide,L’appel Du Vide,WITCH_SHOP,WITCH_SHOP__witchcraft_shops,,,,,,relabelled_si_linked
+laura_lanes_skin_care,Laura Lanes Skin Care,SHOPPING,SHOPPING__beauty_spa,,,,,,relabelled_si_linked
+law_offices_of_paul_r_moraski,Law Offices of Paul R. Moraski,OFFICES,OFFICES__law_offices,42.522538,-70.8943261,,,,relabelled
+ledger,Ledger,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__historic_bldgs,,,,,,relabelled_si_linked
+leos_metro_bowl,Leo's Metro Bowl,SHOPPING,,42.5240328,-70.9294801,,,,relabelled
+leslies_retreat_park,Leslie's Retreat Park,PARKS_REC,PARKS_REC__parks,42.5228628,-70.9027774,,,,relabelled
+levesque_funeral_home,Levesque Funeral Home,SHOPPING,,42.5160149,-70.8925298,,,,relabelled
+liberty_tax,Liberty Tax,OFFICES,OFFICES__tax_advisors,,,,,,relabelled_si_linked
+library_lot,Library Lot,PARKING,,42.5018389,-70.889758,,,,relabelled
+life_alive_urban_oasis_organic_cafe,Life Alive Urban Oasis & Organic Cafe,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+lifebridge_thrift_store,Lifebridge Thrift Store,SHOPPING,SHOPPING__thrift_stores,,,,,,relabelled_si_linked
+lil_devil_s_deli,Lil' Devil's Deli,FOOD_DRINK,FOOD_DRINK__fast_food,,,,,,relabelled_si_linked
+little_free_library,Little Free Library,EDUCATION,EDUCATION__libraries,42.5128816,-70.8920424,,,,relabelled
+londis_roast_beef_pizza,Londi's Roast Beef & Pizza,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+longboards_restaurant_bar,Longboards Restaurant & Bar,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+loring_liquors,Loring Liquors,SHOPPING,SHOPPING__liquor_store,,,,,,relabelled_si_linked
+louis_restoration_repair,Louis Restoration & Repair,AUTO_SERVICES,AUTO_SERVICES__repair_shops,,,,,,relabelled_si_linked
+louise_michaud_photographer,Louise Michaud Photographer,SHOPPING,,42.5208387,-70.8891692,,,,relabelled
+lulu_s_bakery_pantry,Lulu’s Bakery & Pantry,FOOD_DRINK,FOOD_DRINK__cafes,,,,,,relabelled_si_linked
+m_t_bank,M&T Bank,FINANCE,FINANCE__banks,,,,,,relabelled_si_linked
+mack_park_1,Mack Park,PARKS_REC,PARKS_REC__parks,42.5238841,-70.908536,,,,relabelled
+malon_barbershop,Malón Barbershop,SHOPPING,SHOPPING__hair_salons,42.5177604,-70.8896227,,,,relabelled
+mansell_playground,Mansell Playground,PARKS_REC,PARKS_REC__playgrounds,42.5165362,-70.9104031,,,,relabelled
+marblehead_bank,Marblehead Bank,FINANCE,FINANCE__banks,,,,,,relabelled_si_linked
+marcs_market,Marc’s Market,SHOPPING,SHOPPING__convenience_stores,,,,,,relabelled_si_linked
+maria_s_sweet_somethings,Maria’s Sweet Somethings,FOOD_DRINK,,,,,,,relabelled_si_linked
+market_basket,Market Basket,SHOPPING,SHOPPING__supermarkets,,,,,,relabelled_si_linked
+marrs_park,Marrs Park,PARKS_REC,PARKS_REC__parks,42.5160869,-70.9268929,,,,relabelled
+marsh_dining_hall,Marsh Dining Hall,FOOD_DRINK,,42.5001517,-70.8934973,,,,relabelled
+mary_jane_lee_park,Mary Jane Lee Park,PARKS_REC,PARKS_REC__parks,42.5160923,-70.8901091,,,,relabelled
+massgeneral_for_children_at_north_shore_medical_center,MassGeneral for Children at North Shore Medical Center,HEALTHCARE,HEALTHCARE__clinics,42.5118445,-70.9064467,,,,relabelled
+masshire_north_shore_career_center,MassHire North Shore Career Center,CIVIC,CIVIC__community_centres,,,,,,relabelled_si_linked
+mccabe_park,McCabe Park,PARKS_REC,PARKS_REC__parks,42.5397738,-70.899264,,,,relabelled
+mcdonalds_1,McDonald's,FOOD_DRINK,FOOD_DRINK__fast_food,42.5074203,-70.8964264,,,,relabelled
+mcdonalds_2,McDonald's,FOOD_DRINK,FOOD_DRINK__fast_food,42.5027937,-70.9234283,,,,relabelled
+mcglew_park,McGlew Park,PARKS_REC,PARKS_REC__parks,42.5301791,-70.9093018,,,,relabelled
+mcgrath_park,McGrath Park,PARKS_REC,PARKS_REC__parks,42.5085438,-70.9227964,,,,relabelled
+melt,Melt,FOOD_DRINK,FOOD_DRINK__cafes,42.522421365407475,-70.89596360921861,,,,relabelled
+merchant_consulting_group,Merchant Consulting Group,SHOPPING,,42.519485,-70.8949602,,,,relabelled
+mercy_tavern,Mercy Tavern,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+merryfox_realty,MerryFox Realty,OFFICES,OFFICES__real_estate,,,,,,relabelled_si_linked
+metro_by_t_mobile_1,Metro by T-Mobile,SHOPPING,SHOPPING__phone_stores,42.5177369,-70.8943537,,,,relabelled
+mindys_nails,Mindy's Nails,SHOPPING,SHOPPING__beauty_spa,,,,,,relabelled_si_linked
+ministerios_casa_de_oraci_n,Ministerios Casa De Oración,WORSHIP,,42.5167657,-70.8913825,,,,relabelled
+ministry_of_donuts,Ministry Of Donuts,FOOD_DRINK,FOOD_DRINK__bakeries,,,,,,relabelled_si_linked
+monumental_cemetery,Monumental Cemetery,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__cemeteries,,,,,,relabelled_si_linked
+motel_6_danvers,Motel 6,LODGING,LODGING__motels,42.561937,-70.974636,65 Newbury Street,+1 978 7748045,,lodging_osm
+narbonne_house,Narbonne House,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+nathaniel_bowditch_house,Nathaniel Bowditch House,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__historic_bldgs,,,,,,relabelled_si_linked
+national_park_service_visitor_center,National Park Service Visitor Center,CIVIC,,42.522678351824084,-70.89218437671663,,,,relabelled
+new_england_magic,New England Magic,WITCH_SHOP,WITCH_SHOP__metaphysical,,,,,,relabelled_si_linked
+new_england_motor_court_malden,New England Motor Court,LODGING,LODGING__motels,42.439451,-71.032121,551 Broadway,+1 781 3210505,http://newenglandermotorcourt.net/,lodging_osm
+new_england_pirate_museum,New England Pirate Museum,ENTERTAINMENT,,42.52063824592848,-70.89070379734041,,,,relabelled
+new_england_soup_factory,New England Soup Factory,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+new_market,New Market,SHOPPING,SHOPPING__convenience_stores,,,,,,relabelled_si_linked
+newbury_street_inn_peabody,Newbury Street Inn,LODGING,LODGING__motels,42.540952,-70.987599,,+1 978 5353262,http://newburystreetinn.com/,lodging_osm
+north_campus_faculty_lot,North Campus Faculty Lot,PARKING,,42.5002181,-70.8913526,,,,relabelled
+north_campus_parking_garage,North Campus Parking Garage,PARKING,,42.5008142,-70.890823,,,,relabelled
+north_dining_commons,North Dining Commons,FOOD_DRINK,,42.5035209,-70.89051,,,,relabelled
+north_house_of_pizza,North House of Pizza,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+north_shore_auto_clinic,North Shore Auto Clinic,AUTO_SERVICES,AUTO_SERVICES__repair_shops,,,,,,relabelled_si_linked
+north_shore_medical_center_salem_hospital,North Shore Medical Center - Salem Hospital,HEALTHCARE,HEALTHCARE__clinics,42.5111964,-70.9051843,,,,relabelled
+north_street_tattoo,North Street Tattoo,SHOPPING,SHOPPING__tattoo_shops,,,,,,relabelled_si_linked
+northeastern_massachusetts_aquaculture_center,Northeastern Massachusetts Aquaculture Center,CIVIC,,42.5301722,-70.871977,,,,relabelled
+o_connor_park,"O""Connor Park",PARKS_REC,PARKS_REC__parks,42.5163542,-70.9293117,,,,relabelled
+oak_moss,Oak + Moss,SHOPPING,,,,,,,relabelled_si_linked
+oconnor_a,O'Connor A,ENTERTAINMENT,,42.5162939,-70.9293611,,,,relabelled
+okeefe_back_lot,O'Keefe Back Lot,PARKING,,42.5044914,-70.8958295,,,,relabelled
+okeefe_sports_complex,O'Keefe Sports Complex,PARKS_REC,PARKS_REC__rec_grounds,,,,,,relabelled_si_linked
+old_slide,Old Slide,PARKS_REC,,42.5059606,-70.8835172,,,,relabelled
+old_south_trask_cemetery,Old South Trask Cemetery,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__cemeteries,,,,,,relabelled_si_linked
+old_town_hall,Old Town Hall,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__historic_bldgs,,,,,,relabelled_si_linked
+olde_main_street_pub,Olde Main Street Pub,FOOD_DRINK,FOOD_DRINK__bars,,,,,,relabelled_si_linked
+olde_salem_greens,Olde Salem Greens,ENTERTAINMENT,,42.5015297,-70.9084613,,,,relabelled
+palmer_cove_park,Palmer Cove Park,PARKS_REC,PARKS_REC__parks,42.5140429,-70.8893159,,,,relabelled
+palmer_cove_yacht_club,Palmer Cove Yacht Club,ENTERTAINMENT,ENTERTAINMENT__marinas,42.51442658315014,-70.88790088891984,,,,relabelled
+passage_to_india,Passage to India,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+patten_park,Patten Park,PARKS_REC,PARKS_REC__parks,42.527992,-70.9048034,,,,relabelled
+paxton_parts_service,Paxton Parts & Service,SHOPPING,SHOPPING__hair_salons,42.5216415,-70.8955785,,,,relabelled
+peabody_district_court,Peabody District Court,CIVIC,,42.5265884,-70.9276587,,,,relabelled
+peabody_street_park,Peabody Street Park,PARKS_REC,PARKS_REC__parks,42.5188645,-70.8921074,,,,relabelled
+pedrick_store_house,Pedrick Store House,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+pequot_filling_station_inc,Pequot Filling Station Inc,SHOPPING,SHOPPING__convenience_stores,,,,,,relabelled_si_linked
+petsmart,PetSmart,SHOPPING,SHOPPING__pet_stores,,,,,,relabelled_si_linked
+piccolo_piatti,Piccolo piatti,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+pickering_school,Pickering School,CIVIC,,42.5289843,-70.9069937,,,,relabelled
+pickering_wharf,Pickering Wharf,ENTERTAINMENT,ENTERTAINMENT__marinas,42.519787,-70.8876099,,,,relabelled
+pierpont_park,Pierpont Park,PARKS_REC,PARKS_REC__parks,42.521526,-70.9218637,,,,relabelled
+planet_fitness,Planet Fitness,SHOPPING,SHOPPING__beauty_spa,,,,,,relabelled_si_linked
+plaza_motel_peabody_massachusetts_danvers,,LODGING,LODGING__motels,42.533833,-70.989617,125 Newbury Street,+1 978 5352200,,lodging_osm
+poblano,Poblano,FOOD_DRINK,,,,,,,relabelled_si_linked
+polish_league_of_american_veterans,Polish League of American Veterans,CIVIC,,42.5226733,-70.886334,,,,relabelled
+polonus_deli,Polonus Deli,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+popped,Popped!,FOOD_DRINK,,,,,,,relabelled_si_linked
+porcello_law_offices,Porcello Law Offices,OFFICES,OFFICES__law_offices,,,,,,relabelled_si_linked
+prescott_memorial_cemetery,Prescott Memorial Cemetery,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__cemeteries,,,,,,relabelled_si_linked
+prime_gas_station,Prime Gas Station,FUEL_CHARGING,FUEL_CHARGING__gas_stations,42.51525306600403,-70.89234530925752,,,,relabelled
+pringles_barber_shop,Pringle's Barber Shop,FOOD_DRINK,FOOD_DRINK__bars,,,,,,relabelled_si_linked
+professor_spindlewink_s_world_of_wizardry,Professor Spindlewink’s World of Wizardry,WITCH_SHOP,WITCH_SHOP__witchcraft_shops,,,,,,relabelled_si_linked
+public_parking,Public Parking,PARKING,,42.5188095,-70.8959111,,,,relabelled
+public_stores,Public Stores,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+pyramid_books,Pyramid Books,SHOPPING,SHOPPING__bookstores,42.5208468,-70.8890411,,,,relabelled
+quality_cuts,Quality Cuts,SHOPPING,,42.5032392,-70.9227924,,,,relabelled
+quick_pick_convenience,Quick Pick Convenience,SHOPPING,SHOPPING__convenience_stores,,,,,,relabelled_si_linked
+rainbow_terrace_playground,Rainbow Terrace Playground,PARKS_REC,PARKS_REC__playgrounds,42.5024286,-70.8915962,,,,relabelled
+re_max_beacon,RE/MAX Beacon,OFFICES,OFFICES__real_estate,,,,,,relabelled_si_linked
+real_pirates_salem,Real Pirates Salem,ENTERTAINMENT,ENTERTAINMENT__tour_operators,,,,,,relabelled_si_linked
+red_line_cafe,Red Line Cafe,FOOD_DRINK,FOOD_DRINK__cafes,,,,,,relabelled_si_linked
+red_lion_smokeshop,Red Lion Smokeshop,SHOPPING,SHOPPING__tobacco_shops,,,,,,relabelled_si_linked
+red_roof_plus_boston_logan_saugus,Red Roof Plus+ Boston - Logan,LODGING,LODGING__hotels,42.468685,-71.024548,920 Broadway,,https://www.redroof.com/experience/ma/boston-logan,lodging_osm
+red_s_sandwich_shop,Red’s Sandwich Shop,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+remond_park,Remond Park,PARKS_REC,PARKS_REC__parks,42.53713707661984,-70.88689506053926,,,,relabelled
+residence_inn_danvers,Residence Inn,LODGING,LODGING__hotels,42.559211,-70.977185,,+1 978-777-7171,https://www.marriott.com/bosdn,lodging_osm
+richdale_convenience_store,Richdale Convenience Store,SHOPPING,SHOPPING__convenience_stores,,,,,,relabelled_si_linked
+riley_plaza,Riley Plaza,PARKS_REC,,42.519544,-70.8958869,,,,relabelled
+rockett_arena,Rockett Arena,SHOPPING,,42.5053591,-70.8952864,,,,relabelled
+rodeway_inn_revere,Rodeway Inn,LODGING,LODGING__motels,42.417442,-71.00246,309 American Legion Highway,+1 781-241-4714,https://www.choicehotels.com/massachusetts/woburn/comfort-inn-hotels,lodging_osm
+roger_conant_statue,Roger Conant Statue,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__monuments,,,,,,relabelled_si_linked
+ronan_segal_harrington,"Ronan, Segal & Harrington",OFFICES,OFFICES__law_offices,,,,,,relabelled_si_linked
+ropes_garden_little_free_library,Ropes Garden Little Free Library,EDUCATION,EDUCATION__libraries,42.5213452,-70.8997159,,,,relabelled
+rose_insurance_agency_inc,Rose Insurance Agency Inc.,OFFICES,OFFICES__insurance,42.5024617,-70.8942909,,,,relabelled
+roseadella_s,Roseadella’s,FOOD_DRINK,FOOD_DRINK__cafes,,,,,,relabelled_si_linked
+royal_blendz,Royal Blendz,SHOPPING,SHOPPING__hair_salons,,,,,,relabelled_si_linked
+royal_cleaners,Royal Cleaners,SHOPPING,SHOPPING__dry_cleaners,,,,,,relabelled_si_linked
+rv_field,RV Field,LODGING,LODGING__rv_parks,42.5281987,-70.8698148,,,,relabelled
+saint_anne_school,Saint Anne School,CIVIC,,42.5028736,-70.9017153,,,,relabelled
+saint_james_school,Saint James School,CIVIC,,42.5203733,-70.9058824,,,,relabelled
+saint_josephs_school,Saint Josephs School,CIVIC,,42.5167623,-70.8922709,,,,relabelled
+saint_josephs_school_1,Saint Josephs School,EDUCATION,EDUCATION__schools,42.5350952,-70.9272721,,,,relabelled
+saint_marys_cemetery,Saint Marys Cemetery,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__cemeteries,,,,,,relabelled_si_linked
+saint_marys_school,Saint Marys School,CIVIC,,42.5214845,-70.8900487,,,,relabelled
+saint_nicholas_orthodox_church,Saint Nicholas Orthodox Church,WORSHIP,,42.5258615,-70.8847238,,,,relabelled
+saint_thomas_school,Saint Thomas School,CIVIC,,42.5334286,-70.9136606,,,,relabelled
+salem_7,Salem 7,SHOPPING,,,,,,,relabelled_si_linked
+salem_art,Salem Art,SHOPPING,SHOPPING__tattoo_shops,,,,,,relabelled_si_linked
+salem_business_center,Salem Business Center,SHOPPING,,42.5177808,-70.8935526,,,,relabelled
+salem_city_fire_department,Salem City Fire Department,CIVIC,,42.5269631,-70.8795356,,,,relabelled
+salem_city_hall,Salem City Hall,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__historic_bldgs,,,,,,relabelled_si_linked
+salem_community_child_care,Salem Community Child Care,CIVIC,,,,,,,relabelled_si_linked
+salem_community_gardens,Salem Community Gardens,PARKS_REC,PARKS_REC__gardens,,,,,,relabelled_si_linked
+salem_district_court,Salem District Court,CIVIC,,,,,,,relabelled_si_linked
+salem_early_childhood_center,Salem Early Childhood Center,CIVIC,,,,,,,relabelled_si_linked
+salem_farmers_market,Salem Farmer's Market,SHOPPING,SHOPPING__convenience_stores,42.5207843,-70.8946022,,,,relabelled
+salem_five_bank,Salem Five Bank,FINANCE,FINANCE__banks,42.521609874437715,-70.89477941393852,,,,relabelled
+salem_five_financial,Salem Five Financial,SHOPPING,,42.52231,-70.8949244,,,,relabelled
+salem_harbormaster,Salem Harbormaster,CIVIC,,42.5261273,-70.8711621,,,,relabelled
+salem_high_school,Salem High School,CIVIC,,42.506337843518466,-70.9116840362549,,,,relabelled
+salem_historical_tours,Salem Historical Tours,TOUR_COMPANIES,TOUR_COMPANIES__ghost_tours,,,,,,relabelled_si_linked
+salem_laundry_co,Salem Laundry Co.,SHOPPING,SHOPPING__laundromats,,,,,,relabelled_si_linked
+salem_liquors,Salem Liquors,SHOPPING,SHOPPING__liquor_store,,,,,,relabelled_si_linked
+salem_maritime_national_historical_park,Salem Maritime National Historical Park,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+salem_nail_bar,Salem Nail Bar,FOOD_DRINK,FOOD_DRINK__bars,,,,,,relabelled_si_linked
+salem_overhead_door,Salem Overhead Door,OFFICES,OFFICES__companies,,,,,,relabelled_si_linked
+salem_pantry,Salem Pantry,CIVIC,,,,,,,relabelled_si_linked
+salem_post_office,Salem Post Office,SHOPPING,,42.5196108,-70.8965902,,,,relabelled
+salem_s_retreat,Salem's Retreat,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+salem_state_university_north_campus,Salem State University North Campus,CIVIC,,42.5023797,-70.8911021,,,,relabelled
+salem_state_university_okeefe_campus,Salem State University O'Keefe Campus,CIVIC,,42.5052712,-70.8945299,,,,relabelled
+salem_supermarket,Salem Supermarket,SHOPPING,SHOPPING__supermarkets,,,,,,relabelled_si_linked
+salem_waterfront_hotel_suites,Salem Waterfront Hotel & Suites,LODGING,LODGING__hotels,,,,,,relabelled_si_linked
+salem_willows_park_sign,Salem Willows Park sign,CIVIC,,42.5346015,-70.8701225,,,,relabelled
+salem_witch_museum,Salem Witch Museum,ENTERTAINMENT,ENTERTAINMENT__museums,,,,,,relabelled_si_linked
+salem_witch_trials_memorial,Salem Witch Trials Memorial,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+salem_ymca,Salem YMCA,CIVIC,CIVIC__community_centres,,,,,,relabelled_si_linked
+saltonstall_school,Saltonstall School,CIVIC,,42.5135128,-70.8912684,,,,relabelled
+santisis_garage,Santisi's Garage,AUTO_SERVICES,AUTO_SERVICES__repair_shops,,,,,,relabelled_si_linked
+sarai_by_day,Sarai By Day,SHOPPING,SHOPPING__hair_salons,,,,,,relabelled_si_linked
+scale_house,Scale House,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+sea_level_oyster_bar,Sea Level Oyster Bar,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+seeglitz_junior_high_school,Seeglitz Junior High School,CIVIC,,42.5314842,-70.9272721,,,,relabelled
+shaws,Shaw's,SHOPPING,,42.5018553,-70.9215171,,,,relabelled
+shell,Shell,FUEL_CHARGING,FUEL_CHARGING__gas_stations,,,,,,relabelled_si_linked
+shepard_law_offices,Shepard Law Offices,OFFICES,OFFICES__law_offices,,,,,,relabelled_si_linked
+sherwin_williams,Sherwin-Williams,SHOPPING,,42.5032852,-70.9227257,,,,relabelled
+sidelines_sports_bar_grill,Sidelines Sports Bar & Grill,FOOD_DRINK,FOOD_DRINK__bars,,,,,,relabelled_si_linked
+signal_motorsports,Signal Motorsports,AUTO_SERVICES,AUTO_SERVICES__repair_shops,,,,,,relabelled_si_linked
+sonesta_select_danvers,Sonesta Select,LODGING,LODGING__hotels,42.554717,-70.93746,275 Independence Way,+1 978 777 8630,https://www.sonesta.com/us/massachusetts/danvers/sonesta-select-boston-danvers,lodging_osm
+speedway,Speedway,OFFICES,OFFICES__companies,,,,,,relabelled_si_linked
+speedway_1,Speedway,SHOPPING,SHOPPING__convenience_stores,42.5195617,-70.8919458,,,,relabelled
+splaine_park,Splaine Park,PARKS_REC,PARKS_REC__parks,42.5171638,-70.9070928,,,,relabelled
+springhill_suites_peabody,SpringHill Suites,LODGING,LODGING__hotels,42.524304,-70.994282,43 Newbury Street,+1 978-535-5000,https://www.marriott.com/bospy,lodging_osm
+springhill_suites_revere,SpringHill Suites,LODGING,LODGING__hotels,42.413164,-70.991058,400 Ocean Avenue,+1 781-629-1551,https://www.marriott.com/bossr,lodging_osm
+st_jeans_credit_union,St. Jean's Credit Union,FINANCE,FINANCE__banks,,,,,,relabelled_si_linked
+st_john_the_baptist_ukrainian_church,St. John The Baptist Ukrainian Church,WORSHIP,,42.5273977,-70.8908478,,,,relabelled
+st_joseph_hall,St. Joseph Hall,HISTORICAL_BUILDINGS,,42.52187724260232,-70.88632106781007,,,,relabelled
+st_peter_s_church_historic_presentations_and_tours,St. Peter’s Church Historic Presentations and Tours,TOUR_COMPANIES,TOUR_COMPANIES__walking_tours,42.52291161550245,-70.89305609464647,,,,relabelled
+stanley_lot,Stanley Lot,PARKING,,42.5029745,-70.8954428,,,,relabelled
+starbucks,Starbucks,FOOD_DRINK,FOOD_DRINK__cafes,,,,,,relabelled_si_linked
+stardust,Stardust,WITCH_SHOP,WITCH_SHOP__witchcraft_shops,,,,,,relabelled_si_linked
+steves_quality_market,Steve's Quality Market,SHOPPING,SHOPPING__supermarkets,,,,,,relabelled_si_linked
+sullivan_front_lawn,Sullivan Front Lawn,PARKS_REC,,42.5047512,-70.8908229,,,,relabelled
+sunoco,Sunoco,FUEL_CHARGING,FUEL_CHARGING__gas_stations,,,,,,relabelled_si_linked
+taco_bell,Taco Bell,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+target,Target,SHOPPING,SHOPPING__department_stores,,,,,,relabelled_si_linked
+tavern_on_the_green,Tavern on the Green,FOOD_DRINK,FOOD_DRINK__restaurants,42.522856264877916,-70.89044094085695,,,,relabelled
+tennis_courts,Tennis Courts,CIVIC,,42.5340609,-70.8718784,,,,relabelled
+the_babe,The Babe,FOOD_DRINK,FOOD_DRINK__bars,,,,,,relabelled_si_linked
+the_beverly_hotel_beverly,,LODGING,LODGING__hotels,42.584672,-70.885161,18 Enon Street,,,lodging_osm
+the_cauldron_black,The Cauldron Black,WITCH_SHOP,WITCH_SHOP__metaphysical,,,,,,relabelled_si_linked
+the_chocolate_pantry,The Chocolate Pantry,FOOD_DRINK,FOOD_DRINK__candy_stores,,,,,,relabelled_si_linked
+the_coven_s_cottage,The Coven’s Cottage,WITCH_SHOP,WITCH_SHOP__witchcraft_shops,,,,,,relabelled_si_linked
+the_first_muster,The First Muster,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+the_juicery,The Juicery,FOOD_DRINK,,42.52203044750449,-70.89562967419626,,,,relabelled
+the_lobster_shanty,The Lobster Shanty,FOOD_DRINK,FOOD_DRINK__bars,,,,,,relabelled_si_linked
+the_magic_parlor,The Magic Parlor,WITCH_SHOP,WITCH_SHOP__witchcraft_shops,,,,,,relabelled_si_linked
+the_merchant,The Merchant,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+the_merchant_salem,The Merchant,LODGING,LODGING__hotels,42.520424,-70.895926,148;150 Washington Street,,,lodging_osm
+the_ossuary,The Ossuary,SHOPPING,SHOPPING__jewelry,,,,,,relabelled_si_linked
+the_roof,The Roof,FOOD_DRINK,FOOD_DRINK__bars,,,,,,relabelled_si_linked
+the_salvation_army_north_shore_community_center_church,The Salvation Army North Shore Community Center & Church,WORSHIP,,42.5258441,-70.9004692,,,,relabelled
+the_ups_store,The UPS Store,SHOPPING,,,,,,,relabelled_si_linked
+the_witchery,The Witchery,WITCH_SHOP,WITCH_SHOP__witchcraft_shops,,,,,,relabelled_si_linked
+tobies_jewelers,Tobie’s Jewelers,SHOPPING,SHOPPING__jewelry,,,,,,relabelled_si_linked
+today_nails_and_spa_salem,Today Nails and Spa Salem,SHOPPING,SHOPPING__beauty_spa,,,,,,relabelled_si_linked
+tomos_tackle,Tomo’s Tackle,SHOPPING,,42.5207243,-70.8881945,,,,relabelled
+trident_electronics_recycling,Trident Electronics Recycling,SHOPPING,SHOPPING__electronics,,,,,,relabelled_si_linked
+tropicana_market,Tropicana Market,SHOPPING,SHOPPING__convenience_stores,,,,,,relabelled_si_linked
+trunorth_bank,TruNorth Bank,FINANCE,FINANCE__banks,,,,,,relabelled_si_linked
+trunorth_bank_2,TruNorth Bank,FINANCE,FINANCE__banks,42.5003118,-70.926221,,,,relabelled
+twilight_house,Twilight House,SHOPPING,,,,,,,relabelled_si_linked
+twohig_gymnasium,Twohig Gymnasium,SHOPPING,,42.5047075,-70.8954581,,,,relabelled
+u_s_coast_guard_sea_and_rescue_administration,U. S. Coast Guard Sea and Rescue Administration,CIVIC,,42.5268368,-70.8705509,,,,relabelled
+ugly_mug_diner,Ugly Mug Diner,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+university_fuel,University Fuel,SERVICES,SERVICES__plumbing_heating,,,,,,relabelled_si_linked
+university_police,University Police,CIVIC,,42.5006068,-70.8937915,,,,relabelled
+upper_quad,Upper Quad,PARKS_REC,,42.5037881,-70.8910224,,,,relabelled
+vanished_house_of_laser,Vanished House of Laser,SHOPPING,,,,,,,relabelled_si_linked
+velvet_vein,Velvet & Vein,SHOPPING,SHOPPING__jewelry,,,,,,relabelled_si_linked
+verduras,Verduras,PARKS_REC,,42.518884,-70.8938946,,,,relabelled
+verizon,Verizon,SHOPPING,SHOPPING__phone_stores,,,,,,relabelled_si_linked
+viking_statue,Viking Statue,HISTORICAL_LANDMARKS,,42.5053822,-70.8945831,,,,relabelled
+village_silversmith,Village Silversmith,SHOPPING,SHOPPING__jewelry,,,,,,relabelled_si_linked
+walgreens_1,Walgreens,HEALTHCARE,HEALTHCARE__pharmacies,42.51862780535486,-70.90911976863188,,,,relabelled
+washington_arch,Washington Arch,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+waterside_cemetery,Waterside Cemetery,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__cemeteries,42.5115876,-70.8661209,,,,relabelled
+wendy_s,Wendy's,FOOD_DRINK,FOOD_DRINK__fast_food,,,,,,relabelled_si_linked
+wesley_united_methodist_church,Wesley United Methodist Church,WORSHIP,,,,,,,relabelled_si_linked
+west_india_goods_store,West India Goods Store,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+white_dove_market_grill,White Dove Market & Grill,FOOD_DRINK,FOOD_DRINK__restaurants,,,,,,relabelled_si_linked
+wicked_wardrobe,Wicked Wardrobe,SHOPPING,SHOPPING__jewelry,,,,,,relabelled_si_linked
+wilson_cemetery,Wilson Cemetery,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__cemeteries,,,,,,relabelled_si_linked
+witch_city_auto_sales,Witch City Auto Sales,AUTO_SERVICES,AUTO_SERVICES__repair_shops,,,,,,relabelled_si_linked
+witch_city_ink,Witch City Ink,SHOPPING,SHOPPING__beauty_spa,,,,,,relabelled_si_linked
+witch_city_mall,Witch City Mall,SHOPPING,SHOPPING__malls,,,,,,relabelled_si_linked
+witch_dr,Witch Dr.,WITCH_SHOP,WITCH_SHOP__metaphysical,,,,,,relabelled_si_linked
+witch_dungeon_museum,Witch Dungeon Museum,ENTERTAINMENT,,,,,,,relabelled_si_linked
+witch_fairy_emporium,Witch & Fairy Emporium,WITCH_SHOP,WITCH_SHOP__witchcraft_shops,,,,,,relabelled_si_linked
+witch_history_museum,Witch History Museum,ENTERTAINMENT,ENTERTAINMENT__museums,,,,,,relabelled_si_linked
+witch_pix,Witch Pix,ENTERTAINMENT,ENTERTAINMENT__event_venues,,,,,,relabelled_si_linked
+witch_way_gifts,Witch Way Gifts,SHOPPING,SHOPPING__gift_shops,,,,,,relabelled_si_linked
+witchcraft_heights_elementary_school,Witchcraft Heights Elementary School,CIVIC,,,,,,,relabelled_si_linked
+witchcraft_heights_playground,Witchcraft Heights Playground,PARKS_REC,PARKS_REC__playgrounds,42.5151955,-70.9206355,,,,relabelled
+wolf_next_door_coffee,Wolf Next Door Coffee,FOOD_DRINK,FOOD_DRINK__cafes,,,,,,relabelled_si_linked
+woodspring_suites_boston_north_saugus,WoodSpring Suites Boston North,LODGING,LODGING__hotels,42.470937,-71.02388,832 Broadway,+1 339-210-1011,https://www.woodspring.com/extended-stay-hotels/locations/massachusetts/boston-cambridge-newton/woodspring-suites-boston-north,lodging_osm
+world_war_ii_memorial,World War II Memorial,HISTORICAL_BUILDINGS,,,,,,,relabelled_si_linked
+wylie_inn_and_conference_center_at_endicott_college_beverly,Wylie Inn and Conference Center at Endicott College,LODGING,LODGING__hotels,42.553043,-70.847579,295 Hale Street,+1-866-333-0859,https://www.wyliecenter.com/,lodging_osm
+xiomaras_salon,Xiomara's Salon,SHOPPING,SHOPPING__beauty_spa,,,,,,relabelled_si_linked
+ye_olde_pepper_candy_companie,Ye Olde Pepper Candy Companie,HISTORICAL_BUILDINGS,HISTORICAL_BUILDINGS__historic_bldgs,42.522471280159564,-70.88477343320848,,,,relabelled
+ziggy_sons_donuts,Ziggy & Sons Donuts,FOOD_DRINK,FOOD_DRINK__fast_food,,,,,,relabelled_si_linked
