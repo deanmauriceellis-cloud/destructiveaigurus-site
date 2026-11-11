@@ -79,6 +79,16 @@ main a:hover{border-bottom-color:var(--blue-lit)}
 .helpdocs p{margin:4px 0}
 footer{border-top:1px solid var(--line);padding:40px 0 60px;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.14em;color:var(--muted);line-height:2.2}
 footer a{color:var(--blue-lit)}
+.shots{margin:28px 0 0}
+.shots .store{margin:14px 0 6px}
+.shotrow{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin:0 0 6px}
+.shotrow.n5{grid-template-columns:repeat(5,1fr)}
+.shotrow.land{grid-template-columns:repeat(2,1fr)}
+.shotrow img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line);background:#07070b}
+main .shots a{border-bottom:0}
+.lb{display:none;position:fixed;inset:0;z-index:60;background:rgba(2,2,4,.95);padding:18px;align-items:center;justify-content:center;cursor:zoom-out}
+.lb:target{display:flex}
+.lb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:10px;border:1px solid var(--line)}
 @media(max-width:820px){
   .shell{padding:0 22px}
   .bar{padding:15px 22px;gap:12px}
@@ -88,6 +98,8 @@ footer a{color:var(--blue-lit)}
   .media img{height:auto;aspect-ratio:4/3}
   .wide img{aspect-ratio:16/10}
   .spread{grid-template-columns:repeat(2,1fr)}
+  .shotrow{grid-template-columns:repeat(4,1fr)}
+  .shotrow.n5{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
@@ -151,6 +163,21 @@ footer a{color:var(--blue-lit)}
         <p>It is built from public survey data, and it is our small demonstration of what data looks like when you can move through it.</p>
         <p class="small mono" style="text-transform:none;letter-spacing:.04em">Data: MassGIS &middot; MassDOT &middot; USGS 3DEP &middot; MACRIS</p>
         <p class="fine">FlyingSalem is not a government app. Destructive AI Gurus, LLC is not affiliated with, endorsed by, or acting for any government agency. &middot; Historic designations shown in this app are records of public inventory. They describe buildings, not the people who live in them.</p>
+      </div>
+      <div class="shots" id="shots">
+        <h3>Screenshots</h3>
+        <div class="mono store">On Google Play &middot; Android</div>
+        <div class="shotrow land">
+          <a href="#shot1"><img src="/assets/store/flyingsalem/play-01.webp" width="1280" height="720" alt="In flight over Derby Wharf and the harbour, place names shown" loading="lazy"></a>
+          <a href="#shot2"><img src="/assets/store/flyingsalem/play-02.webp" width="1280" height="720" alt="In flight over Salem Common, place names shown" loading="lazy"></a>
+          <a href="#shot3"><img src="/assets/store/flyingsalem/play-03.webp" width="1280" height="720" alt="In flight over the Common toward Charter Street, place names shown" loading="lazy"></a>
+          <a href="#shot4"><img src="/assets/store/flyingsalem/play-04.webp" width="1280" height="720" alt="In flight over Central Wharf toward downtown, place names shown" loading="lazy"></a>
+        </div>
+        <div class="caption mono">Screenshots from the Google Play listing, as published there. Tap one to see it larger. Some place names &copy; OpenStreetMap contributors, available under the Open Database License (openstreetmap.org/copyright).</div>
+        <a class="lb" id="shot1" href="#shots"><img src="/assets/store/flyingsalem/play-01.webp" alt="In flight over Derby Wharf and the harbour, place names shown" loading="lazy"></a>
+        <a class="lb" id="shot2" href="#shots"><img src="/assets/store/flyingsalem/play-02.webp" alt="In flight over Salem Common, place names shown" loading="lazy"></a>
+        <a class="lb" id="shot3" href="#shots"><img src="/assets/store/flyingsalem/play-03.webp" alt="In flight over the Common toward Charter Street, place names shown" loading="lazy"></a>
+        <a class="lb" id="shot4" href="#shots"><img src="/assets/store/flyingsalem/play-04.webp" alt="In flight over Central Wharf toward downtown, place names shown" loading="lazy"></a>
       </div>
       <div class="demo"><video controls preload="metadata" playsinline poster="/assets/demo/flying-salem-poster.jpg" aria-label="FlyingSalem: a demo of the self-flying tour"><source src="/assets/demo/flying-salem-demo.mp4" type="video/mp4"></video><div class="caption mono">A demo of the self-flying tour.</div></div>
       <div class="helpdocs">

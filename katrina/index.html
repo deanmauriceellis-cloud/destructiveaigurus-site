@@ -79,6 +79,16 @@ main a:hover{border-bottom-color:var(--blue-lit)}
 .helpdocs p{margin:4px 0}
 footer{border-top:1px solid var(--line);padding:40px 0 60px;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.14em;color:var(--muted);line-height:2.2}
 footer a{color:var(--blue-lit)}
+.shots{margin:28px 0 0}
+.shots .store{margin:14px 0 6px}
+.shotrow{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin:0 0 6px}
+.shotrow.n5{grid-template-columns:repeat(5,1fr)}
+.shotrow.land{grid-template-columns:repeat(2,1fr)}
+.shotrow img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line);background:#07070b}
+main .shots a{border-bottom:0}
+.lb{display:none;position:fixed;inset:0;z-index:60;background:rgba(2,2,4,.95);padding:18px;align-items:center;justify-content:center;cursor:zoom-out}
+.lb:target{display:flex}
+.lb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:10px;border:1px solid var(--line)}
 @media(max-width:820px){
   .shell{padding:0 22px}
   .bar{padding:15px 22px;gap:12px}
@@ -88,6 +98,8 @@ footer a{color:var(--blue-lit)}
   .media img{height:auto;aspect-ratio:4/3}
   .wide img{aspect-ratio:16/10}
   .spread{grid-template-columns:repeat(2,1fr)}
+  .shotrow{grid-template-columns:repeat(4,1fr)}
+  .shotrow.n5{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
@@ -152,6 +164,48 @@ footer a{color:var(--blue-lit)}
         <p>No advertising. No tracking. No personal information asked for. The app never goes online, and your location stays on your device. Because some US states require it, the app may also ask for your age range: on Android, from the Google Play Store app, which also says whether a parent who supervises your account approved; on iPhone and iPad, from Apple, which may ask you to share it. The answer stays on your device, is used for nothing else, and is not kept.</p>
         <p class="small">For visitors, and for the people who live and work here.</p>
         <p class="fine">This app uses AI-generated content: the narration is built from real voices, AI-simulated with permission from the narrators&rsquo; own recordings, and the illustrated artwork is AI-generated. The Oracle newspapers and the 1692 history and people texts are AI-written, and some photographs have AI-widened edges. Dr.&nbsp;K&rsquo;s historic-site stories are her own work, not AI-generated; only her voice reading them is AI-simulated, with her permission. &middot; Map data &copy; OpenStreetMap contributors, licensed under ODbL 1.0 (opendatacommons.org/licenses/odbl/1-0/). Basemap rendered by Destructive AI Gurus, LLC.</p>
+      </div>
+      <div class="shots" id="shots">
+        <h3>Screenshots</h3>
+        <div class="mono store">On the App Store &middot; iPhone</div>
+        <div class="shotrow">
+          <a href="#shot1"><img src="/assets/store/katrina/appstore-01-our-voices.webp" width="720" height="1558" alt="Our Voices: who the narrators are" loading="lazy"></a>
+          <a href="#shot2"><img src="/assets/store/katrina/appstore-02-home.webp" width="720" height="1558" alt="The home screen: guided walking tours, the Salem witch trials of 1692, explore Salem on your own" loading="lazy"></a>
+          <a href="#shot3"><img src="/assets/store/katrina/appstore-03-map.webp" width="720" height="1558" alt="The map of downtown Salem" loading="lazy"></a>
+          <a href="#shot4"><img src="/assets/store/katrina/appstore-04-collection.webp" width="720" height="1558" alt="Katrina&#x27;s Collection" loading="lazy"></a>
+          <a href="#shot5"><img src="/assets/store/katrina/appstore-05-witch-trials.webp" width="720" height="1558" alt="The Salem witch trials: the history, day by day" loading="lazy"></a>
+          <a href="#shot6"><img src="/assets/store/katrina/appstore-06-find.webp" width="720" height="1558" alt="Find: a search for Witch" loading="lazy"></a>
+          <a href="#shot7"><img src="/assets/store/katrina/appstore-07-tour.webp" width="720" height="1558" alt="The map on Dr. K&#x27;s Tour, with the route" loading="lazy"></a>
+          <a href="#shot8"><img src="/assets/store/katrina/appstore-08-narrating.webp" width="720" height="1558" alt="Now narrating: the Old Armory" loading="lazy"></a>
+        </div>
+        <div class="mono store">On Google Play &middot; Android phone</div>
+        <div class="shotrow">
+          <a href="#shot9"><img src="/assets/store/katrina/play-01-home.webp" width="720" height="1280" alt="The home screen" loading="lazy"></a>
+          <a href="#shot10"><img src="/assets/store/katrina/play-02-oracle.webp" width="720" height="1280" alt="The Oracle, a newspaper of the trials" loading="lazy"></a>
+          <a href="#shot11"><img src="/assets/store/katrina/play-03-find.webp" width="720" height="1280" alt="Find: a search for pizza" loading="lazy"></a>
+          <a href="#shot12"><img src="/assets/store/katrina/play-04-narrating.webp" width="720" height="1280" alt="A historic place, being narrated: the Witch House" loading="lazy"></a>
+          <a href="#shot13"><img src="/assets/store/katrina/play-05-collection.webp" width="720" height="1280" alt="Katrina&#x27;s Collection: the badges" loading="lazy"></a>
+          <a href="#shot14"><img src="/assets/store/katrina/play-06-map.webp" width="720" height="1280" alt="The map of Salem" loading="lazy"></a>
+          <a href="#shot15"><img src="/assets/store/katrina/play-07-directions.webp" width="720" height="1280" alt="Walking directions" loading="lazy"></a>
+          <a href="#shot16"><img src="/assets/store/katrina/play-08-1851-map.webp" width="720" height="1280" alt="The 1851 map of Salem" loading="lazy"></a>
+        </div>
+        <div class="caption mono">Screenshots from the two store listings, as published there. Tap one to see it larger.</div>
+        <a class="lb" id="shot1" href="#shots"><img src="/assets/store/katrina/appstore-01-our-voices.webp" alt="Our Voices: who the narrators are" loading="lazy"></a>
+        <a class="lb" id="shot2" href="#shots"><img src="/assets/store/katrina/appstore-02-home.webp" alt="The home screen: guided walking tours, the Salem witch trials of 1692, explore Salem on your own" loading="lazy"></a>
+        <a class="lb" id="shot3" href="#shots"><img src="/assets/store/katrina/appstore-03-map.webp" alt="The map of downtown Salem" loading="lazy"></a>
+        <a class="lb" id="shot4" href="#shots"><img src="/assets/store/katrina/appstore-04-collection.webp" alt="Katrina&#x27;s Collection" loading="lazy"></a>
+        <a class="lb" id="shot5" href="#shots"><img src="/assets/store/katrina/appstore-05-witch-trials.webp" alt="The Salem witch trials: the history, day by day" loading="lazy"></a>
+        <a class="lb" id="shot6" href="#shots"><img src="/assets/store/katrina/appstore-06-find.webp" alt="Find: a search for Witch" loading="lazy"></a>
+        <a class="lb" id="shot7" href="#shots"><img src="/assets/store/katrina/appstore-07-tour.webp" alt="The map on Dr. K&#x27;s Tour, with the route" loading="lazy"></a>
+        <a class="lb" id="shot8" href="#shots"><img src="/assets/store/katrina/appstore-08-narrating.webp" alt="Now narrating: the Old Armory" loading="lazy"></a>
+        <a class="lb" id="shot9" href="#shots"><img src="/assets/store/katrina/play-01-home.webp" alt="The home screen" loading="lazy"></a>
+        <a class="lb" id="shot10" href="#shots"><img src="/assets/store/katrina/play-02-oracle.webp" alt="The Oracle, a newspaper of the trials" loading="lazy"></a>
+        <a class="lb" id="shot11" href="#shots"><img src="/assets/store/katrina/play-03-find.webp" alt="Find: a search for pizza" loading="lazy"></a>
+        <a class="lb" id="shot12" href="#shots"><img src="/assets/store/katrina/play-04-narrating.webp" alt="A historic place, being narrated: the Witch House" loading="lazy"></a>
+        <a class="lb" id="shot13" href="#shots"><img src="/assets/store/katrina/play-05-collection.webp" alt="Katrina&#x27;s Collection: the badges" loading="lazy"></a>
+        <a class="lb" id="shot14" href="#shots"><img src="/assets/store/katrina/play-06-map.webp" alt="The map of Salem" loading="lazy"></a>
+        <a class="lb" id="shot15" href="#shots"><img src="/assets/store/katrina/play-07-directions.webp" alt="Walking directions" loading="lazy"></a>
+        <a class="lb" id="shot16" href="#shots"><img src="/assets/store/katrina/play-08-1851-map.webp" alt="The 1851 map of Salem" loading="lazy"></a>
       </div>
       <div class="demo"><video controls preload="metadata" playsinline poster="/assets/demo/katrina-poster.jpg" aria-label="Katrina's Mystic Visitors Guide: a demo recorded on the phone"><source src="/assets/demo/katrina-demo.mp4" type="video/mp4"></video><div class="caption mono">A demo recorded on the phone.</div><p class="credit">Map data © OpenStreetMap contributors, licensed under ODbL 1.0 (openstreetmap.org/copyright). Vector tile schema © OpenMapTiles (openmaptiles.org), licensed CC BY 4.0. Structure, parcel and historic-inventory data courtesy of MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts, EOTSS.</p></div>
       <div class="helpdocs">
