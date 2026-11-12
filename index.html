@@ -145,6 +145,16 @@
   .legal{grid-column:1 / span 2;grid-row:4;display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;font-size:14px;color:var(--muted)}
   .legal .pending{border-bottom:1px dashed #33334a;cursor:help}
   [hidden]{display:none!important}
+  .shots{margin:28px 0 0}
+  .shots .store{margin:14px 0 6px}
+  .shotrow{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin:0 0 6px}
+  .shotrow.n5{grid-template-columns:repeat(5,1fr)}
+  .shotrow.land{grid-template-columns:repeat(2,1fr)}
+  .shotrow img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line);background:#07070b}
+  .shots a{text-decoration:none}
+  .lb{display:none;position:fixed;inset:0;z-index:60;background:rgba(2,2,4,.95);padding:18px;align-items:center;justify-content:center;cursor:zoom-out}
+  .lb:target{display:flex}
+  .lb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:10px;border:1px solid var(--line)}
   @media (max-width:820px){
     .frame{grid-template-columns:1fr;grid-template-rows:auto auto auto auto auto auto auto}
     .icon{grid-column:1;grid-row:1}
@@ -162,6 +172,8 @@
     .media img{height:auto;aspect-ratio:4/3}
     .wide img{aspect-ratio:16/10}
     .spread{grid-template-columns:repeat(2,1fr)}
+    .shotrow{grid-template-columns:repeat(4,1fr)}
+    .shotrow.n5{grid-template-columns:repeat(3,1fr)}
   }
 </style>
 </head>
@@ -239,6 +251,48 @@
         <p class="small">For visitors, and for the people who live and work here.</p>
         <p class="fine">This app uses AI-generated content: the narration is built from real voices, AI-simulated with permission from the narrators&rsquo; own recordings, and the illustrated artwork is AI-generated. The Oracle newspapers and the 1692 history and people texts are AI-written, and some photographs have AI-widened edges. Dr.&nbsp;K&rsquo;s historic-site stories are her own work, not AI-generated; only her voice reading them is AI-simulated, with her permission. &middot; Map data &copy; OpenStreetMap contributors, licensed under ODbL 1.0 (opendatacommons.org/licenses/odbl/1-0/). Basemap rendered by Destructive AI Gurus, LLC.</p>
       </div>
+      <div class="shots" id="shots-katrina">
+        <h3>Screenshots</h3>
+        <div class="mono store">On the App Store &middot; iPhone</div>
+        <div class="shotrow">
+          <a href="#hk1"><img src="/assets/store/katrina/appstore-01-our-voices.webp" width="720" height="1558" alt="Our Voices: who the narrators are" loading="lazy"></a>
+          <a href="#hk2"><img src="/assets/store/katrina/appstore-02-home.webp" width="720" height="1558" alt="The home screen: guided walking tours, the Salem witch trials of 1692, explore Salem on your own" loading="lazy"></a>
+          <a href="#hk3"><img src="/assets/store/katrina/appstore-03-map.webp" width="720" height="1558" alt="The map of downtown Salem" loading="lazy"></a>
+          <a href="#hk4"><img src="/assets/store/katrina/appstore-04-collection.webp" width="720" height="1558" alt="Katrina&#x27;s Collection" loading="lazy"></a>
+          <a href="#hk5"><img src="/assets/store/katrina/appstore-05-witch-trials.webp" width="720" height="1558" alt="The Salem witch trials: the history, day by day" loading="lazy"></a>
+          <a href="#hk6"><img src="/assets/store/katrina/appstore-06-find.webp" width="720" height="1558" alt="Find: a search for Witch" loading="lazy"></a>
+          <a href="#hk7"><img src="/assets/store/katrina/appstore-07-tour.webp" width="720" height="1558" alt="The map on Dr. K&#x27;s Tour, with the route" loading="lazy"></a>
+          <a href="#hk8"><img src="/assets/store/katrina/appstore-08-narrating.webp" width="720" height="1558" alt="Now narrating: the Old Armory" loading="lazy"></a>
+        </div>
+        <div class="mono store">On Google Play &middot; Android phone</div>
+        <div class="shotrow">
+          <a href="#hk9"><img src="/assets/store/katrina/play-01-home.webp" width="720" height="1280" alt="The home screen" loading="lazy"></a>
+          <a href="#hk10"><img src="/assets/store/katrina/play-02-oracle.webp" width="720" height="1280" alt="The Oracle, a newspaper of the trials" loading="lazy"></a>
+          <a href="#hk11"><img src="/assets/store/katrina/play-03-find.webp" width="720" height="1280" alt="Find: a search for pizza" loading="lazy"></a>
+          <a href="#hk12"><img src="/assets/store/katrina/play-04-narrating.webp" width="720" height="1280" alt="A historic place, being narrated: the Witch House" loading="lazy"></a>
+          <a href="#hk13"><img src="/assets/store/katrina/play-05-collection.webp" width="720" height="1280" alt="Katrina&#x27;s Collection: the badges" loading="lazy"></a>
+          <a href="#hk14"><img src="/assets/store/katrina/play-06-map.webp" width="720" height="1280" alt="The map of Salem" loading="lazy"></a>
+          <a href="#hk15"><img src="/assets/store/katrina/play-07-directions.webp" width="720" height="1280" alt="Walking directions" loading="lazy"></a>
+          <a href="#hk16"><img src="/assets/store/katrina/play-08-1851-map.webp" width="720" height="1280" alt="The 1851 map of Salem" loading="lazy"></a>
+        </div>
+        <div class="caption mono">Screenshots from the two store listings, as published there. Tap one to see it larger.</div>
+        <a class="lb" id="hk1" href="#katrina"><img src="/assets/store/katrina/appstore-01-our-voices.webp" alt="Our Voices: who the narrators are" loading="lazy"></a>
+        <a class="lb" id="hk2" href="#katrina"><img src="/assets/store/katrina/appstore-02-home.webp" alt="The home screen: guided walking tours, the Salem witch trials of 1692, explore Salem on your own" loading="lazy"></a>
+        <a class="lb" id="hk3" href="#katrina"><img src="/assets/store/katrina/appstore-03-map.webp" alt="The map of downtown Salem" loading="lazy"></a>
+        <a class="lb" id="hk4" href="#katrina"><img src="/assets/store/katrina/appstore-04-collection.webp" alt="Katrina&#x27;s Collection" loading="lazy"></a>
+        <a class="lb" id="hk5" href="#katrina"><img src="/assets/store/katrina/appstore-05-witch-trials.webp" alt="The Salem witch trials: the history, day by day" loading="lazy"></a>
+        <a class="lb" id="hk6" href="#katrina"><img src="/assets/store/katrina/appstore-06-find.webp" alt="Find: a search for Witch" loading="lazy"></a>
+        <a class="lb" id="hk7" href="#katrina"><img src="/assets/store/katrina/appstore-07-tour.webp" alt="The map on Dr. K&#x27;s Tour, with the route" loading="lazy"></a>
+        <a class="lb" id="hk8" href="#katrina"><img src="/assets/store/katrina/appstore-08-narrating.webp" alt="Now narrating: the Old Armory" loading="lazy"></a>
+        <a class="lb" id="hk9" href="#katrina"><img src="/assets/store/katrina/play-01-home.webp" alt="The home screen" loading="lazy"></a>
+        <a class="lb" id="hk10" href="#katrina"><img src="/assets/store/katrina/play-02-oracle.webp" alt="The Oracle, a newspaper of the trials" loading="lazy"></a>
+        <a class="lb" id="hk11" href="#katrina"><img src="/assets/store/katrina/play-03-find.webp" alt="Find: a search for pizza" loading="lazy"></a>
+        <a class="lb" id="hk12" href="#katrina"><img src="/assets/store/katrina/play-04-narrating.webp" alt="A historic place, being narrated: the Witch House" loading="lazy"></a>
+        <a class="lb" id="hk13" href="#katrina"><img src="/assets/store/katrina/play-05-collection.webp" alt="Katrina&#x27;s Collection: the badges" loading="lazy"></a>
+        <a class="lb" id="hk14" href="#katrina"><img src="/assets/store/katrina/play-06-map.webp" alt="The map of Salem" loading="lazy"></a>
+        <a class="lb" id="hk15" href="#katrina"><img src="/assets/store/katrina/play-07-directions.webp" alt="Walking directions" loading="lazy"></a>
+        <a class="lb" id="hk16" href="#katrina"><img src="/assets/store/katrina/play-08-1851-map.webp" alt="The 1851 map of Salem" loading="lazy"></a>
+      </div>
       <div class="demo"><video controls preload="metadata" playsinline poster="assets/demo/katrina-poster.jpg" aria-label="Katrina's Mystic Visitors Guide: a demo recorded on the phone"><source src="assets/demo/katrina-demo.mp4" type="video/mp4"></video><div class="caption mono">A demo recorded on the phone.</div><p class="credit">Map data © OpenStreetMap contributors, licensed under ODbL 1.0 (openstreetmap.org/copyright). Vector tile schema © OpenMapTiles (openmaptiles.org), licensed CC BY 4.0. Structure, parcel and historic-inventory data courtesy of MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts, EOTSS.</p></div>
       <div class="helpdocs">
         <h3>Help</h3>
@@ -263,6 +317,23 @@
       </div>
       <div class="caption mono">The cover and four cards from the deck.</div>
       <p>A full tarot deck drawn from what actually happened here in 1692: the neighbours, the testimony, the paperwork. Read aloud, one card at a time, so the history arrives as something you are standing inside rather than something you are looking at. It teaches. It does not predict.</p>
+      <div class="shots" id="shots-tarot">
+        <h3>Screenshots</h3>
+        <div class="mono store">On the App Store &middot; iPhone</div>
+        <div class="shotrow n5">
+          <a href="#hq1"><img src="/assets/store/qabalah-1692/appstore-01-home.webp" width="720" height="1564" alt="The home screen" loading="lazy"></a>
+          <a href="#hq2"><img src="/assets/store/qabalah-1692/appstore-02-reading.webp" width="720" height="1564" alt="A reading: touch the card to turn it" loading="lazy"></a>
+          <a href="#hq3"><img src="/assets/store/qabalah-1692/appstore-03-card.webp" width="720" height="1564" alt="A single card: The Conjurer, reversed" loading="lazy"></a>
+          <a href="#hq4"><img src="/assets/store/qabalah-1692/appstore-04-history.webp" width="720" height="1564" alt="Qabalah History: The Wayfarer, upright" loading="lazy"></a>
+          <a href="#hq5"><img src="/assets/store/qabalah-1692/appstore-05-deck.webp" width="720" height="1564" alt="The Union Tableau: the deck, face up" loading="lazy"></a>
+        </div>
+        <div class="caption mono">Screenshots from the App Store listing, as published there. Tap one to see it larger.</div>
+        <a class="lb" id="hq1" href="#tarot"><img src="/assets/store/qabalah-1692/appstore-01-home.webp" alt="The home screen" loading="lazy"></a>
+        <a class="lb" id="hq2" href="#tarot"><img src="/assets/store/qabalah-1692/appstore-02-reading.webp" alt="A reading: touch the card to turn it" loading="lazy"></a>
+        <a class="lb" id="hq3" href="#tarot"><img src="/assets/store/qabalah-1692/appstore-03-card.webp" alt="A single card: The Conjurer, reversed" loading="lazy"></a>
+        <a class="lb" id="hq4" href="#tarot"><img src="/assets/store/qabalah-1692/appstore-04-history.webp" alt="Qabalah History: The Wayfarer, upright" loading="lazy"></a>
+        <a class="lb" id="hq5" href="#tarot"><img src="/assets/store/qabalah-1692/appstore-05-deck.webp" alt="The Union Tableau: the deck, face up" loading="lazy"></a>
+      </div>
       <div class="demo"><video controls preload="metadata" playsinline poster="assets/demo/qabalah-1692-poster.jpg" aria-label="Qabalah 1692: a demo recorded on the phone"><source src="assets/demo/qabalah-1692-demo.mp4" type="video/mp4"></video><div class="caption mono">A demo recorded on the phone.</div></div>
       <div class="helpdocs">
         <h3>Help</h3>
@@ -313,6 +384,21 @@
         <p>It is built from public survey data, and it is our small demonstration of what data looks like when you can move through it.</p>
         <p class="small mono" style="text-transform:none;letter-spacing:.04em">Data: MassGIS &middot; MassDOT &middot; USGS 3DEP &middot; MACRIS</p>
         <p class="fine">FlyingSalem is not a government app. Destructive AI Gurus, LLC is not affiliated with, endorsed by, or acting for any government agency. &middot; Historic designations shown in this app are records of public inventory. They describe buildings, not the people who live in them.</p>
+      </div>
+      <div class="shots" id="shots-flying">
+        <h3>Screenshots</h3>
+        <div class="mono store">On Google Play &middot; Android</div>
+        <div class="shotrow land">
+          <a href="#hf1"><img src="/assets/store/flyingsalem/play-01.webp" width="1280" height="720" alt="In flight over Derby Wharf and the harbour, place names shown" loading="lazy"></a>
+          <a href="#hf2"><img src="/assets/store/flyingsalem/play-02.webp" width="1280" height="720" alt="In flight over Salem Common, place names shown" loading="lazy"></a>
+          <a href="#hf3"><img src="/assets/store/flyingsalem/play-03.webp" width="1280" height="720" alt="In flight over the Common toward Charter Street, place names shown" loading="lazy"></a>
+          <a href="#hf4"><img src="/assets/store/flyingsalem/play-04.webp" width="1280" height="720" alt="In flight over Central Wharf toward downtown, place names shown" loading="lazy"></a>
+        </div>
+        <div class="caption mono">Screenshots from the Google Play listing, as published there. Tap one to see it larger. Some place names &copy; OpenStreetMap contributors, available under the Open Database License (openstreetmap.org/copyright).</div>
+        <a class="lb" id="hf1" href="#flying"><img src="/assets/store/flyingsalem/play-01.webp" alt="In flight over Derby Wharf and the harbour, place names shown" loading="lazy"></a>
+        <a class="lb" id="hf2" href="#flying"><img src="/assets/store/flyingsalem/play-02.webp" alt="In flight over Salem Common, place names shown" loading="lazy"></a>
+        <a class="lb" id="hf3" href="#flying"><img src="/assets/store/flyingsalem/play-03.webp" alt="In flight over the Common toward Charter Street, place names shown" loading="lazy"></a>
+        <a class="lb" id="hf4" href="#flying"><img src="/assets/store/flyingsalem/play-04.webp" alt="In flight over Central Wharf toward downtown, place names shown" loading="lazy"></a>
       </div>
       <div class="demo"><video controls preload="metadata" playsinline poster="assets/demo/flying-salem-poster.jpg" aria-label="FlyingSalem: a demo of the self-flying tour"><source src="assets/demo/flying-salem-demo.mp4" type="video/mp4"></video><div class="caption mono">A demo of the self-flying tour.</div></div>
       <div class="helpdocs">
