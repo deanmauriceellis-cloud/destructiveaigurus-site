@@ -537,7 +537,9 @@
   buttons.forEach(b => b.addEventListener('click', () => { history.replaceState(null,'','#'+b.dataset.topic); show(b.dataset.topic, true); }));
   document.getElementById('home').addEventListener('click', () => { history.replaceState(null,'',' '); show('intro', true); });
   document.querySelector('.company h1').addEventListener('click', () => { history.replaceState(null,'',' '); show('intro', true); });
+  const alias = {flyingsalem: 'flying', qabalah: 'tarot', 'qabalah-1692': 'tarot'}, showPanel = show; show = (t, fromClick) => showPanel(alias[t] || t, fromClick);
   show((location.hash||'').slice(1).toLowerCase() || 'intro');
+  window.addEventListener('hashchange', () => { const t = (location.hash||'').slice(1).toLowerCase() || 'intro'; if (strips[alias[t] || t]) show(t); });
 </script>
 </body>
 </html>
