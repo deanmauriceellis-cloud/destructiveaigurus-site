@@ -86,7 +86,7 @@
   .icon{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:center;cursor:pointer}
   .icon img{width:56px;height:56px}
   .company{grid-column:2;grid-row:1;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
-  .company h1{margin:0;font-size:20px;letter-spacing:.08em;text-transform:uppercase}
+  .company h1{margin:0;font-size:20px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
   .company .tag{color:var(--muted);font-size:15px}
   /* rows 2–6 */
   .nav{grid-column:1;grid-row:2;display:flex;flex-direction:column;gap:6px;padding:14px}
@@ -134,6 +134,22 @@
   .tile:hover b{color:var(--blue-lit)}
   .tile img.tile-tall{object-position:50% 30%}
   .tile img.tile-card{object-fit:contain;background:#07070b}
+  .apps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  .app{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#07070b}
+  .app .pic{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%}
+  .app .pic:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+  .app img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .app img.tile-tall{object-position:50% 30%}
+  .app img.tile-card{object-fit:contain;background:#07070b}
+  .app .body{padding:12px 14px 14px}
+  .app h3{margin:0 0 2px;font-family:"Syne",sans-serif;font-size:18px}
+  .panel .app p{font-size:15px;margin:0 0 10px}
+  .panel .app p.tagline{color:var(--muted)}
+  .panel .app p.sub{margin:0 0 14px}
+  .app .get{margin:0}
+  .panel p.free b{color:var(--blue)}
+  .frame.solo .nav{display:none}
+  .frame.solo .panel{grid-column:1 / span 2}
   .demo{margin:24px 0 0}
   .demo video{width:100%;aspect-ratio:1600/720;object-fit:contain;display:block;background:#000;border-radius:8px;border:1px solid var(--line)}
   .demo .credit{margin:0;max-width:none;font-size:12px;line-height:1.45;color:var(--muted)}
@@ -163,12 +179,13 @@
     .nav .group{flex-basis:100%;margin:6px 0 0 4px}
     .nav button{width:auto;flex:1 1 140px}
     .panel{grid-column:1;grid-row:4;min-height:0}
+    .frame.solo .panel{grid-column:1}
     .strip{grid-column:1;grid-row:5}
     .contact{grid-column:1;grid-row:6}
     .legal{grid-column:1;grid-row:7}
     .panel h2{font-size:24px}
     .panel p{font-size:16px}
-    .media,.tiles,.b2b{grid-template-columns:1fr}
+    .media,.tiles,.b2b,.apps{grid-template-columns:1fr}
     .media img{height:auto;aspect-ratio:4/3}
     .wide img{aspect-ratio:16/10}
     .spread{grid-template-columns:repeat(2,1fr)}
@@ -205,8 +222,45 @@
       <div class="tiles">
         <button class="tile" data-topic="katrina"><img class="tile-tall" src="/lma/katrina-hero.jpg" alt="Katrina, the guide&rsquo;s cat, in Salem"><div><b>Katrina's Mystic Visitors Guide</b><span>A guide to all of Salem</span></div></button>
         <button class="tile" data-topic="tarot"><img class="tile-card" src="assets/tarot/the-fool.webp" alt="The Fool, a card from the deck"><div><b>Qabalah 1692</b><span>Salem, one card at a time</span></div></button>
-        <button class="tile" data-topic="flying"><img src="assets/flyingsalem/downtown-rooftops-and-cove.webp" alt="FlyingSalem&rsquo;s view over downtown Salem"><div><b>FlyingSalem</b><span>Fly over the real town</span></div></button>
+        <button class="tile" data-topic="flying"><img src="assets/flyingsalem/derby-wharf-place-names.webp" alt="In flight over Derby Wharf and the harbour, place names shown"><div><b>FlyingSalem</b><span>Fly over the real town</span></div></button>
       </div>
+    </section>
+
+    <section data-panel="dagapps" hidden>
+      <h2>Small apps about Salem.</h2>
+      <div class="apps">
+        <article class="app">
+          <button class="pic" data-topic="katrina"><img class="tile-tall" src="/lma/katrina-hero.jpg" alt="Katrina, the guide&rsquo;s cat, in Salem"></button>
+          <div class="body">
+            <h3>Katrina's Mystic Visitors Guide</h3>
+            <p class="tagline">A guide to all of Salem</p>
+            <p class="sub">For iPhone and Android &middot; on Google Play and the App Store</p>
+            <p><a class="get" href="https://play.google.com/store/apps/details?id=com.destructiveaigurus.katrinasmysticvisitorsguide" target="_blank" rel="noopener">Get it on Google Play &rarr;</a></p>
+            <p><a class="get" href="https://apps.apple.com/us/app/katrinas-mystic-visitors-guide/id6802834532" target="_blank" rel="noopener">Download on the App Store &rarr;</a></p>
+          </div>
+        </article>
+        <article class="app">
+          <button class="pic" data-topic="tarot"><img class="tile-card" src="assets/tarot/the-fool.webp" alt="The Fool, a card from the deck"></button>
+          <div class="body">
+            <h3>Qabalah 1692</h3>
+            <p class="tagline">Salem, one card at a time</p>
+            <p class="sub">For iPhone and Android &middot; on Google Play and the App Store</p>
+            <p><a class="get" href="https://play.google.com/store/apps/details?id=com.destructiveaigurus.tarot" target="_blank" rel="noopener">Get it on Google Play &rarr;</a></p>
+            <p><a class="get" href="https://apps.apple.com/us/app/qabalah-1692/id6818682140" target="_blank" rel="noopener">Download on the App Store &rarr;</a></p>
+          </div>
+        </article>
+        <article class="app">
+          <button class="pic" data-topic="flying"><img src="assets/flyingsalem/derby-wharf-place-names.webp" alt="In flight over Derby Wharf and the harbour, place names shown"></button>
+          <div class="body">
+            <h3>FlyingSalem</h3>
+            <p class="tagline">Fly over the real town</p>
+            <p class="free"><b>Free Download</b>, Fly around Salem</p>
+            <p class="sub">For iPhone and Android &middot; on Google Play &middot; coming to the App Store</p>
+            <p><a class="get" href="https://play.google.com/store/apps/details?id=com.destructiveaigurus.flyingsalem" target="_blank" rel="noopener">Get it on Google Play &rarr;</a></p>
+          </div>
+        </article>
+      </div>
+      <p class="small">Google Play is a trademark of Google LLC. App Store is a service mark of Apple Inc., registered in the U.S. and other countries and regions. iPhone and iPad are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
     </section>
 
     <section data-panel="katrina" hidden>
@@ -305,9 +359,10 @@
 
     <section data-panel="tarot" hidden>
       <h2>Qabalah 1692</h2>
-      <p class="sub">For iPhone and Android &middot; on the App Store &middot; coming to Google Play</p>
+      <p class="sub">For iPhone and Android &middot; on Google Play and the App Store</p>
+      <p><a class="get" href="https://play.google.com/store/apps/details?id=com.destructiveaigurus.tarot" target="_blank" rel="noopener">Get it on Google Play &rarr;</a></p>
       <p><a class="get" href="https://apps.apple.com/us/app/qabalah-1692/id6818682140" target="_blank" rel="noopener">Download on the App Store &rarr;</a></p>
-      <p class="small">App Store is a service mark of Apple Inc., registered in the U.S. and other countries and regions. iPhone and iPad are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
+      <p class="small">Google Play is a trademark of Google LLC. App Store is a service mark of Apple Inc., registered in the U.S. and other countries and regions. iPhone and iPad are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
       <div class="spread">
         <img src="assets/tarot/cover.webp" alt="The deck's cover">
         <img src="assets/tarot/the-fool.webp" alt="The Fool">
@@ -346,10 +401,11 @@
     <section data-panel="flying" hidden>
       <h2>FlyingSalem</h2>
       <p class="sub">For iPhone and Android &middot; on Google Play &middot; coming to the App Store</p>
+      <p class="free"><b>Free Download</b>, Fly around Salem</p>
       <p><a class="get" href="https://play.google.com/store/apps/details?id=com.destructiveaigurus.flyingsalem" target="_blank" rel="noopener">Get it on Google Play &rarr;</a></p>
       <p class="small">Google Play is a trademark of Google LLC.</p>
-      <div class="wide"><img src="assets/flyingsalem/downtown-rooftops-and-cove.webp" alt="FlyingSalem&rsquo;s view over downtown Salem: rooftops and streets, with the water beyond"></div>
-      <div class="caption mono">Screenshot from the app, over downtown Salem. Its controls are cropped out.</div>
+      <div class="wide"><img src="assets/flyingsalem/derby-wharf-harbour-wide.webp" alt="In flight over Derby Wharf and the harbour, place names shown"></div>
+      <div class="caption mono">Screenshot from the app, over Derby Wharf and the harbour. Its controls are cropped out.</div>
       <div class="copy">
         <p class="lede">Fly over the real Salem.</p>
         <p>FlyingSalem lets you fly over the real Salem, Massachusetts. The hills are the real hills, the shoreline is the real shoreline, and every building stands where it stands in life. It never needs the internet.</p>
@@ -460,6 +516,7 @@
 <script>
   const strips = {
     intro:      '<b>Start with a project on the left.</b> The apps are arriving on Google Play and the App Store, each one as it is ready. The practice is what we did for large enterprises for a long time before that.',
+    dagapps:    '<b>Small apps about Salem.</b> The apps are arriving on Google Play and the App Store, each one as it is ready.',
     katrina:    '<b>Katrina.</b> Salem is more than one street and more than one story. This is the guide to the whole town.',
     tarot:      '<b>Qabalah 1692.</b> Every card is a way you might have been in 1692: the accused, the neighbour who repeated the rumour, the magistrate who wrote it down.',
     flying:     '<b>FlyingSalem.</b> Anything that varies across a map can become ground you fly over. Salem is the first one.',
@@ -472,13 +529,15 @@
   function show(topic, fromClick){
     if(!strips[topic]) topic = 'intro';
     document.querySelectorAll('[data-panel]').forEach(s => s.hidden = s.dataset.panel !== topic);
+    document.querySelector('.frame').classList.toggle('solo', topic === 'dagapps');
     buttons.forEach(b => { if(b.tagName === 'BUTTON' && !b.closest('.tiles')) b.setAttribute('aria-current', b.dataset.topic === topic ? 'true' : 'false'); });
     document.getElementById('strip').innerHTML = strips[topic];
     if(fromClick && window.matchMedia('(max-width:820px)').matches) document.getElementById('panel').scrollIntoView({block:'start'});
   }
   buttons.forEach(b => b.addEventListener('click', () => { history.replaceState(null,'','#'+b.dataset.topic); show(b.dataset.topic, true); }));
   document.getElementById('home').addEventListener('click', () => { history.replaceState(null,'',' '); show('intro', true); });
-  show((location.hash||'').slice(1) || 'intro');
+  document.querySelector('.company h1').addEventListener('click', () => { history.replaceState(null,'',' '); show('intro', true); });
+  show((location.hash||'').slice(1).toLowerCase() || 'intro');
 </script>
 </body>
 </html>
