@@ -9,16 +9,16 @@ opendatacommons.org/licenses/odbl/1-0/).
 **Questions or requests:** contact@destructiveaigurus.com
 
 ## What this export covers
-- App build **20261017.1** (source commit `b41d82cf132a`).
+- App version **20261017.1**. Exported 2026-11-25.
 - The same data ships in the iPhone edition built from this release's content.
 
 ## Files
 | File | What it holds |
 |---|---|
-| `walking-route-network.sqlite` | The walking-route network exactly as the app ships it (46,349 edges, 43,087 nodes). |
+| `walking-route-network.sqlite` | The walking-route network the app uses (46,349 edges, 43,087 nodes). |
 | `walking-route-network.geojson` | The same network as GeoJSON LineStrings (WGS 84; `source`/`target` are node ids, `length_m` in metres, `mtfcc` = the segment's feature class). |
-| `places-osm-derived.geojson` / `.csv` | 457 places of OpenStreetMap origin, with only their OpenStreetMap-derived fields (212 with coordinates). |
-| `export-manifest.json` | Counts, the field rule, and the SHA-256 of every input and file. |
+| `places-osm-derived.geojson` / `.csv` | 457 places of OpenStreetMap origin, numbered 1–457, with only their OpenStreetMap-derived fields (212 with coordinates). |
+| `export-manifest.json` | Counts and the SHA-256 of every file. |
 | `SHA256SUMS` | Checksums of every file in this folder. |
 
 ## Which data is included
@@ -29,6 +29,9 @@ opendatacommons.org/licenses/odbl/1-0/).
   imported from OpenStreetMap, and 425
   places first created from OpenStreetMap data. Only fields that still derive
   from OpenStreetMap are included; values from other sources are left out.
+  `osm_origin` says which: `osm_lodging` (the fields that still match
+  OpenStreetMap) · `osm_name_category_location` (name, category, coordinates)
+  · `osm_name_category` (name and category).
 - **Not included:** the rest of the app's database (stories, narration,
   images, audio and other content), which is a separate, independent
   collection under ODbL §4.5; and the map tiles, which are a Produced Work
